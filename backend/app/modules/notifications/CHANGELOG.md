@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- feat(i18n): `notification_templates.locale` and
+  `notification_preferences.preferred_locale` widen from 5 to 10
+  characters (`notif_0009`, with the matching schema/query limits) so the
+  script-tagged Serbian locales `sr-Cyrl` / `sr-Latn` fit. Downgrade
+  refuses to run while a longer code is stored instead of truncating it.
+
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 
 - fix(#614): production with `EMAIL_PROVIDER=console` (or unknown)

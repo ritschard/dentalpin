@@ -15,7 +15,7 @@ class EmailTemplateBase(BaseModel):
 
     template_key: str = Field(..., max_length=100)
     channel: str = Field(default="email", max_length=20)
-    locale: str = Field(default="es", max_length=5)
+    locale: str = Field(default="es", max_length=10)
     subject: str | None = Field(default=None, max_length=255)
     body_html: str | None = None
     body_text: str | None = None
@@ -76,7 +76,7 @@ class NotificationPreferenceBase(BaseModel):
             "welcome": True,
         }
     )
-    preferred_locale: str = Field(default="es", max_length=5)
+    preferred_locale: str = Field(default="es", max_length=10)
 
 
 class NotificationPreferenceCreate(NotificationPreferenceBase):
@@ -94,7 +94,7 @@ class NotificationPreferenceUpdate(BaseModel):
     sms_enabled: bool | None = None
     push_enabled: bool | None = None
     preferences: dict | None = None
-    preferred_locale: str | None = Field(default=None, max_length=5)
+    preferred_locale: str | None = Field(default=None, max_length=10)
 
 
 class NotificationPreferenceResponse(NotificationPreferenceBase):

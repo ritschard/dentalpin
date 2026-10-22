@@ -52,7 +52,7 @@ async def list_templates(
     db: Annotated[AsyncSession, Depends(get_db)],
     page: int = Query(default=1, ge=1),
     page_size: int = Query(default=20, ge=1, le=100),
-    locale: str | None = Query(default=None, max_length=5),
+    locale: str | None = Query(default=None, max_length=10),
     include_system: bool = Query(default=True),
 ) -> PaginatedApiResponse[EmailTemplateResponse]:
     """List email templates for the clinic.
