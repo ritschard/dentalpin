@@ -176,7 +176,12 @@ export default defineNuxtConfig({
       { code: 'hu', name: 'Magyar', file: 'hu.json' },
       { code: 'pl', name: 'Polski', file: 'pl.json' },
       { code: 'it', name: 'Italiano', file: 'it.json' },
-      { code: 'ar', name: 'العربية', file: 'ar.json', dir: 'rtl' }
+      { code: 'ar', name: 'العربية', file: 'ar.json', dir: 'rtl' },
+      // Serbian ships in both scripts, each translated in its own file.
+      // Cyrillic is listed first so a browser sending plain `sr` / `sr-RS`
+      // lands on it.
+      { code: 'sr-Cyrl', language: 'sr-Cyrl-RS', name: 'Српски (ћирилица)', file: 'sr-Cyrl.json' },
+      { code: 'sr-Latn', language: 'sr-Latn-RS', name: 'Srpski (latinica)', file: 'sr-Latn.json' }
     ],
     defaultLocale: 'en',
     lazy: true,

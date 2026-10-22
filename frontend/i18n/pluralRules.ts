@@ -11,6 +11,19 @@ export function plPluralRule(choice: number, choicesLength: number): number {
   return few ? 1 : 2
 }
 
+// Serbian pluralization (both scripts): CLDR one / few / other. Unlike
+// Polish, 21, 31, 101… take the singular ("21 дан") and 22-24 the few
+// form, while 11-14 stay "other". Two-segment messages collapse onto
+// one / other.
+export function srPluralRule(choice: number, choicesLength: number): number {
+  const mod10 = Math.abs(choice) % 10
+  const mod100 = Math.abs(choice) % 100
+  const one = mod10 === 1 && mod100 !== 11
+  if (choicesLength === 2) return one ? 0 : 1
+  const few = mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)
+  return Math.min(one ? 0 : few ? 1 : 2, choicesLength - 1)
+}
+
 // Arabic pluralization (vue-i18n `choice`): CLDR gives Arabic six
 // categories. The rule maps a count to the index vue-i18n uses to pick
 // the pipe segment: 0 → zero, 1 → one, 2 → two, 3-10 → few,

@@ -11,6 +11,13 @@ frontend as a Nuxt layer under its own Python package.
 
 ## [Unreleased]
 
+### Added
+
+- **Serbian UI in both scripts** (`sr-Cyrl`, `sr-Latn`), each a full
+  locale translated in its own file. Nuxt UI ships no Serbian, so its
+  component labels are defined in `app/constants/nuxtUiSerbian.ts`.
+  A Serbian plural rule (one / few / other) joins `pluralRules.ts`.
+
 ### Fixed
 
 - **The module-layer locale parity check passed vacuously for

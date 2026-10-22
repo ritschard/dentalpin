@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest'
-import { arPluralRule, plPluralRule } from '../../i18n/pluralRules'
+import { arPluralRule, plPluralRule, srPluralRule } from '../../i18n/pluralRules'
 
 /**
  * Pins the Arabic plural rule (#389 tail). Every `ar.json` message today
@@ -44,5 +44,18 @@ describe('plPluralRule', () => {
   it('collapses two-segment messages onto one / other', () => {
     expect(plPluralRule(1, 2)).toBe(0)
     for (const n of [2, 5, 22]) expect(plPluralRule(n, 2)).toBe(1)
+  })
+})
+
+describe('srPluralRule', () => {
+  it('maps counts onto one / few / other', () => {
+    for (const n of [1, 21, 31, 101]) expect(srPluralRule(n, 3)).toBe(0)
+    for (const n of [2, 3, 4, 22, 34, 102]) expect(srPluralRule(n, 3)).toBe(1)
+    for (const n of [0, 5, 11, 12, 13, 14, 111, 112, 25]) expect(srPluralRule(n, 3)).toBe(2)
+  })
+
+  it('collapses two-segment messages onto one / other', () => {
+    for (const n of [1, 21, 101]) expect(srPluralRule(n, 2)).toBe(0)
+    for (const n of [0, 2, 5, 11, 22]) expect(srPluralRule(n, 2)).toBe(1)
   })
 })

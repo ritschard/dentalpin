@@ -1,0 +1,3194 @@
+{
+  "app": {
+    "name": "DentalPin",
+    "tagline": "Upravljanje stomatološkom ordinacijom"
+  },
+  "demo": {
+    "bannerMessage": "Javni demo — ne unosite stvarne podatke o pacijentima. Baza podataka se povremeno resetuje.",
+    "bannerDismiss": "Zatvori",
+    "credentialsTitle": "Demo pristupni podaci",
+    "credentialsNote": "Samo za procenu — prikazano jer je ovo javna demo instanca.",
+    "copyEmail": "Kopiraj imejl",
+    "copyPassword": "Kopiraj lozinku",
+    "copied": "Kopirano u privremenu memoriju"
+  },
+  "nav": {
+    "dashboard": "Početna",
+    "journal": "Dnevnik aktivnosti",
+    "staffTasks": "Zadaci osoblja",
+    "patients": "Pacijenti",
+    "appointments": "Raspored",
+    "recalls": "Kontrolni pozivi",
+    "inventory": "Zalihe",
+    "treatmentConsumables": "Potrošni materijal za tretmane",
+    "expenses": "Troškovi",
+    "labOrdersForm": "Novi laboratorijski nalog",
+    "labOrdersStatus": "Laboratorijski nalozi",
+    "treatmentPlans": "Planovi lečenja",
+    "budgets": "Predračuni",
+    "invoices": "Računi",
+    "reports": "Izveštaji",
+    "settings": "Podešavanja",
+    "defaultClinicName": "Ordinacija",
+    "catalog": "Katalog",
+    "contacts": "Kontakti",
+    "menu": "Meni",
+    "openMenu": "Otvori meni",
+    "close": "Zatvori",
+    "sections": {
+      "clinical": "Klinika",
+      "lab": "Laboratorija",
+      "financials": "Finansije",
+      "inventory": "Zalihe",
+      "practice": "Ordinacija"
+    },
+    "toggleSidebar": "Prikaži/sakrij bočnu traku",
+    "documents": "Dokumenti"
+  },
+  "auth": {
+    "login": "Prijava",
+    "logout": "Odjava",
+    "email": "Imejl",
+    "password": "Lozinka",
+    "loginButton": "Prijavi se",
+    "loginSuccess": "Uspešno ste se prijavili",
+    "invalidCredentials": "Pogrešan imejl ili lozinka",
+    "emailRequired": "Unesite imejl",
+    "passwordRequired": "Unesite lozinku",
+    "emailInvalid": "Neispravna imejl adresa",
+    "accountInactive": "Vaš nalog je neaktivan. Obratite se administratoru",
+    "tooManyAttempts": "Previše pokušaja. Pokušajte ponovo za nekoliko minuta",
+    "sessionExpired": "Vaša sesija je istekla",
+    "networkError": "Nije moguće povezati se sa serverom",
+    "serverError": "Server nije dostupan. Pokušajte ponovo za nekoliko minuta",
+    "unknownError": "Neočekivana greška. Pokušajte ponovo"
+  },
+  "setup": {
+    "title": "Početno podešavanje",
+    "subtitle": "Kreirajte svoj nalog i ordinaciju. Za dva minuta možete početi sa radom.",
+    "stepAccount": "Administratorski nalog",
+    "stepClinic": "Podaci o ordinaciji",
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "email": "Imejl",
+    "password": "Lozinka",
+    "passwordConfirm": "Potvrdite lozinku",
+    "passwordHint": "Najmanje 8 karaktera, sa slovima i brojevima",
+    "clinicName": "Naziv ordinacije",
+    "taxId": "PIB",
+    "next": "Dalje",
+    "back": "Nazad",
+    "submit": "Kreiraj moju ordinaciju",
+    "success": "Sve je spremno! Dobro došli u DentalPin",
+    "firstNameRequired": "Unesite ime",
+    "lastNameRequired": "Unesite prezime",
+    "emailRequired": "Unesite imejl",
+    "emailInvalid": "Imejl nije ispravan",
+    "passwordRequired": "Unesite lozinku",
+    "passwordTooShort": "Lozinka mora imati najmanje 12 karaktera",
+    "passwordWeak": "Lozinka mora sadržati slova i brojeve",
+    "passwordMismatch": "Lozinke se ne podudaraju",
+    "clinicNameRequired": "Unesite naziv ordinacije",
+    "taxIdRequired": "Unesite PIB",
+    "alreadyInitialized": "Sistem je već podešen. Prijavite se.",
+    "error": "Podešavanje nije moglo da se završi. Pokušajte ponovo",
+    "stepOf": "Korak {current} od {total}",
+    "country": "Država",
+    "countryHelp": "Automatski podešava poreze, valutu i vremensku zonu",
+    "countryRequired": "Izaberite državu",
+    "taxIdGeneric": "PIB",
+    "taxIdLooksInvalid": "Ovo ne izgleda kao ispravan NIF/CIF. Proverite ga pre izdavanja računa.",
+    "taxIdFormat": "Neispravan format (primer: {example})",
+    "timezoneRequired": "Izaberite vremensku zonu",
+    "currencyRequired": "Izaberite valutu",
+    "derivedSettings": "Vremenska zona i valuta",
+    "willSeed": "Kreiraćemo za vas katalog tretmana, stope PDV-a, seriju računa, jedan kabinet i raspored od ponedeljka do petka. Sve se kasnije može izmeniti.",
+    "willSuggestVerifactu": "Nakon toga ćemo predložiti uključivanje VeriFactu sistema.",
+    "invalidData": "Proverite podatke: neko polje nije ispravno.",
+    "attendPatientsMyself": "I sam/a primam pacijente",
+    "attendPatientsMyselfHelp": "Označava vas kao terapeuta kod koga se mogu zakazivati termini. Ovo možete kasnije promeniti u podešavanjima tima.",
+    "addressTitle": "Adresa ordinacije",
+    "addressOptional": "opciono"
+  },
+  "onboarding": {
+    "title": "Prvi koraci",
+    "progress": "Završeno {done} od {total} koraka",
+    "configure": "Podesi",
+    "skip": "Preskoči",
+    "unskip": "Poništi",
+    "dismiss": "Sakrij",
+    "guidedMode": "Vođeni režim",
+    "optional": "Opciono ({count})",
+    "stepOf": "Korak {current} od {total}",
+    "next": "Dalje",
+    "finish": "Završi",
+    "exit": "Izađi",
+    "completedTitle": "Vaša ordinacija je spremna!",
+    "completedDescription": "Podešavanje je završeno. Sada možete normalno da radite.",
+    "guidedDoneTitle": "Obilazak je završen",
+    "guidedDoneDescription": "Nema preostalih koraka.",
+    "items": {
+      "team": {
+        "label": "Vaš tim",
+        "description": "Dodajte terapeute koji primaju pacijente ili označite sebe kao terapeuta ako radite sami."
+      },
+      "verifactu": {
+        "label": "Uključi VeriFactu",
+        "description": "Obavezno u Španiji za izdavanje računa koje priznaje poreska uprava (AEAT)."
+      }
+    }
+  },
+  "actions": {
+    "edit": "Izmeni",
+    "change": "Promeni",
+    "cancel": "Otkaži",
+    "save": "Sačuvaj",
+    "create": "Kreiraj",
+    "delete": "Obriši",
+    "close": "Zatvori",
+    "remove": "Ukloni"
+  },
+  "attachments": {
+    "linkError": "Greška pri povezivanju priloga"
+  },
+  "patients": {
+    "title": "Pacijenti",
+    "create": "Novi pacijent",
+    "edit": "Izmeni pacijenta",
+    "search": "Pretraži pacijente...",
+    "searchPlaceholder": "Ime ili telefon",
+    "noResults": "Nije pronađen nijedan pacijent",
+    "empty": "Nema registrovanih pacijenata",
+    "emptyAction": "Kreiraj prvog pacijenta",
+    "name": "Ime",
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "phone": "Telefon",
+    "email": "Imejl",
+    "dateOfBirth": "Datum rođenja",
+    "notes": "Napomene",
+    "created": "Pacijent je kreiran",
+    "updated": "Pacijent je ažuriran",
+    "archived": "Pacijent je arhiviran",
+    "notFound": "Pacijent nije pronađen",
+    "archiveConfirm": "Arhivirati pacijenta {name}?",
+    "archiveDescription": "Ova radnja će sakriti pacijenta iz pretrage. Postojeći termini neće biti obrisani.",
+    "cancel": "Otkaži",
+    "archive": "Arhiviraj",
+    "dangerZone": {
+      "title": "Opasna zona",
+      "archiveHelp": "Arhivirajte pacijenta da biste ga sakrili iz pretrage. Termini i istorija se čuvaju."
+    },
+    "billingSection": "Podaci za naplatu",
+    "billingSectionHint": "Ovi podaci će se automatski koristiti pri izradi računa za ovog pacijenta.",
+    "editingBillingForInvoice": "Izmena podataka za naplatu. Promene će se odraziti na račun.",
+    "returnToInvoice": "Nazad na račun",
+    "billingName": "Naziv za račun",
+    "billingNamePlaceholder": "Ime ili firma na računu",
+    "billingTaxId": "PIB",
+    "billingEmail": "Imejl za račune",
+    "billingAddress": "Adresa za račune",
+    "billingComplete": "Potpuno",
+    "billingIncomplete": "Nepotpuno",
+    "demographics": "Lični podaci",
+    "nationalId": "Lični dokument",
+    "nationalIdType": "Vrsta dokumenta",
+    "passport": "Pasoš",
+    "profession": "Zanimanje",
+    "workplace": "Radno mesto",
+    "years": "god.",
+    "status": {
+      "active": "Aktivan",
+      "archived": "Arhiviran"
+    },
+    "filters": {
+      "status": "Status",
+      "city": "Grad",
+      "withDebt": "Sa dugom",
+      "doNotContact": "Ne kontaktirati",
+      "doNotContactOnly": "Samo oni koje ne treba kontaktirati",
+      "doNotContactOnlyContactable": "Samo oni koje je moguće kontaktirati"
+    },
+    "columns": {
+      "city": "Grad",
+      "contact": "Kontakt",
+      "debt": "Dug"
+    },
+    "sort": {
+      "lastVisit": "Poslednja poseta",
+      "lastName": "Prezime",
+      "firstName": "Ime",
+      "createdAt": "Datum registracije",
+      "updatedAt": "Nedavno izmenjeni"
+    },
+    "doNotContact": {
+      "label": "Ne kontaktirati",
+      "hint": "Pacijent će biti isključen sa liste za pozive i iz automatskih poruka",
+      "badge": "Ne kontaktirati"
+    },
+    "gender": {
+      "label": "Pol",
+      "select": "Izaberite pol",
+      "male": "Muški",
+      "female": "Ženski",
+      "other": "Drugo",
+      "preferNotSay": "Ne želim da navedem"
+    },
+    "emergencyContact": {
+      "title": "Kontakt za hitne slučajeve",
+      "hasContact": "Ima kontakt za hitne slučajeve",
+      "noContact": "Nema registrovanog kontakta za hitne slučajeve",
+      "name": "Ime i prezime",
+      "namePlaceholder": "Ime kontakta",
+      "relationship": "Srodstvo",
+      "relationshipPlaceholder": "Izaberite srodstvo",
+      "phone": "Telefon",
+      "phonePlaceholder": "Telefon kontakta",
+      "email": "Imejl",
+      "emailPlaceholder": "Imejl kontakta",
+      "isLegalGuardian": "Zakonski staratelj",
+      "remove": "Ukloni kontakt",
+      "relationships": {
+        "spouse": "Supružnik",
+        "parent": "Roditelj",
+        "child": "Dete",
+        "sibling": "Brat/sestra",
+        "friend": "Prijatelj",
+        "other": "Drugo"
+      }
+    },
+    "medicalHistory": {
+      "title": "Medicinska anamneza",
+      "save": "Sačuvaj anamnezu",
+      "fetchError": "Greška pri učitavanju medicinske anamneze",
+      "saveSuccess": "Medicinska anamneza je sačuvana",
+      "saveError": "Greška pri čuvanju medicinske anamneze",
+      "allergies": "Alergije",
+      "allergiesCount": "{n} alergija | {n} alergije | {n} alergija",
+      "onAnticoagulants": "Na antikoagulantnoj terapiji",
+      "allergyName": "Naziv alergije",
+      "type": "Vrsta",
+      "allergyTypes": {
+        "drug": "Lek",
+        "food": "Hrana",
+        "material": "Materijal",
+        "environmental": "Iz okoline"
+      },
+      "severity": {
+        "low": "Niska",
+        "medium": "Srednja",
+        "high": "Visoka",
+        "critical": "Kritična"
+      },
+      "medications": "Lekovi",
+      "medicationName": "Naziv leka",
+      "dosage": "Doza",
+      "frequency": "Učestalost",
+      "systemicDiseases": "Sistemske bolesti",
+      "diseaseName": "Naziv bolesti",
+      "diseaseTypes": {
+        "cardiovascular": "Kardiovaskularne",
+        "respiratory": "Respiratorne",
+        "endocrine": "Endokrine",
+        "neurological": "Neurološke",
+        "autoimmune": "Autoimune",
+        "other": "Ostalo"
+      },
+      "critical": "Kritično",
+      "controlled": "Pod kontrolom",
+      "notControlled": "Nije pod kontrolom",
+      "specialConditions": "Posebna stanja",
+      "pregnant": "Trudnoća",
+      "pregnancyWeek": "Nedelja trudnoće",
+      "lactating": "Dojenje",
+      "anticoagulants": "Antikoagulansi",
+      "anticoagulantMedication": "Antikoagulantni lek",
+      "inrValue": "INR vrednost",
+      "anesthesiaReaction": "Reakcija na anesteziju",
+      "anesthesiaReactionDetails": "Detalji reakcije",
+      "bruxism": "Bruksizam",
+      "lifestyle": "Način života",
+      "smoker": "Pušač",
+      "smokingFrequency": "Cigareta dnevno",
+      "alcoholConsumption": "Konzumiranje alkohola",
+      "alcohol": {
+        "none": "Ne konzumira",
+        "occasional": "Povremeno",
+        "moderate": "Umereno",
+        "heavy": "Prekomerno"
+      },
+      "surgicalHistory": "Hirurška anamneza",
+      "procedure": "Zahvat"
+    },
+    "timeline": {
+      "empty": "Još nema zabeleženih aktivnosti",
+      "emptyFiltered": "Nema događaja u ovoj kategoriji",
+      "clearFilter": "Prikaži sve aktivnosti",
+      "endOfTimeline": "Kraj vremenske linije",
+      "totalEntries": "{count} unos | {count} unosa | {count} unosa",
+      "groups": {
+        "today": "Danas",
+        "yesterday": "Juče",
+        "thisWeek": "Ove nedelje",
+        "thisMonth": "Ovog meseca",
+        "earlier": "Ranije"
+      },
+      "author": "{name}",
+      "meta": {
+        "cabinet": "Kabinet {name}",
+        "teeth": "Zubi: {list}",
+        "total": "Ukupno: {amount}",
+        "number": "Br. {value}",
+        "via": "Putem: {channel}",
+        "template": "Šablon: {key}",
+        "docType": "Vrsta: {type}"
+      },
+      "categories": {
+        "all": "Sve",
+        "visit": "Posete",
+        "treatment": "Tretmani",
+        "financial": "Finansije",
+        "communication": "Komunikacija",
+        "medical": "Medicinska anamneza",
+        "document": "Dokumenti",
+        "note": "Kliničke beleške"
+      }
+    },
+    "alerts": {
+      "title": "{count} upozorenje | {count} upozorenja | {count} upozorenja",
+      "label": "Klinička upozorenja"
+    },
+    "editDemographics": "Izmeni lične podatke",
+    "editEmergencyContact": "Izmeni kontakt za hitne slučajeve",
+    "editBilling": "Izmeni podatke za naplatu",
+    "editMedicalHistory": "Izmeni medicinsku anamnezu",
+    "medicalSnapshot": {
+      "title": "Medicinski podaci",
+      "allergiesLabel": "Alergije",
+      "allergiesEmpty": "Nema poznatih alergija",
+      "allergiesNotReviewed": "Medicinska anamneza nije uneta",
+      "completeHistory": "Dopuni anamnezu",
+      "reviewedOn": "Pregledano {date}",
+      "conditions": {
+        "pregnantWeek": "Trudnoća · {week}. ned.",
+        "anticoagulantInr": "Antikoagulans · INR {inr}",
+        "smokerFreq": "Pušač · {freq}/dan"
+      }
+    },
+    "personalInfo": {
+      "title": "Lični podaci",
+      "ageLabel": "{age} god.",
+      "birthWithAge": "{date} ({age} god.)"
+    },
+    "contactInfo": {
+      "title": "Kontakt",
+      "copyPhone": "Kopiraj telefon",
+      "copyEmail": "Kopiraj imejl",
+      "address": "Adresa",
+      "addEmergency": "Dodaj kontakt za hitne slučajeve",
+      "addGuardian": "Dodaj zakonskog staratelja",
+      "guardianRequired": "Potreban je zakonski staratelj"
+    },
+    "administrative": {
+      "title": "Administrativni podaci"
+    },
+    "header": {
+      "ariaLabel": "Zaglavlje pacijenta"
+    },
+    "quickActions": {
+      "ariaLabel": "Brze radnje za pacijenta"
+    },
+    "onboarding": {
+      "label": "Kreirajte prvog pacijenta",
+      "description": "Najbrži način da vidite karton, raspored i predračune u akciji."
+    },
+    "editLegalGuardian": "Izmeni zakonskog staratelja",
+    "legalGuardian": {
+      "title": "Zakonski staratelj",
+      "hasGuardian": "Ima registrovanog zakonskog staratelja",
+      "noGuardian": "Nema registrovanog zakonskog staratelja",
+      "name": "Ime i prezime",
+      "namePlaceholder": "Ime staratelja",
+      "dni": "Broj lične karte",
+      "dniPlaceholder": "Lični dokument",
+      "relationship": "Srodstvo",
+      "relationshipPlaceholder": "Izaberite srodstvo",
+      "relationships": {
+        "parent": "Roditelj",
+        "legal_tutor": "Postavljeni staratelj",
+        "grandparent": "Baba/deda",
+        "other": "Drugo"
+      },
+      "phone": "Telefon",
+      "phonePlaceholder": "Telefon staratelja",
+      "email": "Imejl",
+      "emailPlaceholder": "Imejl staratelja",
+      "address": "Adresa",
+      "addressPlaceholder": "Adresa staratelja",
+      "notes": "Napomene",
+      "notesPlaceholder": "Dodatne napomene...",
+      "remove": "Ukloni staratelja"
+    }
+  },
+  "patientDetail": {
+    "tabs": {
+      "summary": "Pregled",
+      "info": "Podaci",
+      "clinical": "Klinika",
+      "odontogram": "Zubni karton",
+      "administration": "Administracija",
+      "history": "Istorija",
+      "timeline": "Aktivnost",
+      "appointments": "Termini",
+      "budgets": "Predračuni",
+      "billing": "Naplata",
+      "payments": "Uplate",
+      "documents": "Dokumenti",
+      "gallery": "Galerija"
+    },
+    "historyPlaceholder": "Kliničke beleške biće dostupne u budućoj verziji",
+    "noAppointments": "Ovaj pacijent nema termine",
+    "scheduleAppointment": "Zakaži termin",
+    "noBudgets": "Ovaj pacijent nema predračune",
+    "createBudget": "Kreiraj predračun",
+    "viewAllBudgets": "Prikaži sve predračune",
+    "activePlan": "Aktivni plan",
+    "noActivePlan": "Nema aktivnog plana",
+    "viewPlan": "Otvori plan",
+    "createPlan": "Kreiraj plan",
+    "nextAppointment": "Sledeći termin",
+    "noUpcomingAppointments": "Nema predstojećih termina",
+    "openAppointment": "Otvori termin",
+    "lastVisit": "Poslednja poseta",
+    "neverVisited": "Nikada nije bio/la",
+    "reschedule": "Pomeri termin",
+    "balance": "Stanje",
+    "collect": "Naplati",
+    "viewLedger": "Otvori karticu",
+    "noPayments": "Nema promena",
+    "diagnoses": "Dijagnoze",
+    "pending": "nelečeno",
+    "noDiagnoses": "Nema otvorenih nalaza",
+    "openOdontogram": "Otvori zubni karton",
+    "medicalHistory": "Medicinska anamneza",
+    "completeMedicalHistory": "Nema medicinske anamneze. Popunite je da biste evidentirali alergije, stanja i lekove.",
+    "editMedicalHistory": "Izmeni medicinsku anamnezu",
+    "quickActions": "Brze radnje",
+    "edit": "Izmeni",
+    "editPatient": "Izmeni pacijenta",
+    "noSummaryCards": "Nema registrovanih modula u pregledu.",
+    "actions": {
+      "label": "Radnje",
+      "newAppointment": "Termin",
+      "collect": "Naplata",
+      "newNote": "Beleška",
+      "newBudget": "Predračun",
+      "uploadDocument": "Dokument"
+    }
+  },
+  "patientBilling": {
+    "totalBudgeted": "Ukupno po predračunima",
+    "workInProgress": "Rad u toku",
+    "workCompleted": "Završen rad",
+    "totalInvoiced": "Ukupno fakturisano",
+    "totalPaid": "Ukupno plaćeno",
+    "balancePending": "Preostali dug",
+    "invoices": "Računi",
+    "createInvoice": "Kreiraj račun",
+    "noInvoices": "Ovaj pacijent nema račune",
+    "pending": "Na čekanju",
+    "totalDiscount": "na popustima"
+  },
+  "odontogram": {
+    "title": "Zubni karton",
+    "tooth": "Zub",
+    "globals": {
+      "category": "Cela usna duplja",
+      "applied": "{name} dodato u plan",
+      "archPickerTitle": "Za koju vilicu je \"{name}\"?",
+      "upperArch": "Gornja vilica",
+      "lowerArch": "Donja vilica",
+      "searchPlaceholder": "Pretraži tretmane…"
+    },
+    "selectCondition": "Izaberite stanje",
+    "readOnly": "Samo pregled",
+    "legend": "Legenda",
+    "statusLegend": "Status tretmana",
+    "toothPosition": "Položaj zuba",
+    "displaced": "Pomeren",
+    "rotated": "Rotiran",
+    "dentition": {
+      "permanent": "Stalni",
+      "deciduous": "Mlečni",
+      "toggle": "Promeni denticiju"
+    },
+    "quadrants": {
+      "upper": "Gornja vilica",
+      "lower": "Donja vilica",
+      "upperRight": "Gore desno",
+      "upperLeft": "Gore levo",
+      "lowerRight": "Dole desno",
+      "lowerLeft": "Dole levo"
+    },
+    "surfaces": {
+      "M": "Mezijalna",
+      "D": "Distalna",
+      "O": "Okluzalna",
+      "V": "Vestibularna",
+      "L": "Lingvalna"
+    },
+    "conditions": {
+      "healthy": "Zdrav",
+      "caries": "Karijes",
+      "filling": "Plomba",
+      "crown": "Krunica",
+      "missing": "Nedostaje",
+      "root_canal": "Lečenje kanala",
+      "implant": "Implant",
+      "bridge_pontic": "Međučlan mosta",
+      "bridge_abutment": "Nosač mosta",
+      "extraction_indicated": "Indikovana ekstrakcija",
+      "sealant": "Zalivač fisura",
+      "fracture": "Fraktura"
+    },
+    "history": {
+      "title": "Istorija izmena",
+      "noChanges": "Nema zabeleženih izmena",
+      "changedBy": "Izmenio/la",
+      "changeTypes": {
+        "created": "Kreirano",
+        "general_condition": "Opšte stanje",
+        "surface_update": "Izmena površine",
+        "note": "Beleška"
+      }
+    },
+    "messages": {
+      "updated": "Zubni karton je ažuriran",
+      "error": "Greška pri ažuriranju zubnog kartona",
+      "loadError": "Nije moguće učitati zubni karton"
+    },
+    "actions": {
+      "save": "Sačuvaj",
+      "reset": "Resetuj",
+      "print": "Štampaj"
+    },
+    "status": {
+      "existing": "Postojeće",
+      "planned": "Planirano"
+    },
+    "treatments": {
+      "title": "Tretmani",
+      "addTreatment": "Dodaj tretman",
+      "selectStatus": "Izaberite status",
+      "noTreatments": "Nema zabeleženih tretmana",
+      "markPerformed": "Označi kao urađeno",
+      "categories": {
+        "common": "Uobičajeni",
+        "restorative": "Restaurativni",
+        "other": "Ostalo",
+        "diagnostico": "Dijagnostika",
+        "restauradora": "Restaurativni",
+        "cirugia": "Hirurgija",
+        "endodoncia": "Endodoncija",
+        "ortodoncia": "Ortodoncija"
+      },
+      "types": {
+        "pulpitis": "Pulpitis",
+        "caries": "Karijes",
+        "incipient_caries": "Početni karijes",
+        "pigmentation": "Pigmentacija",
+        "fracture": "Fraktura",
+        "missing": "Nedostaje",
+        "periapical_small": "Periapikalna <2mm",
+        "periapical_medium": "Periapikalna 2-4mm",
+        "periapical_large": "Periapikalna >4mm",
+        "rotated": "Rotiran",
+        "displaced": "Pomeren",
+        "unerupted": "Neizrastao",
+        "filling": "Plomba",
+        "filling_composite": "Kompozitna plomba",
+        "filling_amalgam": "Amalgamska plomba",
+        "filling_temporary": "Privremena plomba",
+        "sealant": "Zalivač fisura",
+        "veneer": "Faseta",
+        "inlay": "Inlej",
+        "overlay": "Onlej",
+        "crown": "Krunica",
+        "crown_on_implant": "Krunica na implantu",
+        "provisional_crown_on_implant": "Privremena krunica na implantu",
+        "pontic": "Međučlan",
+        "bridge_pontic": "Međučlan mosta",
+        "bridge_abutment": "Nosač mosta",
+        "extraction": "Ekstrakcija",
+        "implant": "Implant",
+        "apicoectomy": "Apikotomija",
+        "root_canal": "Lečenje kanala",
+        "root_canal_full": "Potpuno punjenje kanala",
+        "root_canal_two_thirds": "Punjenje kanala 2/3",
+        "root_canal_half": "Punjenje kanala 1/2",
+        "root_canal_overfill": "Prepunjen kanal",
+        "post": "Kočić",
+        "bracket": "Bravica",
+        "tube": "Tubica",
+        "band": "Prsten",
+        "attachment": "Atačment",
+        "retainer": "Retejner",
+        "rotate": "Rotiran",
+        "displace": "Pomeren",
+        "splint": "Splint",
+        "migrated": "Opšti tretman",
+        "other": "Drugi tretman"
+      },
+      "treatmentAdded": "Tretman je dodat",
+      "treatmentPerformed": "Tretman je označen kao urađen",
+      "treatmentDeleted": "Tretman je obrisan",
+      "status": {
+        "existing": "Postojeće",
+        "planned": "Planirano"
+      },
+      "deleteConfirm": "Obrisati {name} (zub {tooth})? Ova radnja se ne može poništiti."
+    },
+    "position": {
+      "displaced": "Pomeren",
+      "rotated": "Rotiran",
+      "normal": "Normalan"
+    },
+    "views": {
+      "occlusal": "Okluzalni prikaz",
+      "lateral": "Bočni prikaz",
+      "dual": "Dvostruki prikaz"
+    },
+    "selectSurfaces": "Izaberite površine",
+    "selectedSurfaces": "Izabrane površine",
+    "surfacesSelected": "izabranih površina",
+    "instructions": {
+      "selectTreatment": "Izaberite tretman koji želite da primenite",
+      "clickTooth": "Kliknite na zub da biste primenili"
+    },
+    "addToPlan": "Dodaj u plan",
+    "noPlan": "Bez plana",
+    "createNewPlan": "Kreiraj novi plan...",
+    "applyTo": "Primeni na",
+    "oneTooth": "1 zub",
+    "multipleTeeth": "Više zuba",
+    "surfacePricingHint": "Cena po površini: {range}",
+    "toothNames": {
+      "centralIncisor": "Centralni sekutić",
+      "lateralIncisor": "Bočni sekutić",
+      "canine": "Očnjak",
+      "firstPremolar": "Prvi premolar",
+      "secondPremolar": "Drugi premolar",
+      "firstMolar": "Prvi molar",
+      "secondMolar": "Drugi molar",
+      "thirdMolar": "Treći molar"
+    },
+    "positions": {
+      "upper": "gornji",
+      "lower": "donji",
+      "left": "levi",
+      "right": "desni"
+    },
+    "tooltip": {
+      "clickToEdit": "Kliknite za izmenu"
+    },
+    "planning": "Planiranje",
+    "diagnosisMode": "Dijagnoza",
+    "treatmentList": {
+      "title": "Lista tretmana",
+      "noTreatments": "Nema zabeleženih tretmana"
+    },
+    "changeHistory": {
+      "title": "Istorija izmena",
+      "noChanges": "Nema zabeleženih izmena",
+      "treatmentAdded": "Tretman"
+    },
+    "timeline": {
+      "title": "Vremenska linija",
+      "viewingDate": "Prikaz za: {date}",
+      "viewingHistory": "Pregledate istorijsko stanje zubnog kartona",
+      "returnToNow": "Vrati se na trenutno stanje",
+      "noHistory": "Nema prethodne istorije"
+    },
+    "multiTooth": {
+      "bridge": {
+        "label": "Fiksni most"
+      },
+      "splint": {
+        "label": "Splint"
+      },
+      "veneers": {
+        "label": "Više faseta"
+      },
+      "crowns": {
+        "label": "Više krunica"
+      },
+      "pillar": "nosač",
+      "pontic": "međučlan",
+      "roleHint": "Kliknite na zub da biste ga promenili u nosač / međučlan.",
+      "needPillar": "Most zahteva najmanje jedan zub nosač.",
+      "confirmHint": "Kreiraćete grupu tretmana sa brojem zuba: {n}.",
+      "willBePlanned": "Grupa će biti označena kao planirana.",
+      "willBeExisting": "Grupa će biti evidentirana kao postojeća.",
+      "hints": {
+        "range": "Kliknite na prvi, a zatim na poslednji zub",
+        "free": "Kliknite da biste dodali ili uklonili zube"
+      },
+      "errors": {
+        "tooFew": "Potrebno je najmanje {n} zuba",
+        "tooMany": "Dozvoljeno je najviše {n} zuba",
+        "sameArchRequired": "Zubi moraju biti u istoj vilici"
+      },
+      "sectionLabel": "Tretmani na više zuba"
+    }
+  },
+  "clinical": {
+    "modes": {
+      "history": "Istorija",
+      "diagnosis": "Dijagnoza",
+      "plans": "Planovi lečenja",
+      "appointments": "Termini"
+    },
+    "history": {
+      "stateAt": "Stanje na dan",
+      "changesOnDate": "Izmene na ovaj datum",
+      "noChanges": "Nema zabeleženih izmena"
+    },
+    "diagnosis": {
+      "registeredConditions": "Dijagnostikovana stanja",
+      "registerConditions": "Evidentiraj stanja",
+      "noConditions": "Nema evidentiranih stanja",
+      "startDiagnosis": "Izaberite zub i dodajte postojeća stanja",
+      "generalConditions": "Opšta stanja",
+      "readyToCreatePlan": "Dijagnoza je završena?",
+      "createPlan": "Kreiraj plan lečenja",
+      "continuePlan": "Nastavi plan \"{name}\"",
+      "selectPlan": "Izaberite plan",
+      "continue": "Nastavi",
+      "odontogramTab": "Odontogram",
+      "openNotes": "Otvori beleške"
+    },
+    "plans": {
+      "title": "Planovi lečenja",
+      "create": "Novi plan",
+      "backToList": "Nazad na planove",
+      "treatments": "Tretmani u planu",
+      "addTreatment": "Dodaj tretman",
+      "total": "Ukupno",
+      "activate": "Aktiviraj plan",
+      "generateBudget": "Generiši predračun",
+      "empty": "Nema planova lečenja",
+      "emptyDescription": "Kreirajte plan da biste organizovali tretmane pacijenta",
+      "createFirst": "Kreiraj prvi plan",
+      "active": "Aktivni planovi",
+      "drafts": "Nacrti",
+      "completed": "Završeni",
+      "closed": "Zatvoreni",
+      "other": "Ostali",
+      "noItems": "Nema tretmana u planu",
+      "markComplete": "Označi kao završeno",
+      "removeItem": "Ukloni iz plana",
+      "sessions": {
+        "progress": "{done}/{total} seansi",
+        "markDone": "Označi seansu kao završenu",
+        "cancel": "Otkaži seansu",
+        "markedDone": "Seansa je označena kao završena",
+        "cancelled": "Seansa je otkazana",
+        "untitled": "Seansa {n}"
+      },
+      "unknownTreatment": "Tretman",
+      "odontogram": "Odontogram",
+      "pending": "na čekanju",
+      "dragToReorder": "Prevucite da promenite redosled",
+      "reorderHint": "Koristite Alt + strelice za pomeranje",
+      "emptyDraft": {
+        "title": "Isplanirajte tretmane",
+        "step1": "Izaberite tretman sa trake ispod",
+        "step2": "Kliknite na zub na odontogramu",
+        "step3": "Potvrdite plan da biste generisali predračun i termine"
+      },
+      "steps": {
+        "plan": "Plan",
+        "confirm": "Potvrda",
+        "inProgress": "U toku"
+      },
+      "confirmCta": {
+        "titleWithItems": "Potvrdi plan",
+        "subtitleWithItems": "Potvrdom se omogućava izrada predračuna i zakazivanje termina.",
+        "empty": "Dodajte najmanje jedan tretman da biste potvrdili plan"
+      },
+      "ghostHint": "Dostupno nakon potvrde plana",
+      "addedToPlan": "Dodato u plan",
+      "addingToPlan": "Dodavanje u ovaj plan",
+      "cancelPlan": "Otkaži plan",
+      "locked": {
+        "title": "Plan je zaključan",
+        "subtitle": "Predračun {number} je izdat. Za izmenu tretmana koristite Ponovo otvori (ako je na čekanju) ili Pregovaraj ponovo o predračunu.",
+        "viewBudget": "Prikaži predračun"
+      },
+      "removeItemConfirm": "Ukloniti {name} iz ovog plana? Ova radnja se ne može poništiti."
+    },
+    "tooth": "Zub"
+  },
+  "appointments": {
+    "title": "Raspored",
+    "checkin": {
+      "qr": "QR kod za prijavu",
+      "hint": "Pacijent skenira ovaj kod da bi prijavio dolazak. Kod ističe 15 minuta nakon kreiranja.",
+      "copyLink": "Kopiraj link za prijavu",
+      "openTitle": "Prijava dolaska u ordinaciju",
+      "success": "Vaš dolazak je prijavljen. Izvolite, sedite.",
+      "invalid": "Ovaj kod za prijavu je neispravan ili je istekao. Zatražite novi na recepciji.",
+      "confirm": "Stigao/la sam",
+      "confirmHint": "Pritisnite dugme da biste potvrdili dolazak.",
+      "tooEarly": "Još je rano za prijavu. Vaš termin je u {time}.",
+      "tooLate": "Prijava za ovaj termin je zatvorena. Obratite se recepciji."
+    },
+    "create": "Novi termin",
+    "edit": "Izmeni termin",
+    "today": "Danas",
+    "tomorrow": "Sutra",
+    "yesterday": "Juče",
+    "week": "Nedelja",
+    "prevWeek": "Prethodna nedelja",
+    "nextWeek": "Sledeća nedelja",
+    "selectPatient": "Izaberite pacijenta",
+    "selectProfessional": "Izaberite terapeuta",
+    "openPatientFile": "Otvori karton pacijenta",
+    "patient": "Pacijent",
+    "professional": "Terapeut",
+    "cabinet": "Kabinet",
+    "date": "Datum",
+    "time": "Vreme",
+    "startTime": "Vreme početka",
+    "duration": "Trajanje",
+    "treatmentType": "Vrsta tretmana",
+    "treatments": "Tretmani",
+    "addTreatment": "Dodaj tretman",
+    "selectTreatment": "Izaberite tretman",
+    "estimatedDuration": "Procenjeno trajanje",
+    "notes": "Napomene",
+    "hasNotes": "Ima napomene",
+    "status": {
+      "label": "Status",
+      "scheduled": "Zakazano",
+      "confirmed": "Potvrđeno",
+      "checked_in": "U čekaonici",
+      "in_treatment": "Na stolici",
+      "completed": "Završeno",
+      "cancelled": "Otkazano",
+      "no_show": "Nije došao/la"
+    },
+    "transitions": {
+      "confirmed": "Označi kao potvrđeno",
+      "checked_in": "Evidentiraj dolazak",
+      "in_treatment": "Premesti na stolicu",
+      "completed": "Završi termin",
+      "cancelled": "Otkaži termin",
+      "no_show": "Označi da nije došao/la"
+    },
+    "timer": {
+      "startsIn": "počinje za {minutes} min",
+      "startsInOverdue": "kasni {minutes} min",
+      "waiting": "čeka {minutes} min",
+      "inTreatment": "{elapsed}/{planned} min",
+      "completedAt": "završeno u {time}",
+      "cancelledAt": "otkazano",
+      "noShowAt": "nije došao/la"
+    },
+    "confirmTransitionTitle": "Potvrdite promenu statusa",
+    "confirmCancelMessage": "Otkazati ovaj termin? Promena će biti zabeležena.",
+    "confirmNoShowMessage": "Označiti da pacijent nije došao? Promena će biti zabeležena.",
+    "noteLabel": "Napomena (opciono)",
+    "transitionFailed": "Nije moguće promeniti status termina",
+    "when": "Kada",
+    "whereWho": "Kabinet i terapeut",
+    "followup": {
+      "title": "Radnje nakon termina"
+    },
+    "created": "Termin je kreiran",
+    "saved": "Termin je sačuvan",
+    "updated": "Termin je ažuriran",
+    "conflict": "Ovaj termin je već zauzet",
+    "cancel": "Otkaži termin",
+    "markCompleted": "Označi kao završeno",
+    "markNoShow": "Nije došao/la",
+    "dailyView": "Dan",
+    "weeklyView": "Nedelja",
+    "kanbanView": "Kanban",
+    "kanban": {
+      "upcoming": "Predstojeći",
+      "waiting": "Čekaonica",
+      "inChair": "Na stolici",
+      "done": "Završeni",
+      "missed": "Nisu došli / Otkazani",
+      "free": "Slobodno",
+      "inactive": "Neaktivno",
+      "empty": "Nema termina",
+      "nextIn": "Sledeći u {time}",
+      "subtitleCount": "Termina: {count}",
+      "subtitleEmpty": "Nema termina",
+      "subtitleWaiting": "Čeka: {count} · prosek {avg} min",
+      "subtitleInChair": "Zauzeto: {busy} · slobodno: {free}"
+    },
+    "cabinetAssignment": {
+      "assignLater": "Dodeli kasnije",
+      "unassigned": "Nije dodeljeno",
+      "assign": "Dodeli kabinet",
+      "reassign": "Promeni kabinet",
+      "unassign": "Ukloni kabinet",
+      "requiredForTreatment": "Dodelite kabinet pre prelaska na tretman"
+    },
+    "professionals": {
+      "strip": "Terapeuti",
+      "state": {
+        "free": "Slobodan",
+        "in_treatment": "Na stolici",
+        "on_break": "Na pauzi",
+        "off": "Ne radi"
+      }
+    },
+    "noProfessionals": "Nema podešenih terapeuta",
+    "overlapWarning": "Otkrivena su preklapanja",
+    "overlapProfessional": "Terapeut ima termina u ovo vreme: {count}",
+    "overlapCabinet": "Kabinet ima termina u ovo vreme: {count}",
+    "selectDuration": "Izaberite trajanje...",
+    "sendEmail": "Pošalji imejl",
+    "sendConfirmationEmail": "Pošalji potvrdu",
+    "resendConfirmation": "Ponovo pošalji potvrdu",
+    "sendReminderEmail": "Pošalji podsetnik",
+    "emailSent": "Imejl je uspešno poslat",
+    "automatic": "automatski",
+    "selectPatientFirst": "Izaberite pacijenta da biste videli tretmane na čekanju",
+    "noPendingTreatments": "Nema tretmana na čekanju",
+    "createPlanFirst": "Kreirajte plan lečenja za ovog pacijenta",
+    "addTreatmentFromPlan": "Dodaj tretman iz plana",
+    "selectPendingTreatment": "Izaberite tretman na čekanju",
+    "emptyDay": "Nema termina za ovaj dan",
+    "noPatient": "Bez pacijenta",
+    "freeSlots": {
+      "byProfessional": "Terapeut",
+      "byCabinet": "Kabinet",
+      "freeSuffix": "slobodno",
+      "freeShort": "slob.",
+      "noFreeTime": "Nema slobodnog vremena",
+      "tapToBook": "Dodirnite za zakazivanje",
+      "tapToBookAria": "Slobodan termin od {duration} u {time}",
+      "nextFreeAt": "Sledeći u {time}",
+      "gapsAtLeast": "Slobodnih intervala ≥ {min} min: {count}",
+      "minDuration": "Minimum",
+      "noFreeSlots": "Danas nema slobodnih termina",
+      "clinicClosed": "Ordinacija je zatvorena",
+      "professionalOff": "Ne radi",
+      "onBreak": "Na pauzi"
+    },
+    "actionsMenu": "Radnje za termin",
+    "sendMessage": "Pošalji poruku",
+    "resendConfirmationVia": "Ponovo pošalji potvrdu ({channel})",
+    "sendReminderVia": "Pošalji podsetnik ({channel})",
+    "sendCancellationVia": "Pošalji otkazivanje ({channel})",
+    "loadError": "Nije moguće učitati termine",
+    "planAwaitingBudget": "Predračun čeka prihvatanje"
+  },
+  "dashboard": {
+    "greetings": {
+      "morning": "Dobro jutro",
+      "afternoon": "Dobar dan",
+      "evening": "Dobro veče"
+    },
+    "welcome": "Dobro došli u DentalPin",
+    "welcomeMessage": "Počnite kreiranjem prvog pacijenta.",
+    "quickActions": {
+      "newAppointment": "Novi termin",
+      "newPatient": "Novi pacijent",
+      "search": "Pretraži pacijente",
+      "searchPlaceholder": "Pretraga po imenu, telefonu ili imejlu"
+    },
+    "timeline": {
+      "title": "Danas",
+      "empty": "Danas nema zakazanih termina",
+      "now": "Sada",
+      "openSchedule": "Otvori raspored"
+    },
+    "todayKpi": {
+      "title": "Današnji termini",
+      "completed": "završeno",
+      "inProgress": "u toku",
+      "upcoming": "predstoji",
+      "cancelled": "otkazano",
+      "noShow": "nisu došli",
+      "empty": "Danas nema termina"
+    },
+    "inClinic": {
+      "title": "Trenutno u ordinaciji",
+      "inTreatment": "Na stolici: {n}",
+      "waiting": "Čeka: {n}",
+      "empty": "Nema nikoga u ordinaciji"
+    },
+    "unconfirmed": {
+      "title": "Nepotvrđeni za sutra",
+      "empty": "Svi sutrašnji termini su potvrđeni",
+      "confirm": "Potvrdi",
+      "confirmError": "Nije moguće potvrditi"
+    },
+    "overdue": {
+      "title": "Dospela dugovanja",
+      "daysOverdue": "kasni {n} dan | kasni {n} dana | kasni {n} dana",
+      "viewAll": "Prikaži sve",
+      "empty": "Nema dospelih računa"
+    },
+    "recent": {
+      "title": "Nedavni pacijenti",
+      "empty": "Još nema pacijenata"
+    },
+    "weekGlance": {
+      "title": "Pregled nedelje",
+      "subtitle": "Poslednjih 7 dana u odnosu na prethodnih 7",
+      "appointments": "Termini",
+      "completed": "Završeno",
+      "invoiced": "Fakturisano",
+      "empty": "Nema podataka za ovu nedelju"
+    }
+  },
+  "settings": {
+    "title": "Podešavanja",
+    "subtitle": "Upravljajte ordinacijom, timom i modulima.",
+    "allCategories": "Sve kategorije",
+    "navLabel": "Kategorije podešavanja",
+    "attentionRequired": "Potrebna je pažnja",
+    "categories": {
+      "general": {
+        "label": "Opšte",
+        "description": "Profil ordinacije, brending i vremenska zona."
+      },
+      "workspace": {
+        "label": "Radni prostor",
+        "description": "Kabineti, radno vreme i dostupnost."
+      },
+      "people": {
+        "label": "Osoblje",
+        "description": "Korisnici, uloge i pozivnice."
+      },
+      "clinical": {
+        "label": "Klinika",
+        "description": "Katalog, podrazumevane vrednosti tretmana i šabloni."
+      },
+      "billing": {
+        "label": "Naplata i porezi",
+        "description": "Serije računa, PDV i poreska usklađenost."
+      },
+      "communications": {
+        "label": "Komunikacija",
+        "description": "Obaveštenja, SMTP i šabloni."
+      },
+      "integrations": {
+        "label": "Integracije",
+        "description": "Spoljni servisi i provajderi."
+      },
+      "modules": {
+        "label": "Moduli",
+        "description": "Instalacija, nadogradnja i deinstalacija modula."
+      },
+      "account": {
+        "label": "Nalog",
+        "description": "Vaš profil, lozinka i jezik."
+      }
+    },
+    "supergroups": {
+      "clinicalSetup": {
+        "label": "Kliničko podešavanje"
+      },
+      "clinicalManagement": {
+        "label": "Kliničko upravljanje"
+      },
+      "financialConfiguration": {
+        "label": "Finansijska podešavanja"
+      },
+      "systemAddons": {
+        "label": "Sistem i dodaci"
+      },
+      "myPreferences": {
+        "label": "Moje postavke"
+      }
+    },
+    "search": {
+      "placeholder": "Pretraži podešavanja…",
+      "empty": "Nema rezultata za ovu pretragu.",
+      "navigate": "kretanje",
+      "open": "otvori"
+    },
+    "locked": {
+      "title": "Nemate pristup ovom odeljku",
+      "description": "Zatražite od administratora ordinacije potrebne dozvole."
+    },
+    "emptyCategory": {
+      "title": "Nema dostupnih opcija",
+      "description": "Kada uključite kompatibilne module, njihova podešavanja će se pojaviti ovde."
+    },
+    "loadError": {
+      "description": "Nije moguće učitati ovaj uređivač. Pokušajte ponovo za nekoliko sekundi."
+    },
+    "comingSoon": {
+      "title": "Uskoro",
+      "subtitle": "Radimo na ovom odeljku. U međuvremenu ovim možete upravljati preko API-ja."
+    },
+    "onboarding": {
+      "title": "Završite podešavanje ordinacije",
+      "subtitle": "Broj preostalih koraka početnog podešavanja: {count}.",
+      "dismiss": "Zatvori",
+      "items": {
+        "clinicInfo": {
+          "label": "Popunite profil ordinacije",
+          "description": "Naziv, PIB i adresa se prikazuju na predračunima i računima."
+        },
+        "cabinets": {
+          "label": "Kreirajte najmanje jedan kabinet",
+          "description": "Bez kabineta ne možete zakazivati termine."
+        }
+      }
+    },
+    "cabinetsDescription": "Prostorije ili boksovi u kojima se pacijenti leče.",
+    "usersDescription": "Nalozi sa pristupom ovoj ordinaciji i njihove uloge.",
+    "profileDescription": "Vaši lični podaci u ovoj ordinaciji.",
+    "clinic": "Ordinacija",
+    "profile": "Profil",
+    "clinicName": "Naziv ordinacije",
+    "clinicInfo": "Podaci o ordinaciji",
+    "clinicInfoDescription": "Ovi podaci će se prikazivati na predračunima i dokumentima",
+    "taxId": "PIB",
+    "legalName": "Pravni naziv",
+    "legalNameHelp": "Pravni naziv subjekta za izdavanje računa. Ostavite prazno da biste koristili naziv ordinacije.",
+    "street": "Adresa",
+    "city": "Grad",
+    "postalCode": "Poštanski broj",
+    "country": "Država",
+    "countryPlaceholder": "Izaberite državu",
+    "countrySearchPlaceholder": "Pretraži države…",
+    "phone": "Telefon",
+    "timezone": "Vremenska zona",
+    "timezoneHelp": "Svi rasporedi i termini tumače se u ovoj vremenskoj zoni.",
+    "currency": "Valuta",
+    "currencyHelp": "Valuta ordinacije koja se koristi u predračunima, računima i katalogu.",
+    "editClinicInfo": "Izmeni podatke",
+    "clinicUpdated": "Podaci o ordinaciji su ažurirani",
+    "clinicUpdateError": "Greška pri ažuriranju podataka",
+    "cabinets": "Kabineti",
+    "language": "Jezik",
+    "languageDescription": "Izaberite željeni jezik",
+    "users": "Korisnici ordinacije",
+    "newUser": "Novi korisnik",
+    "createUser": "Kreiraj korisnika",
+    "editUser": "Izmeni korisnika",
+    "deleteUser": "Obriši korisnika",
+    "deleteUserConfirm": "Da li ste sigurni da želite da uklonite",
+    "deleteUserNote": "Korisnik će izgubiti pristup ovoj ordinaciji, ali njegov nalog neće biti obrisan.",
+    "noUsers": "Nema registrovanih korisnika",
+    "youTag": "(vi)",
+    "userActive": "Korisnik je aktivan",
+    "isProfessional": "Radi kao terapeut",
+    "isProfessionalHelp": "Prikazuje se u rasporedu, ima radno vreme i može mu se dodeliti tretman. I administrator može raditi kao terapeut.",
+    "userInactiveNote": "(Ne može da se prijavi)",
+    "saveChanges": "Sačuvaj izmene",
+    "noCabinets": "Nema podešenih kabineta",
+    "addCabinet": "Dodaj",
+    "newCabinet": "Novi kabinet",
+    "editCabinet": "Izmeni kabinet",
+    "deleteCabinet": "Obriši kabinet",
+    "deleteCabinetConfirm": "Da li ste sigurni da želite da obrišete kabinet",
+    "deleteCabinetNote": "Postojeći termini u ovom kabinetu neće biti promenjeni.",
+    "createCabinet": "Kreiraj kabinet",
+    "roles": {
+      "admin": "Administrator",
+      "dentist": "Stomatolog",
+      "hygienist": "Higijeničar",
+      "assistant": "Asistent",
+      "receptionist": "Recepcioner"
+    },
+    "errors": {
+      "loadUsers": "Greška pri učitavanju korisnika",
+      "createUser": "Greška pri kreiranju korisnika",
+      "updateUser": "Greška pri ažuriranju korisnika",
+      "deleteUser": "Greška pri brisanju korisnika",
+      "emailExists": "Imejl već postoji",
+      "userNotFound": "Korisnik nije pronađen",
+      "operationNotAllowed": "Operacija nije dozvoljena",
+      "invalidData": "Neispravni podaci",
+      "inviteLink": "Nije moguće generisati pristupni link"
+    },
+    "messages": {
+      "userCreated": "Korisnik je uspešno kreiran",
+      "userUpdated": "Korisnik je uspešno ažuriran",
+      "userDeleted": "Korisnik je uklonjen iz ordinacije"
+    },
+    "modules": {
+      "title": "Moduli",
+      "subtitle": "Instalirajte, deinstalirajte i nadogradite module ordinacije.",
+      "description": "Upravljajte modulima koji su aktivni u vašoj ordinaciji.",
+      "searchPlaceholder": "Pretraži module…",
+      "filterState": "Stanje",
+      "deps": "Zavisnosti",
+      "noDeps": "Nema zavisnosti",
+      "state": {
+        "installed": "Instaliran",
+        "uninstalled": "Nije instaliran",
+        "toInstall": "Čeka instalaciju",
+        "toUpgrade": "Čeka nadogradnju",
+        "toRemove": "Čeka uklanjanje",
+        "disabled": "Isključen",
+        "error": "Greška"
+      },
+      "category": {
+        "official": "Zvanični",
+        "community": "Zajednica"
+      },
+      "actions": {
+        "install": "Instaliraj",
+        "uninstall": "Deinstaliraj",
+        "upgrade": "Nadogradi",
+        "apply": "Primeni izmene",
+        "viewDetails": "Detalji",
+        "force": "Prinudno deinstaliraj"
+      },
+      "confirmInstall": {
+        "title": "Instalirati {name}?",
+        "message": "Modul će biti zakazan za instalaciju i postaće aktivan nakon primene izmena.",
+        "scheduled": "Biće instalirane i sledeće zavisnosti:"
+      },
+      "confirmUninstall": {
+        "title": "Deinstalirati {name}?",
+        "warning": "Tabele modula će biti uklonjene. Prethodno se pravi pg_dump rezervna kopija kako bi se podaci mogli povratiti.",
+        "forceHint": "Zanemaruje zavisne module. Koristite samo ako znate šta radite."
+      },
+      "confirmUpgrade": {
+        "title": "Nadograditi {name}?",
+        "message": "Modul će biti nadograđen na verziju iz manifesta na disku kada se izmene primene."
+      },
+      "confirmApply": {
+        "title": "Primeni izmene",
+        "message": "Backend će se ponovo pokrenuti. Sesija može biti kratko prekinuta dok se izvršavaju operacije na čekanju."
+      },
+      "pending": {
+        "banner": "Izmene na čekanju:",
+        "apply": "Primeni izmene"
+      },
+      "doctor": {
+        "banner": "Otkriveni su problemi u sistemu modula.",
+        "orphans": "napušteni moduli",
+        "missingDeps": "nedostajuće zavisnosti",
+        "manifestErrors": "greške u manifestu",
+        "errored": "moduli sa greškom"
+      },
+      "detail": {
+        "state": "Stanje",
+        "category": "Kategorija",
+        "installedAt": "Instalirano",
+        "lastChange": "Poslednja izmena",
+        "baseRevision": "Osnovna revizija",
+        "appliedRevision": "Primenjena revizija",
+        "manifest": "Ceo manifest",
+        "errorMessage": "Poruka o grešci",
+        "operationLog": "Dnevnik operacija",
+        "noOperations": "Nema zabeleženih operacija."
+      },
+      "restart": {
+        "inProgress": "Ponovno pokretanje bekend-a…",
+        "done": "Izmene su primenjene",
+        "failed": "Primena izmena nije uspela",
+        "timeout": "Isteklo je vreme čekanja na bekend"
+      },
+      "toasts": {
+        "scheduled": "Operacija je zakazana. Primenite izmene da biste je završili.",
+        "applied": "Izmene su uspešno primenjene."
+      }
+    },
+    "invite": {
+      "linkTitle": "Pristupni link",
+      "linkHelp": "Pošaljite ovaj link korisniku {name} kako bi izabrao/la lozinku. Ističe {date} i može se iskoristiti samo jednom.",
+      "copy": "Kopiraj link",
+      "copied": "Link je kopiran",
+      "whatsapp": "Pošalji preko WhatsApp-a",
+      "shareText": "Zdravo {name}, evo tvog pristupa DentalPin-u. Otvori link i izaberi lozinku: {url}",
+      "secretNote": "Čuvajte ga kao lozinku: svako ko ima link može da se prijavi na ovaj nalog.",
+      "passwordOptionalHelp": "Ostavite prazno da biste generisali pristupni link koji možete poslati preko WhatsApp-a ili imejla.",
+      "passwordOptionalPlaceholder": "Opciono",
+      "createAndLink": "Kreiraj i generiši link",
+      "rowAction": "Pristupni link",
+      "setPasswordTitle": "Izaberite lozinku",
+      "setPasswordSubtitle": "Pozvani ste u DentalPin. Kreirajte lozinku da biste se prijavili.",
+      "setPasswordSubmit": "Sačuvaj i prijavi se",
+      "invalidToken": "Ovaj link je neispravan ili je već iskorišćen. Zatražite novi od administratora ordinacije."
+    }
+  },
+  "selector": {
+    "recentPatients": "Nedavni pacijenti",
+    "commonTreatments": "Česti tretmani",
+    "noRecentPatients": "Nema nedavnih pacijenata",
+    "noCommonTreatments": "Nema čestih tretmana",
+    "noMatches": "Nema poklapanja",
+    "typeToSearch": "Kucajte za pretragu..."
+  },
+  "density": {
+    "switchToCompact": "Kompaktan prikaz",
+    "switchToComfortable": "Prostran prikaz"
+  },
+  "patientSelector": {
+    "createOption": "Kreiraj pacijenta \"{query}\"",
+    "createOptionEmpty": "Kreiraj novog pacijenta",
+    "newBadge": "Novo",
+    "duplicateWarning": "{name} već postoji sa ovim telefonom",
+    "useExisting": "Koristi ovog pacijenta",
+    "createForm": {
+      "title": "Novi pacijent",
+      "back": "Nazad na pretragu",
+      "firstName": "Ime",
+      "lastName": "Prezime",
+      "phone": "Telefon",
+      "phoneHint": "Možete ga dodati kasnije u kartonu pacijenta.",
+      "submit": "Kreiraj i izaberi",
+      "cancel": "Otkaži",
+      "errorGeneric": "Nije moguće kreirati pacijenta. Pokušajte ponovo."
+    }
+  },
+  "errors": {
+    "loadFailed": "Učitavanje nije uspelo",
+    "createFailed": "Kreiranje nije uspelo",
+    "updateFailed": "Ažuriranje nije uspelo",
+    "deleteFailed": "Brisanje nije uspelo"
+  },
+  "common": {
+    "andMore": "+ još {count}",
+    "save": "Sačuvaj",
+    "add": "Dodaj",
+    "cancel": "Otkaži",
+    "clear": "Obriši",
+    "close": "Zatvori",
+    "delete": "Obriši",
+    "comingSoon": "Uskoro",
+    "edit": "Izmeni",
+    "change": "izmena | izmene | izmena",
+    "back": "Nazad",
+    "loading": "Učitavanje...",
+    "error": "Greška",
+    "success": "Uspešno",
+    "completed": "Završeno",
+    "retry": "Pokušaj ponovo",
+    "refresh": "Osveži",
+    "hide": "Sakrij",
+    "expand": "Proširi",
+    "collapse": "Skupi",
+    "forbidden": "Pristup odbijen",
+    "confirm": "Potvrdi",
+    "yes": "Da",
+    "no": "Ne",
+    "actions": "Radnje",
+    "viewDetails": "Prikaži detalje",
+    "previous": "Prethodno",
+    "next": "Sledeće",
+    "previousYear": "Prethodna godina",
+    "nextYear": "Sledeća godina",
+    "undo": "Poništi",
+    "undone": "Poništeno",
+    "added": "Dodato",
+    "removed": "Uklonjeno",
+    "page": "Strana {current} od {total}",
+    "noData": "Nema podataka",
+    "noValue": "bez vrednosti",
+    "noResults": "Nema rezultata",
+    "search": "Pretraga...",
+    "selectAll": "Sve",
+    "deselectAll": "Ništa",
+    "all": "Sve",
+    "required": "Ovo polje je obavezno",
+    "optional": "Opciono",
+    "invalidEmail": "Neispravan imejl",
+    "networkError": "Greška u vezi",
+    "serverError": "Greška na serveru",
+    "notFound": "Nije pronađeno",
+    "offline": "Van mreže — podaci možda nisu ažurni",
+    "inactive": "Neaktivno",
+    "name": "Ime",
+    "color": "Boja",
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "email": "Imejl",
+    "password": "Lozinka",
+    "passwordPlaceholder": "Najmanje 8 karaktera",
+    "role": "Uloga",
+    "readOnly": "Samo za čitanje",
+    "createdBy": "Kreirao/la",
+    "date": "Datum",
+    "upload": "Otpremi",
+    "uploading": "Otpremanje…",
+    "maxFileSize": "do 10 MB",
+    "durationMinutes": "{value} min",
+    "days": {
+      "sunday": "Nedelja",
+      "monday": "Ponedeljak",
+      "tuesday": "Utorak",
+      "wednesday": "Sreda",
+      "thursday": "Četvrtak",
+      "friday": "Petak",
+      "saturday": "Subota"
+    },
+    "now": "Sada",
+    "today": "Danas",
+    "tomorrow": "Sutra",
+    "yesterday": "Juče",
+    "copied": "Kopirano u privremenu memoriju",
+    "copy": "Kopiraj",
+    "copyFailed": "Kopiranje nije uspelo",
+    "download": "Preuzmi",
+    "remove": "Ukloni",
+    "default": "Podrazumevano"
+  },
+  "cabinet": {
+    "toast": {
+      "created": "Kabinet je kreiran",
+      "updated": "Kabinet je ažuriran",
+      "deleted": "Kabinet je obrisan",
+      "duplicateName": "Kabinet sa ovim nazivom već postoji",
+      "notFound": "Kabinet nije pronađen",
+      "createFailed": "Kreiranje kabineta nije uspelo",
+      "updateFailed": "Ažuriranje kabineta nije uspelo",
+      "deleteFailed": "Brisanje kabineta nije uspelo"
+    }
+  },
+  "professionals": {
+    "toast": {
+      "loadFailed": "Učitavanje terapeuta nije uspelo"
+    }
+  },
+  "lists": {
+    "empty": {
+      "title": "Nema rezultata",
+      "description": "Prilagodite ili obrišite filtere da biste videli sve zapise."
+    },
+    "resultCount": "{shown} od {total}",
+    "filter": {
+      "title": "Filteri",
+      "more": "Filteri",
+      "moreCount": "Filteri ({count})",
+      "clear": "Obriši",
+      "apply": "Primeni",
+      "date": "Datumi",
+      "dateFrom": "Od",
+      "dateTo": "Do",
+      "searchPlaceholder": "Pretraga...",
+      "noResults": "Nema poklapanja",
+      "all": "Sve"
+    },
+    "sort": {
+      "label": "Sortiraj",
+      "asc": "Rastuće",
+      "desc": "Opadajuće"
+    },
+    "datePreset": {
+      "today": "Danas",
+      "last7": "Poslednjih 7 dana",
+      "last30": "Poslednjih 30 dana",
+      "thisMonth": "Ovaj mesec",
+      "thisQuarter": "Kvartal",
+      "thisYear": "Godina",
+      "custom": "Prilagođeno"
+    },
+    "truncatedWarning": "Rezultati su skraćeni (>1000). Suzite filtere."
+  },
+  "shared": {
+    "totals": "Ukupno",
+    "info": "Detalji",
+    "moreActions": "Više radnji",
+    "criticalBanner": {
+      "dismiss": "Zatvori upozorenje"
+    },
+    "collect": {
+      "amountLabel": "Iznos za naplatu",
+      "methodLabel": "Način plaćanja",
+      "dateLabel": "Datum plaćanja",
+      "today": "Danas",
+      "quickFull": "Ceo iznos",
+      "optionalDetails": "Dodaj referencu ili napomenu (opciono)",
+      "referenceLabel": "Referenca",
+      "referencePlaceholder": "npr. broj POS transakcije",
+      "notesLabel": "Interne napomene",
+      "submit": "Naplati",
+      "cancel": "Otkaži"
+    }
+  },
+  "validation": {
+    "required": "Ovo polje je obavezno",
+    "email": "Unesite ispravan imejl",
+    "minLength": "Najmanje {min} karaktera",
+    "maxLength": "Najviše {max} karaktera",
+    "phone": "Unesite ispravan broj telefona"
+  },
+  "time": {
+    "minutes": "{n} min",
+    "hours": "{n} sat | {n} sata | {n} sati"
+  },
+  "calendar": {
+    "today": "Danas",
+    "prevWeek": "Prethodna nedelja",
+    "nextWeek": "Sledeća nedelja",
+    "monday": "Ponedeljak",
+    "tuesday": "Utorak",
+    "wednesday": "Sreda",
+    "thursday": "Četvrtak",
+    "friday": "Petak",
+    "saturday": "Subota",
+    "sunday": "Nedelja"
+  },
+  "catalog": {
+    "title": "Katalog tretmana",
+    "description": "Upravljajte tretmanima, cenama i poreskim podešavanjima",
+    "items": "Tretmani",
+    "categories": "Kategorije",
+    "noItems": "Nema tretmana u katalogu",
+    "searchPlaceholder": "Pretraga po šifri ili nazivu...",
+    "code": "Šifra",
+    "name": "Naziv",
+    "category": "Kategorija",
+    "price": "Cena",
+    "defaultPrice": "Osnovna cena",
+    "costPrice": "Nabavna cena",
+    "currency": "Valuta",
+    "vatType": "Stopa PDV-a",
+    "vatRate": "PDV %",
+    "duration": "Trajanje",
+    "system": "Sistemski",
+    "newItem": "Novi tretman",
+    "editItem": "Izmeni tretman",
+    "deleteItem": "Obriši tretman",
+    "deleteItemConfirm": "Da li ste sigurni da želite da obrišete tretman \"{name}\"?",
+    "deleteItemNote": "Ova radnja se ne može poništiti.",
+    "pricing": "Cene",
+    "scheduling": "Zakazivanje",
+    "characteristics": "Karakteristike",
+    "scope": "Obuhvat",
+    "requiresAppointment": "Zahteva termin",
+    "isDiagnostic": "Dijagnostički",
+    "requiresSurfaces": "Zahteva površine",
+    "materialNotes": "Napomene o materijalu",
+    "materialNotesPlaceholder": "Potreban materijal ili pribor...",
+    "active": "Aktivan",
+    "vatTypes": {
+      "exempt": "Oslobođeno",
+      "reduced": "Snižena",
+      "standard": "Opšta"
+    },
+    "scopeTypes": {
+      "tooth": "Zub",
+      "multi_tooth": "Više zuba",
+      "global_mouth": "Cela usna duplja",
+      "global_arch": "Po vilici"
+    },
+    "pricingStrategy": {
+      "label": "Način određivanja cene",
+      "help": "Kako se cena tretmana obračunava pri primeni",
+      "flat": "Fiksno (jedna cena)",
+      "per_tooth": "Po zubu (× broj zuba)",
+      "per_surface": "Po površini (stepenasto)",
+      "per_role": "Po ulozi (most: nosač/međučlan)"
+    },
+    "surfacePrices": {
+      "title": "Cene po broju površina",
+      "help": "Definišite cenu za 1–5 površina. Kada se na zubu izaberu površine, koristi se odgovarajući nivo. Za nedostajuće nivoe koristi se najbliži niži popunjeni nivo.",
+      "tier": "{n} pov."
+    },
+    "sessions": {
+      "title": "Seanse (delimična naplata)",
+      "help": "Definišite imenovane faze kroz koje se tretman izvodi i naplaćuje (npr. krunica: 'Otisci' + 'Cementiranje'). Zbir mora biti jednak osnovnoj ceni.",
+      "label": "Naziv",
+      "labelPlaceholder": "npr. Otisci",
+      "price": "Iznos",
+      "add": "Dodaj seansu",
+      "sumStatus": "Zbir {sum} € · Ukupno {total} €"
+    },
+    "categoryCreated": "Kategorija je kreirana",
+    "categoryUpdated": "Kategorija je ažurirana",
+    "categoryDeleted": "Kategorija je obrisana",
+    "categoryKeyExists": "Kategorija sa ovim ključem već postoji",
+    "categoryCreateFailed": "Greška pri kreiranju kategorije",
+    "categoryUpdateFailed": "Greška pri ažuriranju kategorije",
+    "categoryDeleteFailed": "Greška pri brisanju kategorije",
+    "cannotModifySystemCategory": "Sistemska kategorija se ne može menjati",
+    "cannotDeleteSystemCategory": "Sistemska kategorija se ne može obrisati",
+    "itemCreated": "Tretman je kreiran",
+    "itemUpdated": "Tretman je ažuriran",
+    "itemDeleted": "Tretman je obrisan",
+    "itemCodeExists": "Tretman sa ovom šifrom već postoji",
+    "categoryNotFound": "Kategorija nije pronađena",
+    "itemCreateFailed": "Greška pri kreiranju tretmana",
+    "itemUpdateFailed": "Greška pri ažuriranju tretmana",
+    "itemDeleteFailed": "Greška pri brisanju tretmana",
+    "cannotModifySystemItem": "Sistemski tretman se ne može menjati",
+    "systemItemHint": "Sistemski tretman: šifra, kategorija, način određivanja cene i obuhvat su zaključani; cena, nabavna cena, PDV, nazivi, trajanje, seanse i status se mogu menjati.",
+    "cannotDeleteSystemItem": "Sistemski tretman se ne može obrisati",
+    "odontogramMapping": "Prikaz na odontogramu",
+    "odontogramMappingDescription": "Povežite ovaj tretman sa vrstom prikaza na odontogramu kako bi se pojavio u kartonu pacijenta.",
+    "odontogramType": "Vrsta tretmana",
+    "clinicalCategory": "Klinička kategorija",
+    "noOdontogramMapping": "Bez povezivanja",
+    "odontogramMappingHint": "Karakteristike tretmana biće automatski prilagođene izabranoj vrsti.",
+    "selectCategory": "Izaberite kategoriju...",
+    "selectVatType": "Izaberite stopu PDV-a...",
+    "selectScope": "Izaberite obuhvat...",
+    "selectOdontogramType": "Izaberite vrstu...",
+    "selectClinicalCategory": "Izaberite kategoriju...",
+    "expandAll": "Proširi sve",
+    "collapseAll": "Skupi sve",
+    "unnamed": "Bez naziva",
+    "activeHint": "Dostupno za predračune i planove",
+    "tabs": {
+      "general": "Opšte",
+      "pricing": "Cene",
+      "scheduling": "Zakazivanje",
+      "clinical": "Klinika"
+    },
+    "onboarding": {
+      "label": "Katalog tretmana",
+      "description": "Bez tretmana nema predračuna ni planova. Učitajte podrazumevani katalog ili kreirajte sopstveni.",
+      "createOwn": "Kreiraću sopstveni"
+    },
+    "manageCategories": "Upravljaj kategorijama",
+    "newCategory": "Nova kategorija",
+    "categoryName": "Naziv",
+    "categoryNamePlaceholder": "npr. Ortodoncija",
+    "categoryOrder": "Redosled",
+    "noCategories": "Nema kategorija. Kreirajte jednu ili učitajte podrazumevani katalog.",
+    "inactiveCategories": "Neaktivne kategorije",
+    "reactivate": "Ponovo aktiviraj",
+    "deleteCategoryConfirm": "Kategorija će biti deaktivirana; njeni tretmani se čuvaju. Nastaviti?",
+    "systemCategoryNote": "Sistemske kategorije se ne mogu menjati ni brisati.",
+    "loadDefaults": "Učitaj podrazumevani katalog",
+    "loadDefaultsHint": "Stope PDV-a, kategorije i referentni tretmani za državu ordinacije. Dodaju se samo nedostajući redovi.",
+    "defaultsLoaded": "Katalog je učitan: kategorija {categories}, tretmana {items}, stopa PDV-a {vat_types}",
+    "defaultsFailed": "Nije moguće učitati podrazumevani katalog",
+    "loadError": "Nije moguće učitati katalog tretmana"
+  },
+  "placeholders": {
+    "selectRole": "Izaberite ulogu..."
+  },
+  "vatTypes": {
+    "title": "Stope PDV-a",
+    "description": "Upravljajte stopama PDV-a dostupnim za tretmane",
+    "name": "Naziv",
+    "rate": "Stopa",
+    "default": "Podrazumevana",
+    "system": "Sistemska",
+    "active": "Aktivna",
+    "new": "Nova stopa PDV-a",
+    "edit": "Izmeni stopu PDV-a",
+    "delete": "Obriši stopu PDV-a",
+    "setAsDefault": "Postavi kao podrazumevanu",
+    "showInactive": "Prikaži neaktivne",
+    "noItems": "Nema podešenih stopa PDV-a",
+    "namePlaceholder": "Npr.: Posebna (10%)",
+    "systemNote": "Sistemskim stopama PDV-a može se menjati samo status podrazumevane.",
+    "deleteConfirm": "Da li ste sigurni da želite da obrišete stopu PDV-a",
+    "deleteNote": "Tretmani koji koriste ovu stopu PDV-a neće biti promenjeni.",
+    "created": "Stopa PDV-a je kreirana",
+    "updated": "Stopa PDV-a je ažurirana",
+    "deleted": "Stopa PDV-a je obrisana",
+    "loadError": "Greška pri učitavanju stopa PDV-a",
+    "createError": "Greška pri kreiranju stope PDV-a",
+    "updateError": "Greška pri ažuriranju stope PDV-a",
+    "deleteError": "Greška pri brisanju stope PDV-a"
+  },
+  "treatmentPlans": {
+    "title": "Planovi lečenja",
+    "description": "Upravljajte planovima lečenja pacijenata",
+    "new": "Novi plan",
+    "create": "Kreiraj plan lečenja",
+    "edit": "Izmeni plan",
+    "view": "Prikaži plan",
+    "delete": "Obriši plan",
+    "noItems": "Ovaj plan nema tretmane",
+    "noPlans": "Ovaj pacijent nema planove lečenja",
+    "noPlansHint": "Označite tretmane na zubnom kartonu i kreirajte plan da biste ih organizovali",
+    "createFirst": "Kreiraj prvi plan",
+    "empty": "Nema registrovanih planova lečenja",
+    "emptyAction": "Kreiraj prvi plan",
+    "searchPlaceholder": "Pretraga po broju, pacijentu ili nazivu...",
+    "planNumber": "Broj",
+    "patient": "Pacijent",
+    "untitled": "Bez naziva",
+    "untitledPlan": "Plan bez naziva",
+    "itemCount": "{count} tretman | {count} tretmana | {count} tretmana",
+    "treatments": "tretmana",
+    "progress": "Napredak",
+    "pendingTreatments": "Tretmani na čekanju",
+    "completedTreatments": "Završeni tretmani",
+    "linkedBudget": "Povezani predračun",
+    "unknownTreatment": "Nepoznat tretman",
+    "globalTreatment": "Opšti tretman",
+    "activePlan": "Aktivni plan",
+    "otherPlans": "Ostali planovi",
+    "viewAllPlans": "Prikaži istoriju planova",
+    "activate": "Aktiviraj",
+    "generateBudget": "Generiši predračun",
+    "scheduleAppointment": "Zakaži termin",
+    "status": {
+      "draft": "Nacrt",
+      "pending": "Na čekanju",
+      "active": "Aktivan",
+      "completed": "Završen",
+      "closed": "Zatvoren",
+      "archived": "Arhiviran"
+    },
+    "fields": {
+      "title": "Naziv",
+      "titlePlaceholder": "Npr.: Kompletna oralna rehabilitacija",
+      "assignedProfessional": "Dodeljeni terapeut",
+      "selectProfessional": "Izaberite terapeuta",
+      "diagnosisNotes": "Napomene o dijagnozi",
+      "diagnosisNotesPlaceholder": "Dijagnoza i kliničke opservacije...",
+      "internalNotes": "Interne napomene",
+      "internalNotesPlaceholder": "Napomene vidljive samo osoblju..."
+    },
+    "modal": {
+      "subtitle": "Organizujte tretmane pacijenta",
+      "titleHint": "Opciono — pomaže u prepoznavanju plana",
+      "additionalNotes": "Dodatne napomene",
+      "quickTip": "Nakon kreiranja plana možete dodavati tretmane sa odontograma ili iz kataloga.",
+      "createButton": "Kreiraj plan"
+    },
+    "actions": {
+      "activate": "Aktiviraj plan",
+      "confirm": "Potvrdi plan",
+      "complete": "Označi kao završen",
+      "generateBudget": "Generiši predračun",
+      "linkBudget": "Poveži predračun",
+      "syncBudget": "Sinhronizuj predračun",
+      "cancelPlan": "Otkaži plan",
+      "reopen": "Ponovo otvori",
+      "close": "Zatvori plan",
+      "reactivate": "Ponovo aktiviraj plan",
+      "logContact": "Evidentiraj kontakt"
+    },
+    "items": {
+      "title": "Tretmani",
+      "add": "Dodaj tretman",
+      "addSelected": "Dodaj {count} tretman | Dodaj {count} tretmana | Dodaj {count} tretmana",
+      "remove": "Ukloni tretman",
+      "empty": "Nema tretmana u ovom planu",
+      "assignedProfessional": "Dodeljeni stomatolog",
+      "assignedProfessionalAriaLabel": "Promeni dodeljenog stomatologa za ovaj tretman",
+      "useUsersPlanDoctor": "Koristi stomatologa iz plana",
+      "noProfessional": "Nije dodeljen stomatolog",
+      "inactiveProfessional": "Neaktivan terapeut",
+      "cascadeReassign": {
+        "title": "Preraspodeliti tretmane na čekanju?",
+        "body": "Promenili ste stomatologa u planu. Broj tretmana na čekanju dodeljenih stomatologu {previousName}: {count}. Želite li da ih takođe dodelite novom stomatologu?",
+        "confirm": "Da, preraspodeli tretmane na čekanju",
+        "cancel": "Ne, ostavi kako jeste"
+      }
+    },
+    "filters": {
+      "allStatuses": "Svi statusi"
+    },
+    "confirmations": {
+      "delete": "Obrisati ovaj plan lečenja?",
+      "completeItem": "Označiti tretman kao završen?",
+      "completeItemDescription": "Ova radnja se ne može poništiti.",
+      "activateTitle": "Potvrditi plan lečenja?",
+      "activateDescription": "Potvrdom se omogućava izrada predračuna i zakazivanje termina. I nakon toga možete dodavati ili završavati tretmane.",
+      "unlockTitle": "Izmeniti plan?",
+      "unlockIntro": "Za ovaj plan je već izdat predračun {number}. Da biste ga izmenili, trenutni predračun mora biti otkazan.",
+      "unlockConsequence1": "Predračun {number} biće otkazan i više neće važiti za pacijenta.",
+      "unlockConsequence2": "Moći ćete da dodajete, menjate ili uklanjate tretmane iz plana.",
+      "unlockConsequence3": "Kada završite izmene, moraćete da generišete novi predračun.",
+      "unlockConsequence4": "Otkazani predračun ostaje u istoriji radi sledljivosti.",
+      "cancelTitle": "Otkazati plan lečenja?",
+      "cancelDescription": "Plan će preći u status otkazanog, a planirani tretmani koji nisu urađeni biće uklonjeni sa odontograma. Istorija plana se čuva."
+    },
+    "messages": {
+      "created": "Plan lečenja je kreiran",
+      "updated": "Plan lečenja je ažuriran",
+      "deleted": "Plan lečenja je obrisan",
+      "itemsAdded": "Tretmani su dodati u plan"
+    },
+    "itemCompleted": "Tretman je završen",
+    "budgetGenerated": "Predračun je generisan",
+    "created": "Plan lečenja je kreiran",
+    "updated": "Plan lečenja je ažuriran",
+    "statusUpdated": "Status plana je ažuriran",
+    "deleted": "Plan lečenja je obrisan",
+    "budgetLinked": "Predračun je povezan sa planom",
+    "budgetSynced": "Predračun je sinhronizovan",
+    "errors": {
+      "load": "Greška pri učitavanju planova lečenja",
+      "create": "Greška pri kreiranju plana lečenja",
+      "update": "Greška pri ažuriranju plana lečenja",
+      "delete": "Greška pri brisanju plana lečenja"
+    },
+    "notes": {
+      "title": "Kliničke beleške",
+      "empty": "Još nema kliničkih beleški",
+      "addNote": "Dodaj belešku",
+      "edit": "Izmeni belešku",
+      "delete": "Obriši belešku",
+      "attachments": "Prilozi",
+      "author": "Autor",
+      "createdAt": "Kreirano",
+      "templatePicker": "Šabloni",
+      "bodyPlaceholder": "Napišite kliničku belešku…",
+      "saved": "Beleška je sačuvana",
+      "deleted": "Beleška je obrisana"
+    },
+    "completionNudge": {
+      "title": "Završi tretman",
+      "description": "Pre nego što ga označite kao završen, dodajte kliničku belešku o tome šta je urađeno tokom ove posete.",
+      "completeWithNote": "Završi sa beleškom",
+      "skip": "Preskoči belešku",
+      "skipConfirm": "Završiti bez kliničke beleške?"
+    },
+    "visitNote": {
+      "title": "Klinička beleška posete",
+      "save": "Sačuvaj belešku",
+      "empty": "Još nema beleške o poseti",
+      "saved": "Beleška je sačuvana"
+    },
+    "clinicalNotesTab": "Kliničke beleške",
+    "filterBy": {
+      "plan": "Plan",
+      "item": "Tretman",
+      "visit": "Poseta",
+      "all": "Sve"
+    },
+    "byPlan": {
+      "empty": "Ovaj pacijent nema kliničke beleške ni u jednom planu lečenja",
+      "planNotesLabel": "Beleške plana",
+      "noNotesForTreatment": "Nema beleški za ovaj tretman",
+      "noNotesForPlan": "Nema beleški u ovom planu"
+    },
+    "noteTemplates": {
+      "endo": {
+        "singleVisit": "Endodoncija — jedna poseta",
+        "multiVisit": "Endodoncija — više poseta"
+      },
+      "perio": {
+        "scaling": "Uklanjanje kamenca / poliranje korena"
+      },
+      "implant": {
+        "placement": "Ugradnja implanta"
+      },
+      "general": {
+        "followUp": "Opšta kontrola"
+      }
+    },
+    "closureReason": {
+      "rejected_by_patient": "Pacijent je odbio",
+      "expired": "Isteklo",
+      "cancelled_by_clinic": "Ordinacija je otkazala",
+      "patient_abandoned": "Pacijent je odustao",
+      "other": "Drugi razlog"
+    },
+    "confirmed": "Plan je potvrđen",
+    "reopened": "Plan je ponovo otvoren",
+    "closed": "Plan je zatvoren",
+    "reactivated": "Plan je ponovo aktiviran",
+    "contactLogged": "Kontakt je evidentiran",
+    "modals": {
+      "confirm": {
+        "title": "Potvrdi plan",
+        "description": "Plan će preći u status Na čekanju i automatski će biti kreiran nacrt predračuna. Nakon potvrde tretmani su samo za čitanje.",
+        "submit": "Potvrdi plan"
+      },
+      "reopen": {
+        "title": "Ponovo otvori plan za izmenu",
+        "description": "Ovim će trenutni predračun biti otkazan. Plan se vraća u Nacrt kako biste mogli da menjate tretmane.",
+        "submit": "Ponovo otvori"
+      },
+      "close": {
+        "title": "Zatvori plan",
+        "description": "Izaberite razlog zatvaranja. Tretmani na čekanju biće arhivirani.",
+        "reasonLabel": "Razlog",
+        "noteLabel": "Napomena (opciono)",
+        "submit": "Zatvori plan"
+      },
+      "reactivate": {
+        "title": "Ponovo aktiviraj zatvoreni plan",
+        "description": "Ovim će biti ponovo aktiviran plan zatvoren {date} uz razlog «{reason}». Nastaviti?",
+        "submit": "Ponovo aktiviraj"
+      },
+      "contactLog": {
+        "title": "Evidentiraj kontakt",
+        "description": "Beleži kontakt bez promene statusa plana.",
+        "channelLabel": "Kanal",
+        "noteLabel": "Napomena (opciono)",
+        "submit": "Evidentiraj"
+      }
+    },
+    "newBudgetHint": {
+      "text": "Ovaj pacijent ima plan {plan} bez predračuna. Generišite predračun iz plana kako bi ostali povezani.",
+      "cta": "Otvori plan"
+    },
+    "viewDraftBudget": "Predračun {number} (nacrt)",
+    "followup": {
+      "subtitle": "Sledeći planirani tretmani sa ove posete nisu označeni kao urađeni:",
+      "markPerformed": "Označi kao urađeno",
+      "marked": "Označeno kao urađeno: {count}."
+    }
+  },
+  "pipeline": {
+    "title": "Tok planova",
+    "description": "Upravljajte tokom tretmana.",
+    "tabs": {
+      "por_presupuestar": "Za predračun",
+      "esperando_paciente": "Čeka se pacijent",
+      "sin_cita": "Bez termina",
+      "sin_proxima_cita": "Bez sledećeg termina",
+      "cerrados": "Zatvoreni",
+      "listado": "Lista"
+    },
+    "row": {
+      "patient": "Pacijent",
+      "plan": "Plan",
+      "budget": "Predračun",
+      "items": "Tretmani",
+      "daysIn": "Dana u statusu: {n}",
+      "nextAppt": "Sledeći termin",
+      "noNextAppt": "Nema termina",
+      "noBudget": "Nema predračuna"
+    },
+    "actions": {
+      "open": "Otvori",
+      "send": "Pošalji",
+      "remind": "Pošalji ponovo",
+      "schedule": "Zakaži",
+      "scheduleNext": "Zakaži sledeći",
+      "reactivate": "Ponovo aktiviraj",
+      "call": "Pozovi",
+      "whatsapp": "WhatsApp",
+      "markContacted": "Označi kao kontaktiran",
+      "acceptInClinic": "Prihvati u ordinaciji"
+    },
+    "search": "Pretraga po imenu ili broju…",
+    "empty": "Nema redova na ovoj kartici.",
+    "loading": "Učitavanje…"
+  },
+  "budget": {
+    "title": "Predračuni",
+    "description": "Upravljajte predračunima za tretmane pacijenata",
+    "new": "Novi predračun",
+    "edit": "Izmeni predračun",
+    "view": "Prikaži predračun",
+    "delete": "Obriši predračun",
+    "duplicate": "Kreiraj novu verziju",
+    "noItems": "Nema predračuna",
+    "empty": "Nema registrovanih predračuna",
+    "emptyAction": "Kreiraj prvi predračun",
+    "linkedToPlan": "Povezan sa planom",
+    "searchPlaceholder": "Pretraga po broju ili pacijentu...",
+    "budgetNumber": "Broj",
+    "version": "Verzija",
+    "treatmentPlan": "Plan lečenja",
+    "patient": "Pacijent",
+    "selectPatient": "Izaberite pacijenta",
+    "selectPatientHint": "Pronađite i izaberite pacijenta za ovaj predračun",
+    "professional": "Terapeut",
+    "validFrom": "Važi od",
+    "validUntil": "Važi do",
+    "validUntilHint": "Ostavite prazno za predračun bez roka važenja",
+    "noExpiry": "Bez roka važenja",
+    "createAndAddItems": "Kreiraj i dodaj tretmane",
+    "subtotal": "Međuzbir",
+    "totalDiscount": "Ukupan popust",
+    "totalTax": "Ukupan PDV",
+    "total": "Ukupno",
+    "globalDiscount": "Opšti popust",
+    "discountType": "Vrsta popusta",
+    "discountValue": "Vrednost popusta",
+    "percentage": "Procenat",
+    "absolute": "Iznos",
+    "internalNotes": "Interne napomene",
+    "internalNotesPlaceholder": "Napomene vidljive samo osoblju...",
+    "patientNotes": "Napomene za pacijenta",
+    "patientNotesPlaceholder": "Napomene vidljive na predračunu...",
+    "status": {
+      "title": "Status",
+      "draft": "Nacrt",
+      "sent": "Poslat",
+      "partially_accepted": "Delimično prihvaćen",
+      "accepted": "Prihvaćen",
+      "in_progress": "U toku",
+      "completed": "Završen",
+      "invoiced": "Fakturisan",
+      "rejected": "Odbijen",
+      "expired": "Istekao",
+      "cancelled": "Otkazan"
+    },
+    "itemStatus": {
+      "pending": "Na čekanju",
+      "accepted": "Prihvaćen",
+      "rejected": "Odbijen",
+      "in_progress": "U toku",
+      "completed": "Završen"
+    },
+    "actions": {
+      "send": "Pošalji pacijentu",
+      "accept": "Prihvati predračun",
+      "acceptPartial": "Prihvati izabrano",
+      "reject": "Odbij",
+      "cancel": "Otkaži predračun",
+      "duplicate": "Kreiraj novu verziju",
+      "downloadPdf": "Preuzmi PDF",
+      "previewPdf": "Pregledaj PDF",
+      "startTreatment": "Započni tretman",
+      "completeTreatment": "Završi tretman",
+      "renegotiate": "Pregovaraj ponovo",
+      "acceptInClinic": "Prihvati u ordinaciji",
+      "resend": "Pošalji ponovo",
+      "sendReminder": "Pošalji podsetnik",
+      "setPublicCode": "Postavi pristupni kod",
+      "unlockPublic": "Otključaj pristup"
+    },
+    "items": {
+      "title": "Tretmani",
+      "add": "Dodaj tretman",
+      "remove": "Ukloni tretman",
+      "edit": "Izmeni tretman",
+      "empty": "Nema tretmana u ovom predračunu",
+      "singular": "tretman",
+      "plural": "tretmana",
+      "addFromCatalog": "Dodaj iz kataloga",
+      "addFromOdontogram": "Dodaj sa zubnog kartona",
+      "treatment": "Tretman",
+      "searchCatalog": "Pretraži katalog tretmana...",
+      "unitPrice": "Jedinična cena",
+      "quantity": "Količina",
+      "discount": "Popust",
+      "lineTotal": "Ukupno za stavku",
+      "tooth": "Zub",
+      "toothNumber": "Broj zuba",
+      "toothNumberPlaceholder": "Npr.: 11, 21, 36...",
+      "surfaces": "Površine",
+      "notes": "Napomene",
+      "notesPlaceholder": "Napomene o ovom tretmanu...",
+      "managedByPlan": "Stavkama ovog predračuna upravlja se iz plana lečenja {plan}."
+    },
+    "signature": {
+      "title": "Digitalni potpis",
+      "viewAction": "Prikaži potpis",
+      "signedBy": "Potpisao/la",
+      "signedAt": "Potpisano",
+      "methodLabel": "Način",
+      "relationshipLabel": "Odnos",
+      "documentHash": "Heš dokumenta (SHA-256)",
+      "hashHint": "Heš {short} — vezuje potpis za tačno ovaj PDF. Svaka izmena bi ga poništila.",
+      "downloadSignedPdf": "Preuzmi potpisani PDF",
+      "downloadError": "Nije moguće preuzeti potpisani PDF.",
+      "notSigned": "Za ovaj predračun još nije zabeležen potpis.",
+      "method": {
+        "drawn": "Svojeručni potpis",
+        "clickAccept": "Prihvatanje klikom",
+        "external": "Spoljni provajder"
+      },
+      "email": "Imejl",
+      "relationship": "Odnos prema pacijentu",
+      "patient": "Pacijent",
+      "guardian": "Zakonski staratelj",
+      "representative": "Zastupnik",
+      "accept": "Prihvatam uslove predračuna",
+      "signHere": "Potpišite ovde",
+      "clear": "Obriši potpis",
+      "loadError": "Nije moguće učitati status potpisa"
+    },
+    "history": {
+      "title": "Istorija izmena",
+      "noChanges": "Nema zabeleženih izmena",
+      "actions": {
+        "created": "Predračun je kreiran",
+        "updated": "Predračun je ažuriran",
+        "status_changed": "Status je promenjen",
+        "item_added": "Tretman je dodat",
+        "item_removed": "Tretman je uklonjen",
+        "signed": "Predračun je potpisan",
+        "sent": "Predračun je poslat",
+        "duplicated": "Kreirana je nova verzija",
+        "deleted": "Predračun je obrisan",
+        "item_treatment_started": "Tretman je započet",
+        "item_treatment_completed": "Tretman je završen"
+      }
+    },
+    "versions": {
+      "title": "Verzije",
+      "current": "Trenutna",
+      "viewVersion": "Prikaži verziju"
+    },
+    "confirmations": {
+      "send": "Poslati predračun pacijentu?",
+      "sendDescription": "Predračun će biti označen kao poslat.",
+      "reject": "Odbiti predračun?",
+      "rejectDescription": "Ova radnja se ne može poništiti.",
+      "cancel": "Otkazati predračun?",
+      "cancelDescription": "Ova radnja se ne može poništiti.",
+      "resend": "Kreirati novu verziju ovog predračuna? Povezani plan lečenja pratiće novu verziju.",
+      "delete": "Obrisati predračun?",
+      "deleteDescription": "Ova radnja se ne može poništiti."
+    },
+    "send": {
+      "description": "Predračun možete poslati imejlom ili preko WhatsApp-a, ili ga ručno označiti kao poslat (odštampan ili predat lično).",
+      "sendByEmail": "Pošalji imejlom",
+      "willSendTo": "Biće poslato na",
+      "noPatientEmail": "Pacijent nema registrovan imejl",
+      "customMessage": "Prilagođena poruka (opciono)",
+      "customMessagePlaceholder": "Dodajte poruku za pacijenta...",
+      "manualNote": "Predračun će biti označen kao poslat bez slanja poruke.",
+      "sendEmail": "Pošalji imejl",
+      "markAsSent": "Označi kao poslato",
+      "sendByWhatsapp": "Pošalji preko WhatsApp-a",
+      "sendWhatsapp": "Pošalji WhatsApp",
+      "willSendToPhone": "Biće poslato preko WhatsApp-a na"
+    },
+    "messages": {
+      "created": "Predračun je kreiran",
+      "updated": "Predračun je ažuriran",
+      "deleted": "Predračun je obrisan",
+      "sent": "Predračun je poslat",
+      "sentByEmail": "Predračun je poslat imejlom",
+      "sentManually": "Predračun je označen kao poslat",
+      "accepted": "Predračun je prihvaćen",
+      "rejected": "Predračun je odbijen",
+      "cancelled": "Predračun je otkazan",
+      "duplicated": "Kreirana je nova verzija",
+      "resent": "Kreirana je nova verzija na osnovu prethodnog predračuna",
+      "itemAdded": "Tretman je dodat",
+      "itemUpdated": "Tretman je ažuriran",
+      "itemRemoved": "Tretman je uklonjen",
+      "treatmentStarted": "Tretman je započet",
+      "treatmentCompleted": "Tretman je završen",
+      "sentByWhatsapp": "Predračun je poslat preko WhatsApp-a"
+    },
+    "errors": {
+      "load": "Greška pri učitavanju predračuna",
+      "create": "Greška pri kreiranju predračuna",
+      "update": "Greška pri ažuriranju predračuna",
+      "delete": "Greška pri brisanju predračuna",
+      "send": "Greška pri slanju predračuna",
+      "accept": "Greška pri prihvatanju predračuna",
+      "reject": "Greška pri odbijanju predračuna",
+      "notFound": "Predračun nije pronađen",
+      "onlyDraft": "Mogu se menjati samo predračuni u nacrtu"
+    },
+    "filters": {
+      "allStatuses": "Svi statusi",
+      "status": "Status",
+      "paymentStatus": "Status",
+      "professional": "Terapeut",
+      "validity": "Važenje",
+      "validityValid": "Važeći",
+      "validityExpiringSoon": "Ističe za 7 dana",
+      "validityExpired": "Istekli",
+      "dateFrom": "Od",
+      "dateTo": "Do",
+      "showExpired": "Prikaži istekle",
+      "advanced": "Napredni filteri",
+      "clear": "Obriši filtere"
+    },
+    "sortFields": {
+      "createdAt": "Kreirano",
+      "validUntil": "Važi do",
+      "total": "Ukupno",
+      "status": "Status",
+      "budgetNumber": "Broj"
+    },
+    "validity": {
+      "expired": "Istekao",
+      "expiresIn": "Ističe za {days} d"
+    },
+    "pdf": {
+      "generating": "Generisanje PDF-a...",
+      "downloadError": "Greška pri preuzimanju PDF-a"
+    },
+    "modals": {
+      "renegotiate": {
+        "title": "Ponovo pregovaraj o predračunu",
+        "description": "Ovim će trenutni predračun biti otkazan, a plan vraćen u Nacrt kako biste mogli da prilagodite tretmane.",
+        "submit": "Pregovaraj ponovo"
+      },
+      "acceptInClinic": {
+        "title": "Prihvatanje predračuna u ordinaciji",
+        "description": "Zabeležite prihvatanje od strane pacijenta. Možete uzeti potpis na tabletu (opciono).",
+        "signerLabel": "Ime i prezime potpisnika",
+        "captureSignature": "Uzmi potpis",
+        "submit": "Označi kao prihvaćeno"
+      },
+      "setPublicCode": {
+        "title": "Postavi pristupni kod",
+        "description": "Ovaj pacijent nema evidentiran ni telefon ni datum rođenja. Postavite kod od 4-6 cifara i saopštite ga pacijentu usmeno. NE navodite kod u imejlu.",
+        "codeLabel": "Kod (4-6 cifara)",
+        "submit": "Sačuvaj kod"
+      }
+    },
+    "publicLink": {
+      "action": "Podeli link",
+      "title": "Link za pacijenta",
+      "help": "Kopirajte ovaj link i podelite ga sa pacijentom preko WhatsApp-a ili imejla. Pre pregleda predračuna od njega će se tražiti jedan podatak za proveru.",
+      "copy": "Kopiraj link",
+      "copied": "Kopirano!",
+      "whatsapp": "Otvori u WhatsApp-u",
+      "whatsappNoPhone": "Pacijent nema evidentiran telefon",
+      "whatsappGreeting": "Zdravo {name}, evo vašeg predračuna:",
+      "whatsappGreetingFallback": "Zdravo, evo vašeg predračuna:",
+      "preview": "Pregled",
+      "statusSent": "Poslat",
+      "statusAccepted": "Prihvaćen",
+      "statusRejected": "Odbijen",
+      "statusExpired": "Istekao"
+    },
+    "public": {
+      "title": "Vaš predračun",
+      "intro": "{clinic} vam je poslala ovaj predračun. Pregledajte tretmane i izaberite opciju.",
+      "subtitle": "Vaš lični plan lečenja",
+      "budgetNumber": "Predračun",
+      "issuedOn": "Izdato {date}",
+      "items": "Uključeni tretmani",
+      "tooth": "Zub {number}",
+      "subtotal": "Međuzbir",
+      "discount": "Popust",
+      "tax": "PDV",
+      "total": "Ukupno",
+      "validUntil": "Važi do {date}",
+      "trustSecure": "Bezbedna veza",
+      "trustEncrypted": "Šifrovani podaci",
+      "trustSignature": "Pravno obavezujući potpis",
+      "needHelp": "Potrebna vam je pomoć? Pozovite ordinaciju",
+      "noteFromClinic": "Poruka ordinacije",
+      "callClinic": "Pozovi ordinaciju",
+      "emailClinic": "Pošalji imejl",
+      "cta_accept": "Prihvati i potpiši",
+      "cta_reject": "Nisam zainteresovan/a",
+      "expired": "Ovaj predračun je istekao. Obratite se ordinaciji.",
+      "locked": "Pristup je zaključan nakon previše pokušaja. Pozovite ordinaciju.",
+      "already_accepted": "Već ste prihvatili ovaj predračun. Ordinacija će vas kontaktirati radi zakazivanja prvog termina.",
+      "already_rejected": "Odbili ste ovaj predračun. Ako se predomislite, pozovite ordinaciju.",
+      "download": {
+        "signedPdf": "Preuzmi potpisani PDF",
+        "notSigned": "Ovaj predračun još nema priložen potpis.",
+        "error": "Nije moguće preuzeti PDF. Pokušajte ponovo.",
+        "reauthIntro": "Iz bezbednosnih razloga, ponovo potvrdite identitet da biste preuzeli potpisani PDF."
+      },
+      "verify": {
+        "title": "Potvrdite identitet",
+        "intro": "Radi zaštite vaših podataka, potvrdite jedan podatak pre pregleda predračuna.",
+        "phone_last4_label": "Poslednje 4 cifre vašeg telefona",
+        "dob_label": "Vaš datum rođenja",
+        "manual_code_label": "Kod koji ste dobili od ordinacije",
+        "submit": "Nastavi",
+        "invalid": "Netačan podatak. Pokušajte ponovo.",
+        "locked": "Pristup je zaključan nakon previše pokušaja. Pozovite ordinaciju.",
+        "rate_limited": "Previše pokušaja. Sačekajte 15 minuta."
+      },
+      "accept": {
+        "title": "Prihvati i potpiši",
+        "signerLabel": "Vaše ime i prezime",
+        "signatureLabel": "Potpišite ovde (opciono)",
+        "signatureClear": "Obriši",
+        "consent": "Prihvatam ovaj predračun i odobravam opisani tretman.",
+        "submit": "Potvrdi prihvatanje",
+        "success": "Gotovo! Ordinacija će vas kontaktirati radi zakazivanja prvog termina."
+      },
+      "reject": {
+        "title": "Nisam zainteresovan/a",
+        "intro": "Zašto vam ovaj predračun ne odgovara?",
+        "reasonLabel": "Razlog",
+        "noteLabel": "Komentar (opciono)",
+        "submit": "Potvrdi odbijanje",
+        "success": "Obavestili smo ordinaciju.",
+        "reasons": {
+          "price": "Cena",
+          "time": "Nedostatak vremena",
+          "second_opinion": "Drugo mišljenje",
+          "other": "Drugi razlog"
+        }
+      }
+    },
+    "settings": {
+      "title": "Podešavanja predračuna",
+      "description": "Podesite rok važenja, podsetnike i proveru javnog linka.",
+      "cards": {
+        "expiry": {
+          "title": "Rok važenja i automatsko zatvaranje",
+          "description": "Koliko dugo predračun važi pre isteka i kada se planovi na čekanju automatski zatvaraju."
+        },
+        "reminders": {
+          "title": "Automatski podsetnici",
+          "description": "Uključite/isključite imejl podsetnike nakon 7 i 14 dana pacijentima koji nisu odgovorili."
+        },
+        "publicLink": {
+          "title": "Javni link i provera",
+          "description": "Podesite zaštitu linka do predračuna za pacijente."
+        }
+      },
+      "expiry": {
+        "validityDays": "Važenje predračuna (dana)",
+        "validityHelp": "Nakon ovoliko dana bez odgovora predračun prelazi u status Istekao (opseg 7-180).",
+        "autoCloseDays": "Dana do automatskog zatvaranja plana",
+        "autoCloseHelp": "Planovi sa isteklim predračunom i bez aktivnosti tokom ovoliko dana prelaze u status Zatvoren (opseg 7-180).",
+        "save": "Sačuvaj"
+      },
+      "reminders": {
+        "enabled": "Šalji automatske podsetnike nakon 7 i 14 dana",
+        "enabledHelp": "Kada je uključeno, sistem šalje pacijentu imejl o predračunima na čekanju. Kada je isključeno, recepcija ručno prati pacijente.",
+        "save": "Sačuvaj"
+      },
+      "publicLink": {
+        "authDisabled": "Isključi proveru javnog linka",
+        "authDisabledHelp": "Kada je uključeno, pacijent vidi predračun samo pomoću linka — bez provere telefona ili datuma rođenja. Prihvatate rizik ako se link podeli.",
+        "save": "Sačuvaj"
+      },
+      "saved": "Podešavanja su sačuvana"
+    }
+  },
+  "notifications": {
+    "communications": {
+      "language": {
+        "cardTitle": "Jezik komunikacije",
+        "cardDescription": "Jezik koji se koristi u prikazu predračuna za pacijente, imejlovima i WhatsApp porukama.",
+        "title": "Jezik komunikacije sa pacijentima",
+        "label": "Jezik",
+        "help": "Primenjuje se na prikaz predračuna za pacijente i automatske šablone za imejl/WhatsApp. Interfejs za osoblje zadržava jezik koji je svaki korisnik izabrao.",
+        "save": "Sačuvaj",
+        "saved": "Jezik je sačuvan"
+      }
+    },
+    "title": "Obaveštenja",
+    "description": "Podesite imejl obaveštenja ordinacije",
+    "pageDescription": "Podesite koja se obaveštenja šalju automatski, a koja zahtevaju ručno slanje.",
+    "autoVsManual": "Automatska i ručna obaveštenja",
+    "autoVsManualDescription": "Odredite koja se obaveštenja šalju automatski kada se dogodi neki događaj, a koja korisnik mora poslati ručno.",
+    "notificationType": "Vrsta obaveštenja",
+    "enabled": "Uključeno",
+    "autoSend": "Automatsko slanje",
+    "options": "Opcije",
+    "hoursBefore": "č ranije",
+    "testConnection": "Testiraj vezu",
+    "testEmailTitle": "Pošalji probni imejl",
+    "testEmailDescription": "Poslaćemo probni imejl kako bismo proverili da podešavanja ispravno rade.",
+    "sendTestEmail": "Pošalji probu",
+    "test_email_sent": "Probni imejl je uspešno poslat",
+    "settings_saved": "Podešavanja su sačuvana",
+    "emailProvider": "Imejl provajder",
+    "providerConfigured": "Imejl provajder je podešen",
+    "providerNote": "Imejl server se podešava kroz promenljive okruženja na serveru.",
+    "infoTitle": "Informacije",
+    "infoAutoSend": "Automatsko slanje: obaveštenje se šalje kada se događaj desi (npr. pri kreiranju termina).",
+    "infoManualSend": "Ručno slanje: pojaviće se dugme za slanje obaveštenja kada želite.",
+    "infoDisabled": "Isključeno: obaveštenje se neće slati i opcija za slanje se neće prikazivati.",
+    "types": {
+      "appointment_confirmation": "Potvrda termina",
+      "appointment_confirmation_desc": "Imejl potvrde kada se termin zakaže",
+      "appointment_cancelled": "Otkazivanje termina",
+      "appointment_cancelled_desc": "Imejl obaveštenja kada se termin otkaže",
+      "appointment_reminder": "Podsetnik za termin",
+      "appointment_reminder_desc": "Imejl podsetnik pre termina",
+      "budget_sent": "Slanje predračuna",
+      "budget_sent_desc": "Imejl sa detaljima predračuna",
+      "budget_accepted": "Predračun je prihvaćen",
+      "budget_accepted_desc": "Imejl potvrde kada se predračun prihvati",
+      "welcome": "Dobrodošlica",
+      "welcome_desc": "Imejl dobrodošlice za nove pacijente",
+      "invoice_sent": "Slanje računa",
+      "invoice_sent_desc": "Poruka sa računom kada se pošalje pacijentu",
+      "budget_reminder": "Podsetnik za predračun",
+      "budget_reminder_desc": "Praćenje predračuna bez odgovora (7 i 14 dana)",
+      "recall_reminder": "Podsetnik za kontrolu",
+      "recall_reminder_desc": "Podsetnik za zakazivanje periodične kontrolne posete"
+    },
+    "sendConfirmation": "Pošalji potvrdu",
+    "sendReminder": "Pošalji podsetnik",
+    "sendCancellation": "Pošalji otkazivanje",
+    "sendBudget": "Pošalji imejlom",
+    "sendAcceptance": "Pošalji potvrdu",
+    "sendWelcome": "Pošalji dobrodošlicu",
+    "sendEmail": "Pošalji imejl",
+    "errors": {
+      "fetch_failed": "Greška pri učitavanju podešavanja",
+      "save_failed": "Greška pri čuvanju podešavanja",
+      "test_failed": "Greška pri slanju probnog imejla",
+      "send_failed": "Greška pri slanju obaveštenja"
+    },
+    "smtp": {
+      "title": "Podešavanje imejl servera",
+      "description": "Podesite SMTP server za slanje imejlova iz vaše ordinacije. Svaka ordinacija može imati sopstvena podešavanja.",
+      "configure": "Podesi",
+      "provider": "Provajder",
+      "host": "Server",
+      "port": "Port",
+      "username": "Korisničko ime",
+      "password": "Lozinka",
+      "passwordHint": "Ostavite prazno da biste zadržali trenutnu lozinku",
+      "useTls": "Koristi TLS",
+      "useSsl": "Koristi SSL",
+      "fromEmail": "Imejl pošiljaoca",
+      "fromName": "Ime pošiljaoca",
+      "security": "Bezbednost",
+      "testConnection": "Testiraj vezu",
+      "testConnectionTitle": "Testirajte podešavanja pre čuvanja",
+      "testEmailPlaceholder": "Imejl adresa za probu",
+      "test_success": "SMTP veza je uspešna. Probni imejl je poslat.",
+      "test_failed": "Greška SMTP veze",
+      "settings_saved": "SMTP podešavanja su sačuvana",
+      "consoleNote": "U režimu konzole imejlovi se prikazuju u konzoli servera umesto da se šalju. Korisno za razvoj.",
+      "disabledNote": "Kada je imejl isključen, ova ordinacija neće slati nikakva imejl obaveštenja.",
+      "status": {
+        "not_configured": "Nije podešeno",
+        "verified": "Provereno i radi",
+        "not_verified": "Podešeno, ali nije provereno",
+        "disabled": "Imejl je isključen",
+        "console": "Režim konzole (razvoj)"
+      },
+      "errors": {
+        "fetch_failed": "Greška pri učitavanju SMTP podešavanja",
+        "save_failed": "Greška pri čuvanju SMTP podešavanja",
+        "test_failed": "Greška pri testiranju SMTP veze"
+      }
+    },
+    "onboarding": {
+      "label": "Slanje imejlova",
+      "description": "Podesite pošiljaoca da biste slali potvrde termina i predračune imejlom."
+    },
+    "channels": {
+      "cardTitle": "Kanali",
+      "cardDescription": "Kako ordinacija kontaktira pacijente: kanal koji koriste automatske poruke i dugmad za slanje koju osoblje vidi.",
+      "preferredLabel": "Željeni kanal",
+      "preferredHelp": "Koristi se za automatske poruke (novi termin, podsetnik, dobrodošlica…).",
+      "fallbackLabel": "Rezervno koristi drugi kanal",
+      "fallbackHelp": "Ako željeni kanal ne može da pošalje poruku, pokušaj preko drugog dostupnog kanala umesto da se poruka preskoči.",
+      "manualLabel": "Prikaži dugme za slanje za…",
+      "manualHelp": "Koju dugmad za slanje recepcija vidi kod termina, predračuna i računa.",
+      "manualAtLeastOne": "Izaberite najmanje jedan kanal.",
+      "email": "Imejl",
+      "whatsapp": "WhatsApp",
+      "whatsappUnavailableHint": "WhatsApp nije dostupan dok se ne poveže broj ordinacije.",
+      "whatsappConnect": "Poveži WhatsApp (Kapso)",
+      "noEmail": "Pacijent nema evidentiran imejl",
+      "noPhone": "Pacijent nema evidentiran telefon",
+      "sms": "SMS",
+      "smsUnavailableHint": "SMS nije dostupan dok se ne podesi SMS provajder.",
+      "smsConnect": "Podesi",
+      "smsDailyLimitLabel": "Dnevno ograničenje SMS-a",
+      "smsDailyLimitHelp": "Najveći broj odlaznih SMS poruka dnevno za ordinaciju."
+    },
+    "channelSent": {
+      "email": "Imejl je uspešno poslat",
+      "whatsapp": "WhatsApp poruka je uspešno poslata",
+      "sms": "SMS poruka je uspešno poslata"
+    },
+    "prefs": {
+      "title": "Postavke obaveštenja",
+      "description": "Kojim kanalima se ovaj pacijent sme kontaktirati. Odjava blokira taj kanal čak i za prinudna slanja.",
+      "saved": "Postavke su sačuvane"
+    }
+  },
+  "invoice": {
+    "title": "Računi",
+    "description": "Upravljajte računima i naplatom",
+    "new": "Novi račun",
+    "edit": "Izmeni račun",
+    "view": "Prikaži račun",
+    "delete": "Obriši račun",
+    "noItems": "Nema računa",
+    "empty": "Nema registrovanih računa",
+    "emptyAction": "Kreiraj prvi račun",
+    "searchPlaceholder": "Pretraga po broju ili pacijentu...",
+    "notFound": "Račun nije pronađen",
+    "draftNoNumber": "Nacrt",
+    "details": "Detalji",
+    "invoiceNumber": "Broj računa",
+    "patient": "Pacijent",
+    "searchPatient": "Pretraži pacijente",
+    "searchPatientPlaceholder": "Pretraga po imenu...",
+    "professional": "Terapeut",
+    "billingData": "Podaci za naplatu",
+    "billingName": "Naziv za račun",
+    "taxId": "PIB",
+    "billingEmail": "Imejl za račune",
+    "billingAddress": "Adresa za račune",
+    "billingDataComplete": "Potpuno",
+    "billingDataIncomplete": "Nepotpuno",
+    "billingDataIncompleteHint": "Pacijentu nedostaju neki podaci za naplatu.",
+    "editPatientBilling": "Izmeni podatke pacijenta",
+    "fromPatient": "Iz kartona pacijenta",
+    "editInPatient": "Izmeni u profilu",
+    "billingFromPatientHint": "Ovi podaci potiču iz kartona pacijenta. Da biste ih izmenili, izmenite podatke za naplatu pacijenta.",
+    "paymentTerms": "Uslovi plaćanja",
+    "linkedToBudget": "Povezan sa predračunom",
+    "selectPatient": "Izaberite pacijenta",
+    "noBillingData": "Nema podataka za naplatu",
+    "street": "Ulica",
+    "city": "Grad",
+    "postalCode": "Poštanski broj",
+    "province": "Okrug",
+    "country": "Država",
+    "linkedBudget": "Povezani predračun",
+    "creditNoteFor": "Knjižno odobrenje za",
+    "paymentTermDays": "Rok plaćanja (dana)",
+    "dueDate": "Datum dospeća",
+    "issueDate": "Datum izdavanja",
+    "subtotal": "Međuzbir",
+    "discount": "Popust",
+    "tax": "Porez",
+    "total": "Ukupno",
+    "paid": "Plaćeno",
+    "balance": "Stanje",
+    "balanceDue": "Preostalo za plaćanje",
+    "overdue": "Dospelo",
+    "overdueDays": "Kasni {n} d",
+    "info": {
+      "issueDate": "Datum izdavanja",
+      "dueDate": "Datum dospeća",
+      "issuedBy": "Izdao/la",
+      "createdBy": "Kreirao/la",
+      "createdAt": "Kreirano",
+      "budget": "Predračun",
+      "creditNoteFor": "Knjižno odobrenje za"
+    },
+    "criticalBanner": {
+      "aeatRejected": {
+        "title": "AEAT je odbio ovaj račun",
+        "cta": "Ispravi i pošalji ponovo"
+      },
+      "billingIncomplete": {
+        "title": "Podaci za naplatu su nepotpuni",
+        "cta": "Dopuni podatke"
+      }
+    },
+    "collect": {
+      "title": "Naplata računa",
+      "submit": "Naplati",
+      "noteAppliedToInvoice": "primenjeno na ovaj račun.",
+      "notePendingAfter": "Preostali iznos",
+      "noteFullySettled": "Ovom uplatom račun je u potpunosti izmiren.",
+      "noteToInvoice": "primenjeno na ovaj račun i",
+      "noteExcessToOnAccount": "uplaćeno kao avans pacijenta.",
+      "noteInvoiceSettled": "Ovaj račun je već plaćen.",
+      "noteToOnAccount": "biće uplaćeno kao avans pacijenta."
+    },
+    "tooth": "Zub",
+    "vat": "PDV",
+    "internalNotes": "Interne napomene",
+    "internalNotesPlaceholder": "Napomene vidljive samo osoblju...",
+    "publicNotes": "Javne napomene",
+    "publicNotesPlaceholder": "Napomene vidljive na računu...",
+    "items": "Stavke",
+    "addItem": "Dodaj stavku",
+    "editItem": "Izmeni stavku",
+    "selectTreatment": "Tretman",
+    "searchCatalog": "Pretraži tretmane u katalogu...",
+    "itemDescription": "Opis",
+    "itemPrice": "Jedinična cena",
+    "itemQuantity": "Količina",
+    "selectVatType": "Izaberite stopu PDV-a",
+    "summary": "Rezime",
+    "createDraft": "Kreiraj nacrt",
+    "createFromBudget": "Kreiraj račun iz predračuna",
+    "notes": "Napomene",
+    "status": {
+      "draft": "Nacrt",
+      "issued": "Izdat",
+      "partial": "Delimično plaćen",
+      "paid": "Plaćen",
+      "cancelled": "Otkazan",
+      "voided": "Poništen"
+    },
+    "actions": {
+      "issue": "Izdaj račun",
+      "void": "Poništi",
+      "recordPayment": "Evidentiraj uplatu",
+      "createCreditNote": "Kreiraj knjižno odobrenje",
+      "downloadPdf": "Preuzmi PDF",
+      "previewPdf": "Pregledaj PDF",
+      "sendEmail": "Pošalji imejlom"
+    },
+    "recordPayment": "Evidentiraj uplatu",
+    "paymentAmount": "Iznos",
+    "paymentMethod": "Način plaćanja",
+    "paymentDate": "Datum plaćanja",
+    "paymentReference": "Referenca",
+    "paymentReferencePlaceholder": "Broj transakcije, priznanica...",
+    "paymentNotes": "Napomene o uplati",
+    "paymentVoided": "Uplata je poništena",
+    "createCreditNote": "Kreiraj knjižno odobrenje",
+    "creditNoteReason": "Razlog knjižnog odobrenja",
+    "creditNoteReasonPlaceholder": "Opišite razlog knjižnog odobrenja...",
+    "creditNoteInfo": "Biće kreirano knjižno odobrenje na ceo iznos računa.",
+    "prompts": {
+      "voidPaymentReason": "Unesite razlog poništavanja ove uplate"
+    },
+    "payments": {
+      "title": "Uplate",
+      "void": "Poništi uplatu",
+      "amount": "Iznos",
+      "method": "Način plaćanja",
+      "date": "Datum",
+      "reference": "Referenca",
+      "notes": "Napomene",
+      "noPayments": "Nema evidentiranih uplata",
+      "voided": "Uplata je poništena",
+      "voidReason": "Razlog poništavanja",
+      "voidReasonPlaceholder": "Razlog poništavanja ove uplate...",
+      "methods": {
+        "cash": "Gotovina",
+        "card": "Kartica",
+        "bank_transfer": "Bankovni transfer",
+        "direct_debit": "Direktno zaduženje",
+        "insurance": "Osiguranje",
+        "upi": "UPI",
+        "netbanking": "Elektronsko bankarstvo",
+        "other": "Drugo"
+      }
+    },
+    "creditNote": {
+      "title": "Knjižno odobrenje",
+      "create": "Kreiraj knjižno odobrenje",
+      "reason": "Razlog",
+      "reasonPlaceholder": "Razlog knjižnog odobrenja...",
+      "selectItems": "Izaberite stavke za ispravku",
+      "originalInvoice": "Originalni račun"
+    },
+    "history": {
+      "title": "Istorija",
+      "noChanges": "Nema zabeleženih izmena",
+      "actions": {
+        "created": "Račun je kreiran",
+        "updated": "Račun je ažuriran",
+        "issued": "Račun je izdat",
+        "voided": "Račun je poništen",
+        "payment_recorded": "Uplata je evidentirana",
+        "payment_voided": "Uplata je poništena",
+        "credit_note_created": "Knjižno odobrenje je kreirano"
+      }
+    },
+    "fromBudget": "Kreiraj račun iz predračuna",
+    "selectItems": "Izaberite stavke za fakturisanje",
+    "selectItemsHint": "Izaberite stavke predračuna koje želite da fakturišete",
+    "availableQuantity": "Dostupno",
+    "quantityToInvoice": "Količina za fakturisanje",
+    "alreadyInvoiced": "Već fakturisano",
+    "remaining": "Preostalo",
+    "noItemsAvailable": "Nema stavki dostupnih za fakturisanje",
+    "allItemsInvoiced": "Sve stavke su fakturisane",
+    "series": {
+      "title": "Serije računa",
+      "prefix": "Prefiks",
+      "type": "Vrsta",
+      "currentNumber": "Trenutni broj",
+      "resetYearly": "Resetuj godišnje",
+      "default": "Podrazumevana"
+    },
+    "filters": {
+      "allStatuses": "Status",
+      "overdueOnly": "Dospeli",
+      "dateFrom": "Od",
+      "dateTo": "Do"
+    },
+    "sortFields": {
+      "created": "Kreirano",
+      "issueDate": "Datum izdavanja",
+      "dueDate": "Datum dospeća",
+      "total": "Ukupno"
+    },
+    "overdueByDays": "Kasni {days} d",
+    "pdf": {
+      "generating": "Generisanje PDF-a...",
+      "downloadError": "Greška pri preuzimanju PDF-a"
+    },
+    "reports": {
+      "title": "Izveštaji o naplati",
+      "summary": "Rezime",
+      "overdue": "Dospelo",
+      "overdueInvoices": "Dospeli računi",
+      "byPaymentMethod": "Po načinu plaćanja",
+      "byProfessional": "Po terapeutu",
+      "vatSummary": "Rezime PDV-a",
+      "gaps": "Praznine u numeraciji",
+      "period": "Period",
+      "from": "Od",
+      "to": "Do",
+      "refresh": "Osveži",
+      "totalInvoiced": "Ukupno fakturisano",
+      "totalCollected": "Ukupno naplaćeno",
+      "totalPaid": "Ukupno plaćeno",
+      "totalPending": "Ukupno na čekanju",
+      "pending": "Neizmireni iznos",
+      "invoices": "računa",
+      "paid": "plaćeno",
+      "payments": "uplata",
+      "noGaps": "Nema praznina u numeraciji",
+      "gapsFound": "Pronađeno praznina u numeraciji: {count}",
+      "gapsDetected": "Otkrivene su praznine u numeraciji",
+      "missingNumbers": "Nedostajući brojevi:",
+      "noData": "Nema podataka za izabrani period",
+      "noOverdue": "Nema dospelih računa",
+      "daysOverdue": "dana kašnjenja",
+      "vatType": "Stopa PDV-a",
+      "base": "Osnovica",
+      "tax": "Porez",
+      "thisMonth": "Ovaj mesec",
+      "thisQuarter": "Ovaj kvartal",
+      "thisYear": "Ova godina",
+      "lastMonth": "Prošli mesec",
+      "lastQuarter": "Prošli kvartal",
+      "lastYear": "Prošla godina"
+    },
+    "confirmations": {
+      "issue": "Izdati račun?",
+      "issueDescription": "Nakon izdavanja račun se ne može menjati. Mogu se samo evidentirati uplate ili kreirati knjižna odobrenja.",
+      "void": "Poništiti račun?",
+      "voidDescription": "Ova radnja se ne može poništiti.",
+      "delete": "Obrisati račun?",
+      "deleteDescription": "Ova radnja se ne može poništiti."
+    },
+    "messages": {
+      "created": "Račun je kreiran",
+      "updated": "Račun je ažuriran",
+      "deleted": "Račun je obrisan",
+      "issued": "Račun je izdat",
+      "voided": "Račun je poništen",
+      "itemAdded": "Stavka je dodata",
+      "itemUpdated": "Stavka je ažurirana",
+      "sentByEmail": "Račun je poslat imejlom",
+      "sentManually": "Račun je označen kao poslat",
+      "sentByWhatsapp": "Račun je poslat preko WhatsApp-a",
+      "creditNoteCreated": "Knjižno odobrenje je kreirano",
+      "paymentRecorded": "Uplata je evidentirana"
+    },
+    "send": {
+      "title": "Pošalji račun",
+      "description": "Račun možete poslati imejlom ili preko WhatsApp-a, ili ga ručno označiti kao poslat (odštampan ili predat lično).",
+      "sendByEmail": "Pošalji imejlom",
+      "willSendTo": "Biće poslato na",
+      "noPatientEmail": "Pacijent nema imejl adresu",
+      "customMessage": "Prilagođena poruka (opciono)",
+      "customMessagePlaceholder": "Dodajte poruku za pacijenta...",
+      "manualNote": "Račun će biti označen kao poslat bez slanja poruke.",
+      "sendEmail": "Pošalji imejl",
+      "markAsSent": "Označi kao poslato",
+      "sendByWhatsapp": "Pošalji preko WhatsApp-a",
+      "sendWhatsapp": "Pošalji WhatsApp",
+      "willSendToPhone": "Biće poslato preko WhatsApp-a na"
+    },
+    "errors": {
+      "load": "Greška pri učitavanju računa",
+      "create": "Greška pri kreiranju računa",
+      "update": "Greška pri ažuriranju računa",
+      "delete": "Greška pri brisanju računa",
+      "issue": "Greška pri izdavanju računa",
+      "void": "Greška pri poništavanju računa",
+      "recordPayment": "Greška pri evidentiranju uplate",
+      "voidPayment": "Greška pri poništavanju uplate",
+      "createCreditNote": "Greška pri kreiranju knjižnog odobrenja",
+      "send": "Greška pri slanju računa",
+      "creditNoteReasonRequired": "Razlog knjižnog odobrenja je obavezan",
+      "notFound": "Račun nije pronađen",
+      "canOnlyDeleteDraft": "Mogu se brisati samo računi u nacrtu",
+      "patientRequired": "Pacijent je obavezan",
+      "itemsRequired": "Potrebna je najmanje jedna stavka",
+      "itemRequired": "Opis i cena su obavezni",
+      "selectCatalogItem": "Izaberite tretman iz kataloga",
+      "cannotEdit": "Mogu se menjati samo računi u nacrtu"
+    },
+    "newItemsPending": "Nove stavke čekaju čuvanje",
+    "linkedPlan": "Plan lečenja"
+  },
+  "reports": {
+    "title": "Izveštaji",
+    "subtitle": "Analitika i statistika ordinacije",
+    "viewReports": "Prikaži izveštaje",
+    "noAccess": "Nemate pristup nijednom izveštaju",
+    "dashboard": {
+      "title": "Kontrolna tabla",
+      "subtitle": "Vaša ordinacija na prvi pogled",
+      "period": "Period",
+      "snapshotBadge": "Danas",
+      "snapshotTooltip": "Ne zavisi od izabranog perioda",
+      "vsPrev": "u odnosu na prethodni period",
+      "empty": {
+        "noData": "Nema podataka u ovom periodu"
+      },
+      "drilldown": {
+        "title": "Detaljan prikaz",
+        "payments": "Uplate"
+      },
+      "kpi": {
+        "cashCollected": "Naplaćeno",
+        "cashCollectedHint": "Uplata: {count}",
+        "patientAdvance": "Avansi pacijenata",
+        "patientAdvanceHint": "Neraspoređeni avansi",
+        "production": "Produkcija",
+        "productionHint": "Tretmana: {count}",
+        "byMethod": "Po načinu plaćanja",
+        "methodCount": "Uplata: {count}",
+        "total": "Ukupno",
+        "newPatients": "Novi pacijenti",
+        "newPatientsHint": "{rate}% od ukupnog broja termina",
+        "appointmentFunnel": "Stopa nedolazaka",
+        "funnelHint": "{completed}% završeno",
+        "avgCollectedTicket": "Prosečna naplata",
+        "avgTicketHint": "Na osnovu uplata: {count}",
+        "aging": "Starost potraživanja"
+      },
+      "charts": {
+        "cashOverTime": "Naplata kroz vreme",
+        "productionByDoctor": "Produkcija po stomatologu",
+        "refunded": "Povraćaji"
+      },
+      "production": {
+        "unassigned": "Nedodeljeno",
+        "others": "Ostali",
+        "treatmentCount": "Tretmana: {count}"
+      },
+      "aging": {
+        "bucket0_30": "0-30 dana",
+        "bucket31_60": "31-60 dana",
+        "bucket61_90": "61-90 dana",
+        "bucket90plus": "90+ dana",
+        "empty": "Nema neizmirenih potraživanja",
+        "patientCount": "Pacijenata: {count}"
+      }
+    },
+    "billing": {
+      "title": "Naplata",
+      "description": "Prihodi, uplate, PDV i dospeli računi",
+      "summary": "Rezime",
+      "overdue": "Dospelo",
+      "overdueInvoices": "Dospeli računi",
+      "byPaymentMethod": "Po načinu plaćanja",
+      "byProfessional": "Po terapeutu",
+      "vatSummary": "Rezime PDV-a",
+      "gaps": "Praznine u numeraciji",
+      "period": "Period",
+      "from": "Od",
+      "to": "Do",
+      "refresh": "Osveži",
+      "totalInvoiced": "Ukupno fakturisano",
+      "totalCollected": "Ukupno naplaćeno",
+      "pending": "Neizmireni iznos",
+      "invoices": "računa",
+      "paid": "plaćeno",
+      "payments": "uplata",
+      "gapsDetected": "Otkrivene su praznine u numeraciji",
+      "missingNumbers": "Nedostajući brojevi:",
+      "noData": "Nema podataka za izabrani period",
+      "noOverdue": "Nema dospelih računa",
+      "invoiceAging": "Starost računa",
+      "invoiceAgingDescription": "Neizmireni iznosi izdatih računa po intervalima. Računi koji još nisu dospeli prikazani su odvojeno.",
+      "notDue": "Nije dospelo",
+      "issuedTrend": "Trend izdavanja",
+      "daysOverdue": "dana kašnjenja",
+      "vatType": "Stopa PDV-a",
+      "base": "Osnovica",
+      "tax": "Porez",
+      "thisMonth": "Ovaj mesec",
+      "thisQuarter": "Ovaj kvartal",
+      "thisYear": "Ova godina",
+      "lastMonth": "Prošli mesec",
+      "lastQuarter": "Prošli kvartal",
+      "lastYear": "Prošla godina"
+    },
+    "budgets": {
+      "title": "Predračuni",
+      "description": "Stope prihvatanja, analiza po terapeutima i tretmani",
+      "comingSoonDescription": "Izveštaji o predračunima biće uskoro dostupni. Moći ćete da analizirate stope prihvatanja, predračune po terapeutu i najtraženije tretmane.",
+      "features": {
+        "acceptanceRate": "Stopa prihvatanja",
+        "acceptanceRateDesc": "Procenat prihvaćenih u odnosu na odbijene predračune",
+        "byProfessional": "Po terapeutu",
+        "byProfessionalDesc": "Predračuni koje je kreirao svaki terapeut",
+        "byTreatment": "Po tretmanu",
+        "byTreatmentDesc": "Najčešći tretmani u predračunima",
+        "averageValue": "Prosečna vrednost",
+        "averageValueDesc": "Prosečan iznos predračuna"
+      },
+      "labels": {
+        "totalCreated": "Ukupno kreirano",
+        "accepted": "Prihvaćeno",
+        "rejected": "odbijeno",
+        "pending": "na čekanju",
+        "completed": "Završeno",
+        "acceptanceRate": "Stopa prihvatanja",
+        "averageValue": "Prosečna vrednost",
+        "byStatus": "Po statusu",
+        "topTreatments": "Najčešći tretmani u predračunima",
+        "treatment": "Tretman",
+        "occurrences": "Pojavljivanja",
+        "quantity": "Količina"
+      }
+    },
+    "scheduling": {
+      "title": "Raspored",
+      "description": "Prve posete, radni sati i popunjenost",
+      "comingSoonDescription": "Izveštaji o rasporedu biće uskoro dostupni. Moći ćete da analizirate prve posete, sate po terapeutu i stope otkazivanja.",
+      "features": {
+        "firstVisits": "Prve posete",
+        "firstVisitsDesc": "Novi pacijenti po periodu",
+        "hoursWorked": "Radni sati",
+        "hoursWorkedDesc": "Vreme po terapeutu",
+        "cancellations": "Otkazivanja",
+        "cancellationsDesc": "Stope otkazivanja i nedolazaka",
+        "cabinetUtilization": "Popunjenost kabineta",
+        "cabinetUtilizationDesc": "Iskorišćenost svakog kabineta"
+      },
+      "labels": {
+        "totalAppointments": "Ukupno termina",
+        "completionRate": "Stopa završenih",
+        "completed": "završeno",
+        "cancellationRate": "Stopa otkazivanja",
+        "cancelled": "otkazano",
+        "noShowRate": "Stopa nedolazaka",
+        "noShows": "nedolazaka",
+        "newPatients": "novih pacijenata",
+        "firstVisitRate": "Stopa prvih poseta",
+        "ofTotalAppointments": "od ukupnog broja termina",
+        "appointmentsInPeriod": "Termini u periodu",
+        "excludingCancelled": "bez otkazanih",
+        "appointments": "termina",
+        "byDayOfWeek": "Po danu u nedelji",
+        "statusBreakdown": "Raspodela po statusu",
+        "pending": "na čekanju"
+      },
+      "analytics": {
+        "funnel": "Levak statusa",
+        "funnelDesc": "Raspodela termina po statusu u periodu",
+        "waitingTimes": "Vreme čekanja",
+        "waitingTimesDesc": "Minuti od dolaska pacijenta do sedanja u stolicu",
+        "punctuality": "Tačnost pacijenata",
+        "punctualityDesc": "Razlika između zakazanog vremena i stvarnog dolaska",
+        "durationVariance": "Planirano i stvarno trajanje",
+        "durationVarianceDesc": "Poređenje planiranog trajanja i stvarnog vremena na stolici",
+        "samples": "Uzorci",
+        "average": "Prosek",
+        "median": "Medijana",
+        "p90": "P90",
+        "avgDelta": "Prosečna razlika",
+        "medianDelta": "Medijana razlike",
+        "onTime": "% na vreme",
+        "avgOverrun": "Prosečno prekoračenje",
+        "overrunCount": "Broj prekoračenja",
+        "underCount": "Broj kraćih od planiranog",
+        "completionRate": "Završeno",
+        "noShowRate": "Nedolazak",
+        "cancellationRate": "Otkazivanje",
+        "punctuality_early": "Ranije (<-5)",
+        "punctuality_on_time": "Na vreme (±5)",
+        "punctuality_late_short": "Kašnjenje (5-15)",
+        "punctuality_late_long": "Kašnjenje (>15)"
+      },
+      "tabs": {
+        "overview": "Pregled",
+        "activity": "Aktivnost",
+        "quality": "Kvalitet"
+      },
+      "hero": {
+        "inPeriod": "u periodu"
+      },
+      "filters": {
+        "cabinet": "Kabinet",
+        "professional": "Terapeut",
+        "custom": "Prilagođeni period",
+        "all": "Svi",
+        "clear": "Obriši filtere"
+      },
+      "empty": {
+        "title": "Nema podataka za ovaj period",
+        "desc": "Pokušajte sa širim vremenskim periodom ili uklonite filtere."
+      }
+    },
+    "loadError": "Nije moguće učitati podatke izveštaja"
+  },
+  "invoiceSeries": {
+    "title": "Serije računa",
+    "description": "Podesite prefikse i numeraciju računa",
+    "regularInvoices": "Računi",
+    "creditNotes": "Knjižna odobrenja",
+    "new": "Nova serija",
+    "newTitle": "Nova serija: {type}",
+    "editTitle": "Izmeni seriju",
+    "prefix": "Prefiks",
+    "prefixHint": "npr. RAC, KO. Godina će biti dodata automatski.",
+    "descriptionLabel": "Opis",
+    "descriptionPlaceholder": "Opcioni opis serije...",
+    "nextNumber": "Sledeći broj",
+    "preview": "Pregled",
+    "resetYearly": "Godišnje resetovanje",
+    "resetYearlyLabel": "Resetuj numeraciju svake godine",
+    "setAsDefault": "Postavi kao podrazumevanu",
+    "activeLabel": "Aktivna serija",
+    "showInactive": "Prikaži neaktivne",
+    "noItems": "Nema podešenih serija",
+    "resetCounter": "Resetuj brojač",
+    "currentNumber": "Trenutni broj",
+    "seriesPrefix": "Prefiks serije",
+    "newNumber": "Novi broj",
+    "newNumberHint": "Broj mora biti veći od najvećeg postojećeg broja u ovoj seriji.",
+    "resetWarningTitle": "Upozorenje",
+    "resetWarning": "Ova radnja će biti zabeležena u dnevniku revizije i ne može se poništiti.",
+    "confirmReset": "Resetuj brojač",
+    "created": "Serija je uspešno kreirana",
+    "saved": "Serija je uspešno ažurirana",
+    "resetSuccess": "Brojač je uspešno resetovan",
+    "onboarding": {
+      "label": "Serije računa",
+      "description": "Potrebno za izdavanje prvog računa (npr. FAC-2026-0001)."
+    }
+  },
+  "documents": {
+    "title": "Dokumenti",
+    "add": "Dodaj",
+    "edit": "Izmeni dokument",
+    "upload": "Otpremi dokument",
+    "uploading": "Otpremanje...",
+    "empty": "Još nema dokumenata",
+    "uploadFirst": "Otpremi prvi dokument",
+    "types": {
+      "consent": "Saglasnost",
+      "id_scan": "Lični dokument",
+      "insurance": "Osiguranje",
+      "report": "Izveštaj",
+      "referral": "Uput",
+      "other": "Drugo"
+    },
+    "fields": {
+      "type": "Vrsta",
+      "title": "Naslov",
+      "titlePlaceholder": "Naslov dokumenta",
+      "description": "Opis",
+      "descriptionPlaceholder": "Opcione napomene"
+    },
+    "dropzone": {
+      "hint": "Prevucite datoteku ovde ili kliknite da biste je izabrali"
+    },
+    "filter": {
+      "allTypes": "Sve vrste"
+    },
+    "deleteConfirm": {
+      "title": "Obriši dokument",
+      "message": "Da li ste sigurni da želite da obrišete ovaj dokument? Ova radnja se ne može poništiti."
+    },
+    "fetchError": "Greška pri učitavanju dokumenata",
+    "uploadSuccess": "Dokument je uspešno otpremljen",
+    "uploadError": "Greška pri otpremanju dokumenta",
+    "downloadError": "Greška pri preuzimanju dokumenta",
+    "viewError": "Greška pri učitavanju dokumenta",
+    "deleteSuccess": "Dokument je obrisan",
+    "deleteError": "Greška pri brisanju dokumenta",
+    "updateSuccess": "Dokument je ažuriran",
+    "updateError": "Greška pri ažuriranju dokumenta",
+    "viewer": {
+      "loading": "Učitavanje dokumenta...",
+      "error": "Nije moguće učitati dokument",
+      "downloadInstead": "Preuzmi umesto toga",
+      "unsupported": "Pregled nije dostupan za ovu vrstu datoteke",
+      "zoomOut": "Umanji",
+      "zoomIn": "Uvećaj",
+      "resetZoom": "Vrati na 100%",
+      "zoomHint": "Ctrl + točkić za zumiranje"
+    },
+    "typeDesc": {
+      "consent": "Potpisan dokument",
+      "id_scan": "Lična karta / pasoš",
+      "insurance": "Polisa ili kartica",
+      "report": "Klinički izveštaj",
+      "referral": "Uput",
+      "other": "Neklasifikovano"
+    },
+    "errors": {
+      "mime": "Vrsta datoteke nije dozvoljena. Samo PDF, JPG ili PNG.",
+      "size": "Datoteka je veća od 10 MB."
+    },
+    "pdfPreviewHint": "Pregled je dostupan nakon otpremanja",
+    "uploadHelp": "Klasifikujte datoteku kako bi se pojavila u odgovarajućoj kategoriji."
+  },
+  "photoGallery": {
+    "title": "Galerija pacijenta",
+    "add": "Dodaj fotografiju",
+    "empty": "Još nema fotografija",
+    "uploadFirst": "Otpremi prvu",
+    "showingOf": "Prikazano {count} od {total}",
+    "upload": "Otpremi fotografiju",
+    "uploadHelp": "Klasifikujte kako bi se pojavila u odgovarajućoj kategoriji",
+    "fetchError": "Greška pri učitavanju fotografija",
+    "uploadError": "Greška pri otpremanju fotografije",
+    "uploadSuccess": "Fotografija je uspešno otpremljena",
+    "dropHere": "Prevucite fotografiju ovde ili kliknite",
+    "category": "Vrsta",
+    "subtype": "Prikaz",
+    "titlePlaceholder": "Frontalni intraoralni — 02.05.",
+    "capturedAt": "Datum",
+    "exifHint": "Automatski iz EXIF-a",
+    "cat": {
+      "all": "Sve",
+      "intraoral": "Intraoralne",
+      "extraoral": "Ekstraoralne",
+      "xray": "Rendgen",
+      "clinical": "Pre/posle",
+      "other": "Drugo"
+    },
+    "catDesc": {
+      "intraoral": "Unutar usne duplje",
+      "extraoral": "Lice i profil",
+      "xray": "Radiološki snimak",
+      "clinical": "Poređenje tretmana",
+      "other": "Neklasifikovano"
+    },
+    "sub": {
+      "frontal": "Frontalni",
+      "lateral_left": "Levi bočni",
+      "lateral_right": "Desni bočni",
+      "occlusal_upper": "Gornji okluzalni",
+      "occlusal_lower": "Donji okluzalni",
+      "palatal": "Palatinalni",
+      "lingual": "Lingvalni",
+      "smile": "Osmeh",
+      "rest": "U mirovanju",
+      "frontal_face": "Frontalni",
+      "profile_left": "Levi profil",
+      "profile_right": "Desni profil",
+      "three_quarter_left": "3/4 levo",
+      "three_quarter_right": "3/4 desno",
+      "panoramic": "Panoramski",
+      "periapical": "Periapikalni",
+      "bitewing": "Bitewing",
+      "ceph_lat": "Kefalometrijski lateralni",
+      "ceph_pa": "Kefalometrijski PA",
+      "cbct": "CBCT",
+      "occlusal_xray": "Okluzalni snimak",
+      "before": "Pre",
+      "after": "Posle",
+      "progress": "Napredak",
+      "reference": "Referenca",
+      "portrait": "Portret",
+      "document_scan": "Dokument",
+      "model_photo": "Model"
+    },
+    "compare": {
+      "before": "Pre",
+      "after": "Posle"
+    },
+    "pair": {
+      "pickHint": "Izaberite fotografiju za uparivanje:",
+      "noCandidates": "Nema dostupnih fotografija. Najpre otpremite još jednu.",
+      "paired": "Upareno",
+      "exitCompare": "Izađi iz poređenja",
+      "compare": "Uporedi",
+      "unpair": "Ukloni",
+      "pair": "Upari pre/posle"
+    }
+  },
+  "help": {
+    "label": "Pomoć",
+    "openHelp": "Otvori pomoć",
+    "drawerTitle": "Pomoć za ovu stranicu",
+    "unavailable": "Za ovu stranicu još nema kontekstualne pomoći.",
+    "openFullManual": "Otvori kompletno uputstvo"
+  },
+  "charts": {
+    "trend": {
+      "ariaLabel": "Trend kroz {count} tačaka"
+    },
+    "donut": {
+      "ariaLabel": "Prstenasti grafikon, segmenata: {count}"
+    }
+  }
+}
