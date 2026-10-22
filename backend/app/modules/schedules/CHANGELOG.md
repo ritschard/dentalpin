@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- feat(i18n): Serbian layer strings in both scripts (`sr-Cyrl.json`, `sr-Latn.json`).
 - docs(#707): the permissions doc's role table missed `analytics.read`
   for `dentist` and described `assistant` as `professional.own.{read,write}`
   while the manifest grants `professional.read` (any professional's

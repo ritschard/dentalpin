@@ -1,0 +1,24 @@
+{
+  "expenses": {
+    "title": "Трошкови",
+    "add": "Додај трошак",
+    "date": "Датум",
+    "category": "Категорија",
+    "amount": "Износ",
+    "description": "Опис",
+    "filterByCategory": "Филтер по категорији",
+    "delete": "Обриши",
+    "deleteTitle": "Брисање трошка",
+    "deleteMessage": "Обрисати овај трошак? Ова радња се не може опозвати.",
+    "categories": {
+      "rent": "Закуп",
+      "utilities": "Комуналије",
+      "salaries": "Зараде",
+      "supplies": "Потрошни материјал",
+      "equipment": "Опрема",
+      "insurance": "Осигурање",
+      "maintenance": "Одржавање",
+      "other": "Остало"
+    }
+  }
+}

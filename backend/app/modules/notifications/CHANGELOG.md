@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- feat(i18n): Serbian layer strings in both scripts (`notifications-sr-Cyrl.json`, `notifications-sr-Latn.json`).
 - feat(i18n): `notification_templates.locale` and
   `notification_preferences.preferred_locale` widen from 5 to 10
   characters (`notif_0009`, with the matching schema/query limits) so the

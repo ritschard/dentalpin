@@ -1,0 +1,22 @@
+{
+  "patientRelationships": {
+    "title": "Porodica",
+    "emptyHint": "Nema evidentiranih porodičnih veza.",
+    "relationships": {
+      "title": "Porodične veze",
+      "searchPatient": "Pretražite pacijenta za povezivanje…",
+      "addSuccess": "Veza je dodata",
+      "addError": "Dodavanje veze nije uspelo",
+      "removeError": "Uklanjanje veze nije uspelo",
+      "types": {
+        "parent": "Roditelj",
+        "child": "Dete",
+        "spouse": "Supružnik",
+        "sibling": "Brat/sestra",
+        "guardian": "Staratelj",
+        "ward": "Štićenik",
+        "other": "Ostalo"
+      }
+    }
+  }
+}

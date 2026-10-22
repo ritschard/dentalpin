@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "accountingExport": "Извоз за књиговођу"
+  },
+  "accountingExport": {
+    "title": "Извоз за књиговођу",
+    "subtitle": "Преузмите рачуне и уплате за период да бисте их предали књиговођи.",
+    "period": "Период",
+    "from": "Од",
+    "to": "До",
+    "presets": {
+      "currentMonth": "Текући месец",
+      "previousMonth": "Претходни месец",
+      "currentQuarter": "Текући квартал",
+      "previousQuarter": "Претходни квартал",
+      "yearToDate": "Од почетка године",
+      "custom": "Прилагођено"
+    },
+    "actions": {
+      "preview": "Преглед",
+      "download": "Преузми (.zip)"
+    },
+    "counters": {
+      "invoices": "Рачуни",
+      "payments": "Уплате",
+      "base": "Основица",
+      "total": "Укупно"
+    },
+    "cols": {
+      "numero": "Број",
+      "fecha_emision": "Датум",
+      "cliente": "Купац",
+      "nif": "ПИБ",
+      "base": "Основица",
+      "cuota_iva": "ПДВ",
+      "total": "Укупно",
+      "estado": "Статус"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sms_gateway": {
+    "settings": {
+      "title": "SMS gejtvej",
+      "description": "Provajder za slanje SMS poruka iz ordinacije",
+      "provider": "Provajder",
+      "fromNumber": "Broj pošiljaoca",
+      "active": "Uključeno",
+      "activeHelp": "Samo uključen provajder sa sačuvanim podešavanjima može da šalje.",
+      "placeholderNote": "Ugrađeni provajder samo beleži poruke u serverskom logu. Ništa se ne šalje dok se ne podesi pravi provajder.",
+      "test": "Test",
+      "testResult": "Podešeno: {configured}. Slalo bi: {wouldSend}."
+    },
+    "common": {
+      "save": "Sačuvaj",
+      "saved": "Podešavanja su sačuvana",
+      "saveError": "Čuvanje podešavanja nije uspelo",
+      "loadError": "Učitavanje podešavanja nije uspelo",
+      "retry": "Pokušaj ponovo"
+    }
+  }
+}

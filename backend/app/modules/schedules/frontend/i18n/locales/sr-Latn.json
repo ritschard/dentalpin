@@ -1,0 +1,88 @@
+{
+  "schedules": {
+    "nav": {
+      "clinicHours": "Radno vreme ordinacije",
+      "professionalSchedules": "Rasporedi terapeuta"
+    },
+    "settingsCards": {
+      "clinicHoursTitle": "Radno vreme ordinacije",
+      "clinicHoursDescription": "Podesite nedeljno radno vreme ordinacije i posebne datume (praznici, skraćeno radno vreme).",
+      "professionalHoursTitle": "Rasporedi terapeuta",
+      "professionalHoursDescription": "Podesite pojedinačni raspored svakog terapeuta i upravljajte odmorima i drugim periodima nedostupnosti."
+    },
+    "clinicHours": {
+      "title": "Radno vreme ordinacije",
+      "subtitle": "Podesite kada je ordinacija otvorena svakog dana u nedelji.",
+      "weeklyTemplate": "Nedeljni šablon",
+      "overrides": "Posebni datumi",
+      "addOverride": "Dodaj poseban datum",
+      "editOverride": "Izmeni poseban datum",
+      "save": "Sačuvaj izmene",
+      "saved": "Raspored je ažuriran",
+      "savedError": "Čuvanje rasporeda nije uspelo"
+    },
+    "professionalHours": {
+      "title": "Rasporedi terapeuta",
+      "selectProfessional": "Izaberite terapeuta",
+      "weeklyTemplate": "Nedeljni raspored",
+      "overrides": "Odsustva i posebno radno vreme",
+      "addOverride": "Dodaj odsustvo",
+      "editOverride": "Izmeni odsustvo",
+      "save": "Sačuvaj izmene",
+      "saved": "Raspored je ažuriran"
+    },
+    "weekday": {
+      "0": "Ponedeljak",
+      "1": "Utorak",
+      "2": "Sreda",
+      "3": "Četvrtak",
+      "4": "Petak",
+      "5": "Subota",
+      "6": "Nedelja",
+      "closed": "Zatvoreno",
+      "addShift": "Dodaj smenu",
+      "removeShift": "Ukloni smenu",
+      "start": "Početak",
+      "end": "Kraj"
+    },
+    "overrides": {
+      "startDate": "Datum početka",
+      "endDate": "Datum završetka",
+      "kind": "Vrsta",
+      "reason": "Razlog",
+      "reasonPlaceholder": "Na primer: Božić, konferencija...",
+      "closed": "Zatvoreno",
+      "customHours": "Posebno radno vreme",
+      "unavailable": "Nedostupan",
+      "noOverrides": "Nema zakazanih posebnih datuma",
+      "delete": "Obriši",
+      "confirmDelete": "Obrisati ovaj period?",
+      "add": "Dodaj",
+      "save": "Sačuvaj",
+      "cancel": "Otkaži"
+    },
+    "analytics": {
+      "occupancyTitle": "Popunjenost po kabinetima",
+      "utilizationTitle": "Iskorišćenost po terapeutima",
+      "peakHoursTitle": "Najopterećeniji sati",
+      "bookedMinutes": "Zakazani minuti",
+      "availableMinutes": "Raspoloživi minuti",
+      "rate": "Popunjenost",
+      "noData": "Nema podataka u izabranom periodu"
+    },
+    "availability": {
+      "clinicClosed": "Ordinacija je zatvorena",
+      "professionalOff": "Terapeut nije dostupan",
+      "outsideHours": "Van podešenog radnog vremena",
+      "confirmOutside": "Ovaj termin je van radnog vremena. Ipak zakazati termin?",
+      "confirm": "Ipak zakaži",
+      "cancel": "Otkaži"
+    },
+    "onboarding": {
+      "hoursLabel": "Radno vreme ordinacije",
+      "hoursDescription": "Raspored je trenutno otvoren 24/7. Podesite stvarno radno vreme.",
+      "presetSplit": "Pon–pet 9–14 i 16–20",
+      "presetContinuous": "Pon–pet 9–18"
+    }
+  }
+}

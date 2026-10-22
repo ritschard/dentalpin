@@ -20,7 +20,9 @@ export default defineNuxtConfig({
       { code: 'pl', file: 'notifications-pl.json' },
       { code: 'it', file: 'notifications-it.json' },
       { code: 'hu', file: 'notifications-hu.json' },
-      { code: 'ar', file: 'notifications-ar.json' }
+      { code: 'ar', file: 'notifications-ar.json' },
+      { code: 'sr-Cyrl', file: 'notifications-sr-Cyrl.json' },
+      { code: 'sr-Latn', file: 'notifications-sr-Latn.json' }
     ],
     langDir: 'locales'
   }

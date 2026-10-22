@@ -21,6 +21,10 @@ frontend as a Nuxt layer under its own Python package.
   Spain-only Verifactu templates are exempt), selectable as the clinic
   communication language. The notifications locale columns widen to fit
   script-tagged codes (`notif_0009`).
+- **Serbian module layers**: every general-purpose module layer ships
+  `sr-Cyrl` / `sr-Latn` strings; the country-specific compliance/payment
+  layers (verifactu, sistema_ts, sdi_it, nav_online, india_gst, razorpay)
+  fall back to English.
 
 ### Fixed
 

@@ -1,0 +1,21 @@
+{
+  "staffAttendance": {
+    "nav": {
+      "title": "Prisustvo"
+    },
+    "title": "Prisustvo zaposlenih",
+    "clockTitle": "Prijava dolaska / odlaska",
+    "member": "Zaposleni",
+    "pickMember": "Izaberite zaposlenog",
+    "note": "Napomena",
+    "notePlaceholder": "Opciona napomena",
+    "clockIn": "Prijavi dolazak",
+    "clockOut": "Prijavi odlazak",
+    "today": "Danas",
+    "noEvents": "Tog dana nema evidentiranih prijava.",
+    "report": "Dnevni izveštaj",
+    "openShift": "još uvek na poslu",
+    "in": "Dolazak",
+    "out": "Odlazak"
+  }
+}

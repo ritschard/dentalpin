@@ -1,0 +1,22 @@
+{
+  "notifications": {
+    "conversation": {
+      "title": "WhatsApp razgovor",
+      "empty": "Još nema poruka.",
+      "placeholder": "Unesite odgovor…",
+      "replyError": "Slanje odgovora nije uspelo",
+      "windowClosed": "Prozor od 24 sata je zatvoren. Koristite šablon da biste ponovo otvorili razgovor.",
+      "send": "Pošalji"
+    },
+    "pushSubscribe": {
+      "title": "Podsetnici za termine",
+      "clinicLine": "{clinic} želi da Vam šalje podsetnike za termine.",
+      "enable": "Uključi obaveštenja",
+      "enabled": "Obaveštenja su uključena. Možete zatvoriti ovu stranicu.",
+      "denied": "Pregledač je odbio dozvolu. Uključite obaveštenja u podešavanjima pregledača i pokušajte ponovo.",
+      "unsupported": "Ovaj pregledač ne podržava push obaveštenja.",
+      "invalid": "Ovaj link je nevažeći ili je istekao. Zatražite novi od ordinacije.",
+      "error": "Uključivanje obaveštenja nije uspelo. Pokušajte ponovo."
+    }
+  }
+}

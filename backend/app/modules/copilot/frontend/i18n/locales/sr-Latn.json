@@ -1,0 +1,183 @@
+{
+  "copilot": {
+    "title": "AI",
+    "open": "Otvori AI",
+    "empty": "Pitajte me o pacijentima, rasporedu ili zatražite zakazivanje termina.",
+    "placeholder": "Unesite poruku…",
+    "send": "Pošalji",
+    "copy": "Kopiraj",
+    "new": "Novi razgovor",
+    "thinking": "Razmišljam…",
+    "you": "Vi",
+    "assistant": "AI",
+    "trust": "Vaši podaci su zaštićeni",
+    "phase": {
+      "working": "Radim…",
+      "writing": "Pišem…"
+    },
+    "tabs": {
+      "pending": "Za uraditi",
+      "chat": "Ćaskanje"
+    },
+    "pending": {
+      "empty": "Nema ničega na čekanju. Sve je završeno.",
+      "unknownPatient": "Nepoznat pacijent",
+      "group": {
+        "recall": "Kontrolni pozivi za praćenje",
+        "budget": "Predračuni koji čekaju odgovor"
+      }
+    },
+    "nudge": {
+      "act": "Pogledaj",
+      "dismiss": "Odbaci",
+      "appointmentCancelled": {
+        "text": "Termin u {time} je otkazan — upravo se oslobodilo mesto.",
+        "prompt": "Termin u {time} je otkazan. Pronađi pacijente sa kontrolnim pozivima koji bi mogli da popune taj termin."
+      }
+    },
+    "suggest": {
+      "heading": "Kako mogu da pomognem?",
+      "cat": {
+        "workflows": "Tokovi rada",
+        "patients": "Pacijenti",
+        "agenda": "Raspored",
+        "recalls": "Kontrolni pozivi",
+        "money": "Naplata i predračuni",
+        "reports": "Izveštaji"
+      },
+      "dailyBriefing": "Dnevni pregled",
+      "prepareVisit": "Pripremi posetu",
+      "fillGap": "Popuni prazan termin",
+      "searchPatient": "Pronađi pacijenta",
+      "patientSummary": "Sažetak pacijenta",
+      "freeSlots": "Slobodni termini danas",
+      "bookAppointment": "Zakaži termin",
+      "dueRecalls": "Dospeli kontrolni pozivi",
+      "pendingBudgets": "Predračuni bez odgovora",
+      "recordPayment": "Evidentiraj uplatu",
+      "monthCollections": "Naplata ovog meseca",
+      "agendaSummary": "Pregled rasporeda",
+      "prompt": {
+        "dailyBriefing": "Daj mi dnevni pregled: današnje termine, dospele kontrolne pozive i predračune bez odgovora",
+        "prepareVisit": "Pripremi mi sledeću posetu pacijenta",
+        "fillGap": "U rasporedu se oslobodio termin, koga možemo da pozovemo?",
+        "searchPatient": "Pronađi pacijenta",
+        "patientSummary": "Daj mi sažetak pacijenta",
+        "freeSlots": "Koji su slobodni termini danas?",
+        "bookAppointment": "Želim da zakažem termin",
+        "dueRecalls": "Koji kontrolni pozivi dospevaju ovog meseca?",
+        "pendingBudgets": "Koji predračuni su poslati, a bez odgovora?",
+        "recordPayment": "Želim da evidentiram uplatu pacijenta",
+        "monthCollections": "Sažetak naplate za ovaj mesec",
+        "agendaSummary": "Daj mi pregled današnjeg rasporeda"
+      }
+    },
+    "settings": {
+      "title": "Kopilot",
+      "description": "AI asistent: dnevni pregled i model",
+      "saved": "Podešavanja su sačuvana",
+      "digest": {
+        "title": "Jutarnji pregled imejlom",
+        "description": "Svako jutro: današnji termini, dospeli kontrolni pozivi i predračuni bez odgovora.",
+        "enabled": "Šalji dnevni pregled",
+        "hour": "Vreme slanja",
+        "hourHelp": "Prema vremenskoj zoni ordinacije.",
+        "recipients": "Primaoci",
+        "recipientsHelp": "Svaki primalac dobija svoj pregled, ograničen na ono što njegova uloga može da vidi.",
+        "recipientsPlaceholder": "Izaberite zaposlene…"
+      },
+      "engine": {
+        "title": "Model",
+        "provider": "Provajder",
+        "model": "Model",
+        "redaction": "Skrivanje zdravstvenih podataka",
+        "redactionOn": "Uključeno",
+        "redactionOff": "Isključeno"
+      },
+      "metrics": {
+        "title": "Korišćenje",
+        "description": "Poslednjih dana: {days}.",
+        "toolCalls": "Pozivi alata",
+        "errorRate": "Stopa grešaka",
+        "avgLatency": "Prosečno kašnjenje",
+        "conversations": "Razgovori",
+        "tokenBudget": "Mesečni budžet tokena",
+        "topTools": "Najkorišćeniji alati",
+        "toolNames": {
+          "recalls_list_due_recalls": "Dospeli kontrolni pozivi",
+          "budget_list_budgets": "Predračuni na čekanju",
+          "patients_list_patients": "Pretraga pacijenata",
+          "appointments_list_appointments": "Termini",
+          "invoices_list_invoices": "Računi"
+        }
+      }
+    },
+    "tool": {
+      "running": "Pokreće se {name}…",
+      "done": "{name} – završeno",
+      "failed": "{name} – neuspešno"
+    },
+    "card": {
+      "viewPatient": "Prikaži karton",
+      "noResults": "Nema rezultata",
+      "notFound": "Nije pronađeno",
+      "more": "+ još {n}",
+      "freeSlots": "Slobodni termini",
+      "appointments": "Termini",
+      "patients": "Pacijenti"
+    },
+    "patientStatus": {
+      "active": "aktivan",
+      "archived": "arhiviran"
+    },
+    "apptStatus": {
+      "scheduled": "Zakazano",
+      "confirmed": "Potvrđeno",
+      "checked_in": "U čekaonici",
+      "in_treatment": "Na stolici",
+      "completed": "Završeno",
+      "cancelled": "Otkazano",
+      "no_show": "Nije došao/la"
+    },
+    "confirm": {
+      "title": "Potvrdite radnju",
+      "body": "AI asistent želi da pokrene {name}.",
+      "approve": "Potvrdi",
+      "reject": "Otkaži",
+      "approved": "Potvrđeno",
+      "rejected": "Otkazano",
+      "destructiveNote": "Ova radnja se ne može opozvati.",
+      "action": {
+        "book_appointment": "AI asistent želi da zakaže termin.",
+        "cancel_appointment": "AI asistent želi da otkaže termin.",
+        "create_patient": "AI asistent želi da kreira pacijenta."
+      },
+      "field": {
+        "patient_id": "Pacijent",
+        "professional_id": "Terapeut",
+        "appointment_id": "Termin",
+        "cabinet_id": "Kabinet",
+        "cabinet": "Kabinet",
+        "start_time": "Datum",
+        "end_time": "Kraj",
+        "datetime": "Datum",
+        "service": "Usluga",
+        "reason": "Razlog",
+        "duration_minutes": "Trajanje (min)",
+        "first_name": "Ime",
+        "last_name": "Prezime",
+        "phone": "Telefon",
+        "email": "Imejl",
+        "date_of_birth": "Datum rođenja",
+        "query": "Pretraga"
+      }
+    },
+    "budgetExceeded": "Dostignuto je mesečno ograničenje korišćenja AI asistenta.",
+    "error": "Došlo je do greške.",
+    "sessionExpired": "Vaša sesija je istekla. Prijavite se ponovo da biste nastavili.",
+    "page": {
+      "title": "AI",
+      "subtitle": "Asistent Vaše ordinacije, ograničen na Vaše dozvole."
+    }
+  }
+}

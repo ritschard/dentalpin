@@ -1,0 +1,26 @@
+{
+  "whatsapp_webhook": {
+    "settings": {
+      "title": "WhatsApp preko vebhuka",
+      "description": "Šaljite WhatsApp obaveštenja preko Zapier / Make / n8n huka — nije potreban nalog kod provajdera."
+    },
+    "connection": "Veza",
+    "targetUrl": "URL huka",
+    "targetUrlHelp": "HTTPS URL koji prima svako obaveštenje kao potpisan JSON (Zapier, Make, n8n…).",
+    "active": "Uključeno",
+    "delivering": "Isporuka radi",
+    "lastErrorBadge": "Greška pri isporuci",
+    "secret": "Tajni ključ za potpis",
+    "secretShownOnce": "Kopirajte ovaj ključ sada — prikazuje se samo jednom. Koristite ga za proveru zaglavlja X-DentalPin-Signature u svojoj automatizaciji.",
+    "rotateSecret": "Zameni tajni ključ",
+    "copy": "Kopiraj",
+    "copied": "Kopirano u privremenu memoriju",
+    "saved": "Podešavanja su sačuvana",
+    "saveError": "Čuvanje podešavanja nije uspelo",
+    "test": "Test isporuke",
+    "testHelp": "Šalje potpisan test na Vaš huk da biste mogli da povežete automatizaciju.",
+    "sendTest": "Pošalji test",
+    "testOk": "Test je isporučen",
+    "testFail": "Test isporuka nije uspela"
+  }
+}

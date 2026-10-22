@@ -1,0 +1,20 @@
+{
+  "consumables": {
+    "title": "Potrošni materijal za tretmane",
+    "subtitle": "Koji artikli sa zaliha se troše za svaki tretman iz kataloga i u kojoj količini. Samo povezivanje — zalihe se ne umanjuju automatski.",
+    "treatment": "Tretman",
+    "item": "Artikal sa zaliha",
+    "quantity": "Količina",
+    "note": "Napomena",
+    "searchTreatments": "Pretraži tretmane…",
+    "searchItems": "Pretraži artikle sa zaliha…",
+    "add": "Poveži materijal",
+    "delete": "Ukloni vezu",
+    "deleteTitle": "Uklanjanje veze sa materijalom",
+    "deleteMessage": "Ukloniti ovu vezu? Tretman više neće navoditi ovaj artikal kao potrošni materijal.",
+    "empty": "Još nema veza. Koristite „Poveži materijal“ da povežete tretman sa artiklom sa zaliha.",
+    "noMatches": "Nema rezultata",
+    "duplicate": "Ovaj tretman već troši ovaj artikal.",
+    "editTitle": "Izmeni potrošni materijal"
+  }
+}

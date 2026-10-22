@@ -1,0 +1,11 @@
+{
+  "patientSegments": {
+    "title": "Grupe",
+    "emptyHint": "Nema dodeljenih grupa.",
+    "add": "Upravljaj grupama",
+    "remove": "Ukloni iz grupe",
+    "pickExisting": "Dodaj u postojeću grupu",
+    "newName": "Naziv nove grupe",
+    "create": "Kreiraj i dodeli"
+  }
+}

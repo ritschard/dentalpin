@@ -1,0 +1,90 @@
+{
+  "migrationImport": {
+    "settingsCard": {
+      "title": "Migracija podataka (dental-bridge)",
+      "description": "Uvoz DPMF datoteke koju je napravio dental-bridge (pacijenti, termini, predračuni, uplate, dokumenti)."
+    },
+    "page": {
+      "title": "Migracija podataka",
+      "subtitle": "Uvezite u ovu ordinaciju podatke koje je izdvojio dental-bridge."
+    },
+    "upload": {
+      "dropFile": "Prevucite .dpm datoteku ovde ili kliknite da je izaberete",
+      "passphrase": "Lozinka (samo za šifrovane datoteke)",
+      "passphraseHelp": "Potrebna samo za .dpm.enc / .dpm.zst.enc",
+      "submit": "Otpremi i proveri",
+      "uploading": "Otpremanje…",
+      "error": "Otpremanje nije uspelo"
+    },
+    "validate": {
+      "running": "Provera datoteke…",
+      "ok": "Datoteka je ispravna",
+      "failed": "Provera nije uspela"
+    },
+    "preview": {
+      "title": "Pregled",
+      "entities": "Entiteti",
+      "samples": "Uzorci",
+      "warnings": "Upozorenja",
+      "files": "Priložene datoteke",
+      "filesTotal": "Ukupno",
+      "filesWithSha": "Sa sha256",
+      "filesWithoutSha": "Bez sha256",
+      "verifactuCheckbox": "Uvezi Verifactu pravne podatke",
+      "verifactuHelp": "Čuva pravne heševe (Verifactu) na računima. Dostupno samo kada je instaliran modul Verifactu i kada datoteka sadrži te podatke.",
+      "confirm": "Potvrdi i uvezi",
+      "warning": "Ova radnja se ne može opozvati. Pregledajte podatke pre potvrde."
+    },
+    "filters": {
+      "title": "Filtriranje terapeuta",
+      "description": "Filtrirani zaposleni se uvoze kao neaktivni (čuvaju se zbog istorijskih veza, ali se ne prikazuju u rasporedu). Kasnije ih možete ponovo aktivirati u Podešavanja → Korisnici.",
+      "totalLabel": "Ukupno",
+      "deactivatedLabel": "Neaktivni u izvoru",
+      "orphansLabel": "Kolone samo u rasporedu",
+      "stale24mLabel": "Bez aktivnosti u poslednja 24 meseca",
+      "minActivityLabel": "Minimalna aktivnost (u mesecima)",
+      "minActivityHelp": "Deaktivira terapeute bez kliničkog traga novijeg od ovog broja meseci. Unesite 0 da isključite.",
+      "excludeOrphans": "Izostavi kolone koje postoje samo u rasporedu, bez stvarnog zapisa o saradniku",
+      "excludeInactive": "Izostavi terapeute označene kao neaktivne u izvoru",
+      "excludeNonClinical": "Uvezi samo stomatologe i higijeničare (bez pomoćnog i administrativnog osoblja)"
+    },
+    "execute": {
+      "running": "Uvoz…",
+      "progress": "{processed} od {total} entiteta",
+      "ok": "Uvoz je završen",
+      "failed": "Uvoz nije uspeo"
+    },
+    "proposals": {
+      "title": "Pregled povezivanja kataloga",
+      "subtitle": "Pre uvoza povežite svaki tretman iz Gesdén-a sa katalogom DentalPin-a.",
+      "build": "Izračunaj predloge",
+      "building": "Izračunavanje…",
+      "summary": "Predloga: {total} — povezano: {link}, približno: {fuzzy}, za kreiranje: {create}",
+      "bulkAccept": "Prihvati sva podudaranja sa pouzdanošću ≥ 0,9",
+      "accepted": "Prihvaćeno predloga: {n}.",
+      "columnSource": "Tretman iz Gesdén-a",
+      "columnProposed": "Predlog",
+      "columnAction": "Radnja",
+      "columnStatus": "Status",
+      "actionLink": "Poveži sa katalogom",
+      "actionFuzzy": "Približno podudaranje",
+      "actionCreate": "Kreiraj novi",
+      "operatorPending": "Na čekanju",
+      "operatorAccepted": "Prihvaćeno",
+      "operatorRelinked": "Ponovo povezano",
+      "operatorCreated": "Kreiraj novi",
+      "operatorIgnored": "Zanemareno",
+      "acceptRow": "Prihvati",
+      "ignoreRow": "Zanemari"
+    },
+    "status": {
+      "uploaded": "Otpremljeno",
+      "validating": "Provera",
+      "validated": "Provereno",
+      "previewing": "Pregled",
+      "executing": "Uvoz",
+      "completed": "Završeno",
+      "failed": "Neuspešno"
+    }
+  }
+}

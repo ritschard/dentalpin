@@ -1,0 +1,124 @@
+{
+  "clinicalNotes": {
+    "types": {
+      "administrative": "Administrativna",
+      "diagnosis": "Dijagnoza",
+      "treatment": "Tretman",
+      "treatment_plan": "Plan",
+      "appointment_clinical": "Klinička",
+      "appointment_administrative": "Administrativna"
+    },
+    "appointment": {
+      "addByType": "Dodaj belešku: {label}",
+      "empty": "Za ovaj termin još nema beleški. Dodajte belešku pomoću dugmadi iznad."
+    },
+    "feed": {
+      "filterLabel": "Filteri",
+      "filterAll": "Sve",
+      "filterClear": "Obriši filtere",
+      "filterStatus": "Prikazano {n} od {total} vrsta",
+      "addAdministrative": "Administrativna beleška",
+      "loadMore": "Učitaj još",
+      "empty": {
+        "title": "Još nema beleški",
+        "help": "Administrativne, dijagnostičke beleške i beleške o tretmanima pojaviće se ovde hronološkim redom."
+      }
+    },
+    "diagnosisSidebar": {
+      "title": "Beleške",
+      "addNote": "Dodaj belešku",
+      "empty": "U ovoj kategoriji nema beleški."
+    },
+    "treatmentButton": {
+      "title": "Beleške o tretmanu",
+      "add": "Dodaj belešku",
+      "empty": "Za ovaj tretman još nema beleški.",
+      "aria": "Beleške o tretmanu ({n})"
+    },
+    "timeline": {
+      "addPlanNote": "Beleška o planu",
+      "empty": "Još nema beleški.",
+      "emptyForFilter": "Nijedna beleška ne odgovara filteru.",
+      "source": {
+        "plan": "Plan",
+        "treatment": "Tretman",
+        "visit": "Poseta"
+      }
+    },
+    "byPlan": {
+      "empty": "Ovaj pacijent još nema kliničkih beleški povezanih sa planom.",
+      "planNotesLabel": "Beleške o planu",
+      "unknownTreatment": "Tretman",
+      "noNotesForTreatment": "Za ovaj tretman još nema beleški."
+    },
+    "composer": {
+      "placeholder": "Napišite belešku…",
+      "templates": "Šabloni",
+      "attach": "Priloži fotografiju ili dokument",
+      "bindToTooth": "Poveži sa zubom {n}"
+    },
+    "linked": {
+      "tooth": "Zub {n}",
+      "treatment": "Tretman",
+      "treatmentOnTooth": "{label} (zub {n})",
+      "plan": "Plan",
+      "planNamed": "Plan: {label}"
+    },
+    "actions": {
+      "showMore": "Prikaži više",
+      "showLess": "Prikaži manje",
+      "openLinked": "Otvori kontekst"
+    },
+    "author": {
+      "unknown": "Nepoznat autor"
+    },
+    "time": {
+      "justNow": "upravo sada",
+      "minutesAgo": "pre {n} min",
+      "hoursAgo": "pre {n} č",
+      "daysAgo": "pre {n} d"
+    },
+    "toasts": {
+      "saved": "Beleška je sačuvana",
+      "deleted": "Beleška je obrisana",
+      "saveFailed": "Čuvanje beleške nije uspelo"
+    },
+    "confirms": {
+      "delete": "Obrisati ovu belešku? Za vraćanje je potrebno kontaktirati podršku."
+    },
+    "templates": {
+      "endo": {
+        "singleVisit": "Endodoncija (u jednoj poseti)",
+        "multiVisit": "Endodoncija (u više poseta)"
+      },
+      "perio": {
+        "scaling": "Uklanjanje kamenca / poliranje korena"
+      },
+      "implant": {
+        "placement": "Ugradnja implanta"
+      },
+      "diagnosis": {
+        "caries": "Karijes",
+        "periapical": "Periapikalna lezija"
+      },
+      "admin": {
+        "phoneCall": "Telefonski poziv pacijenta",
+        "reschedule": "Zahtev za pomeranje termina"
+      },
+      "general": {
+        "followUp": "Opšta kontrola"
+      }
+    },
+    "templateBodies": {
+      "endo_single_visit": "Dijagnoza: \nAnestezija: \nPronađeni kanali: \nRadna dužina: \nOpturacija: \nPostoperativno: ",
+      "endo_multi_visit": "Seansa: \nObrađeni kanali: \nIntrakanalni medikament: \nSledeći termin: ",
+      "perio_scaling": "Tretirani kvadranti: \nDubina džepova: \nKrvarenje pri sondiranju: \nUputstva za higijenu: ",
+      "implant_placement": "Implant (proizvođač / prečnik / dužina): \nZavršni tork (Ncm): \nPrimarna stabilnost: \nGraft: \nPostoperativno: ",
+      "diagnosis_caries": "Nalaz: karijes \nDubina: \nSimptomi: \nTest vitalnosti: \nPredloženi tretman: ",
+      "diagnosis_periapical": "Periapikalna lezija \nZub: \nRendgen: \nTestovi (perkusija, palpacija): \nDijagnoza: ",
+      "admin_phone_call": "Poziv pacijenta: \nRazlog: \nPreduzeta radnja: \nPraćenje: ",
+      "admin_reschedule": "Zahtev za pomeranje termina: \nTrenutni datum: \nNovi predlog: ",
+      "general_follow_up": "Nalazi: \nIzvedena procedura: \nUputstva pacijentu: "
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "imagingAi": "AI analiza snimaka"
+  },
+  "imagingAi": {
+    "list": {
+      "title": "Zadaci AI segmentacije",
+      "empty": "Za ovog pacijenta još nema AI zadataka.",
+      "noPatient": "Nije izabran pacijent",
+      "noPatientHint": "Otvorite ovu stranicu sa ?patient_id=..., npr. iz kartona pacijenta.",
+      "queueHint": "Pokrenite analizu ispod; rezultati se pojavljuju ovde kada je raspoređivač obradi.",
+      "visualizationNote": "AI rezultat je samo pomoć pri vizuelizaciji — nikada dijagnoza."
+    },
+    "status": {
+      "queued": "U redu čekanja",
+      "running": "U toku",
+      "done": "Završeno",
+      "failed": "Neuspešno",
+      "cancelled": "Otkazano",
+      "proposed": "Predloženo"
+    },
+    "queue": {
+      "patient": "Pacijent",
+      "searchPatients": "Pretražite pacijente po imenu...",
+      "title": "Pokreni AI analizu",
+      "noDicom": "Za ovog pacijenta još nema DICOM dokumenata.",
+      "backend": "Model",
+      "submit": "Stavi u red",
+      "seriesHint": "Prva označena datoteka je glavni dokument; označite ostatak serije za volumetrijsku (nnU-Net) analizu."
+    },
+    "backends": {
+      "pano": "Nalazi na ortopantomogramu (jedan snimak)",
+      "nnunet": "nnU-Net volumen (DICOM serija)"
+    },
+    "review": {
+      "pending_review": "Nacrt - čeka pregled",
+      "confirmed": "Pregledano",
+      "not_applicable": "Nije primenljivo"
+    },
+    "job": {
+      "artifacts": "Nacrti rezultata",
+      "cancel": "Otkaži",
+      "authorize": "Odobri pokretanje",
+      "markReviewed": "Označi kao pregledano"
+    }
+  }
+}

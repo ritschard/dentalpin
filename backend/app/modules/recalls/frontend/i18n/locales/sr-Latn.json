@@ -1,0 +1,133 @@
+{
+  "recalls": {
+    "title": "Kontrolni pozivi",
+    "callList": "Spisak poziva",
+    "noRecallsThisMonth": "Ovog meseca nema kontrolnih poziva na čekanju",
+    "filters": {
+      "month": "Mesec",
+      "reason": "Razlog",
+      "professional": "Terapeut",
+      "status": "Status",
+      "priority": "Prioritet",
+      "overdue": "Prikaži dospele",
+      "any": "Bilo koji",
+      "thisMonth": "Ovaj mesec"
+    },
+    "counters": {
+      "due_this_week": "Dospeva ove nedelje",
+      "due_this_month": "Dospeva ovog meseca",
+      "overdue": "Dospelo",
+      "scheduled_this_month": "Zakazano ovog meseca",
+      "completed_this_month": "Završeno ovog meseca",
+      "conversion_rate": "Konverzija"
+    },
+    "setRecall": "Postavi kontrolni poziv",
+    "setRecallShort": "Kontrola",
+    "history": "Istorija kontrolnih poziva",
+    "viewAll": "Prikaži sve",
+    "pillNext": "Sledeća kontrola: {month} · {reason}",
+    "pillNone": "Nema aktivnog kontrolnog poziva",
+    "reasons": {
+      "hygiene": "Higijena",
+      "checkup": "Kontrolni pregled",
+      "ortho_review": "Ortodontska kontrola",
+      "implant_review": "Kontrola implanta",
+      "post_op": "Postoperativna kontrola",
+      "treatment_followup": "Praćenje tretmana",
+      "other": "Ostalo"
+    },
+    "priority": {
+      "low": "Nizak",
+      "normal": "Normalan",
+      "high": "Visok"
+    },
+    "status": {
+      "pending": "Na čekanju",
+      "contacted_no_answer": "Nema odgovora",
+      "contacted_scheduled": "Zakazano",
+      "contacted_declined": "Odbijeno",
+      "done": "Završeno",
+      "cancelled": "Otkazano",
+      "needs_review": "Potrebna provera"
+    },
+    "confirms": {
+      "cancel": "Otkazati kontrolni poziv za pacijenta {name}? Ova radnja se ne može opozvati.",
+      "done": "Označiti kontrolni poziv za pacijenta {name} kao završen? Time se zatvara za ovaj ciklus."
+    },
+    "actions": {
+      "call": "Pozovi",
+      "logAttempt": "Evidentiraj pokušaj",
+      "noAnswer": "Nema odgovora",
+      "book": "Zakaži termin",
+      "snooze": "Odloži",
+      "cancel": "Otkaži",
+      "markDone": "Označi kao završeno",
+      "exportCsv": "Izvezi CSV",
+      "save": "Sačuvaj"
+    },
+    "closeoutPrompt": {
+      "title": "Zakazati kontrolni poziv?",
+      "subtitle": "Pacijent je upravo završio — kada da ga ponovo pozovemo?",
+      "skip": "Ne sada"
+    },
+    "modal": {
+      "title": "Postavi kontrolni poziv",
+      "subtitle": "Označite pacijenta za budući poziv",
+      "patient": "Pacijent",
+      "reason": "Razlog",
+      "when": "Kada",
+      "month": "Ciljni mesec",
+      "targetMonth": "Ciljni mesec",
+      "preciseDate": "Izaberi tačan dan",
+      "priority": "Prioritet",
+      "assigned": "Zaduženi terapeut",
+      "note": "Interna napomena",
+      "notePlaceholder": "Opcioni detalj (npr. „Proveriti plombu na 47“)",
+      "optional": "opciono",
+      "duplicateGuard": "Za ovog pacijenta i ovaj razlog već postoji kontrolni poziv na čekanju. Biće ažuriran."
+    },
+    "doNotContact": {
+      "cannotSchedule": "Ovaj pacijent je označen sa „Ne kontaktirati“. Kontrolni pozivi se ne mogu zakazati. Promenite podešavanje u demografskim podacima da biste ponovo omogućili kontakt."
+    },
+    "activeRecallHint": "Aktivan kontrolni poziv · dodirnite za upravljanje",
+    "logAttempt": {
+      "channel": "Kanal",
+      "outcome": "Ishod",
+      "note": "Napomena",
+      "submit": "Evidentiraj pokušaj"
+    },
+    "channel": {
+      "phone": "Telefon",
+      "whatsapp": "WhatsApp",
+      "sms": "SMS",
+      "email": "Imejl"
+    },
+    "outcome": {
+      "no_answer": "Nema odgovora",
+      "voicemail": "Govorna pošta",
+      "scheduled": "Termin je zakazan",
+      "declined": "Odbijeno",
+      "wrong_number": "Pogrešan broj"
+    },
+    "snoozePrompt": "Za koliko meseci odložiti?",
+    "settings": {
+      "title": "Kontrolni pozivi",
+      "description": "Podrazumevani intervali i povezivanje kategorija tretmana",
+      "intervals": "Podrazumevani intervali (u mesecima)",
+      "categoryMap": "Tretman → razlog",
+      "categoryKeyPlaceholder": "ključ kategorije kataloga",
+      "autoSuggest": "Predloži kontrolni poziv kada se tretman završi",
+      "autoLink": "Poveži zakazani termin sa kontrolnim pozivom na čekanju",
+      "saved": "Podešavanja su sačuvana"
+    },
+    "dashboard": {
+      "title": "Kontrolni pozivi"
+    },
+    "suggestion": {
+      "title": "Predloženi kontrolni poziv",
+      "body": "Posle ovog tretmana predlažemo kontrolu u periodu {month} ({reason}).",
+      "create": "Kreiraj kontrolni poziv",
+      "dismiss": "Odbaci"
+    }
+  }
+}

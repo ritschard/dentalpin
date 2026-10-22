@@ -1,0 +1,20 @@
+{
+  "journal": {
+    "title": "Dnevnik aktivnosti",
+    "subtitle": "Evidencija u koju se samo dodaje: ko je šta uradio i kada — na osnovu događaja iz modula.",
+    "filterByType": "Filter po vrsti događaja",
+    "filterByDateFrom": "Od",
+    "filterByDateTo": "Do",
+    "event": "Događaj",
+    "actor": "Izvršilac",
+    "patient": "Pacijent",
+    "when": "Kada",
+    "source": "Izvor",
+    "empty": "Još nema evidentiranih aktivnosti.",
+    "total": "Unosa: {total}",
+    "detailTitle": "Podaci o događaju",
+    "unattributed": "—",
+    "allEvents": "Svi događaji",
+    "viewPayload": "Prikaži detalje"
+  }
+}

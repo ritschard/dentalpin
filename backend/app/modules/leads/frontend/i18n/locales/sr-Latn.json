@@ -1,0 +1,113 @@
+{
+  "leads": {
+    "nav": {
+      "leads": "Upiti"
+    },
+    "title": "Upiti",
+    "subtitle": "Upiti primljeni preko obrasca na veb-sajtu",
+    "empty": "Nema novih upita",
+    "emptyHint": "Upiti osoba koje su već pacijenti idu direktno u Kontrolne pozive — proverite tamo pre nego što zaključite da obrazac ne radi.",
+    "emptyAction": "Dodaj upit ručno",
+    "searchPlaceholder": "Pretraži po imenu, telefonu ili imejlu",
+    "filterStatus": "Status",
+    "filters": {
+      "showAll": "Prikaži sve statuse"
+    },
+    "receivedAt": "Primljeno",
+    "newLead": "Novi upit",
+    "websiteForm": "Obrazac na veb-sajtu",
+    "status": {
+      "new": "Nov",
+      "contacted": "Kontaktiran",
+      "converted": "Pretvoren u pacijenta",
+      "discarded": "Odbačen"
+    },
+    "fields": {
+      "fullName": "Ime i prezime",
+      "phone": "Telefon",
+      "email": "Imejl",
+      "motive": "Razlog",
+      "description": "Opis",
+      "availability": "Dostupnost",
+      "status": "Status",
+      "availabilityHint": "Kojim danima možemo da ga/je pozovemo?"
+    },
+    "actions": {
+      "edit": "Izmeni",
+      "save": "Sačuvaj",
+      "cancel": "Otkaži",
+      "discard": "Odbaci",
+      "markContacted": "Označi kao kontaktiran"
+    },
+    "convert": {
+      "title": "Pretvori u pacijenta",
+      "enquiry": "Upit",
+      "patient": "Pacijent",
+      "createPatient": "Kreiraj pacijenta",
+      "created": "Pacijent je kreiran",
+      "openPatient": "Otvori pacijenta",
+      "alreadyConverted": "Ovaj upit je već pretvoren u pacijenta.",
+      "duplicateWarning": "Pacijent sa ovim brojem telefona već postoji",
+      "duplicateOpen": "Otvori tog pacijenta"
+    },
+    "validation": {
+      "required": "Ovo polje je obavezno",
+      "email": "Unesite ispravnu imejl adresu, na primer ime{'@'}primer.rs",
+      "phone": "Unesite ispravan broj telefona (najmanje 6 cifara)",
+      "dateOfBirth": "Datum rođenja ne može biti u budućnosti",
+      "fixErrors": "Proverite označena polja"
+    },
+    "slots": {
+      "any": "Bilo kada",
+      "morning": "Pre podne",
+      "afternoon": "Posle podne",
+      "evening": "Uveče"
+    },
+    "routing": {
+      "recallQueued": "{name} je već pacijent — poziv je dodat u Kontrolne pozive.",
+      "openRecalls": "Otvori kontrolne pozive"
+    },
+    "settings": {
+      "title": "Obrazac na veb-sajtu",
+      "description": "Ključ za prijem i dnevno ograničenje za upite koje Vaš veb-sajt šalje u DentalPin.",
+      "capLabel": "Dnevno ograničenje",
+      "capHint": "Najveći broj upita prihvaćenih dnevno. 0 = bez ograničenja.",
+      "capSave": "Sačuvaj ograničenje",
+      "capSaved": "Dnevno ograničenje je sačuvano",
+      "volume": "Danas: {count} od {cap}",
+      "unlimited": "Danas: {count} (bez ograničenja)",
+      "atLimit": "Prijem je pauziran do sutra: dostignuto je današnje ograničenje.",
+      "capLoweredWarning": "Smanjenje ograničenja ispod današnjeg broja odmah blokira prijem.",
+      "keyTitle": "Ključ za prijem",
+      "keyMissing": "Ključ još ne postoji — prijem je zatvoren dok ga ne kreirate.",
+      "keyPrefix": "Prefiks",
+      "keyActive": "Aktivan",
+      "keyInactive": "Isključen",
+      "lastUsed": "Poslednje korišćenje",
+      "never": "Nikad",
+      "rotate": "Generiši / zameni ključ",
+      "rotateWarning": "Zamena ključa odmah zaustavlja ključ koji je procureo. Ne zaboravite da novi ključ nalepite na veb-sajt — obrazac neće raditi dok to ne uradite.",
+      "confirmRotate": {
+        "title": "Zameniti ključ za prijem?",
+        "message": "Trenutni ključ odmah prestaje da radi. Svaki veb-sajt koji ga još koristi neće raditi dok ne nalepite novi ključ."
+      },
+      "rotateCopyOnce": "Kopirajte ovaj ključ sada: prikazuje se samo jednom.",
+      "copied": "Kopirano",
+      "activate": "Uključi prijem",
+      "intakeUrl": "URL za prijem",
+      "example": "Primer zahteva",
+      "routingNote": "Upiti čiji telefon ili imejl već pripada pacijentu ne kreiraju novi upit — dodaju se u Kontrolne pozive radi povratnog poziva.",
+      "readOnly": "Nemate dozvolu da menjate ova podešavanja.",
+      "noPermission": "Nemate dozvolu da vidite ova podešavanja.",
+      "copy": "Kopiraj"
+    },
+    "errors": {
+      "save": "Čuvanje upita nije uspelo",
+      "convert": "Kreiranje pacijenta nije uspelo",
+      "settingsLoad": "Učitavanje podešavanja nije uspelo",
+      "settingsSave": "Čuvanje podešavanja nije uspelo",
+      "rotate": "Zamena ključa nije uspela",
+      "copy": "Privremena memorija nije dostupna — označite tekst i kopirajte ga ručno"
+    }
+  }
+}

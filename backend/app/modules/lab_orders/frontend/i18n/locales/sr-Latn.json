@@ -1,0 +1,50 @@
+{
+  "labOrders": {
+    "title": "Laboratorijski nalozi",
+    "add": "Novi laboratorijski nalog",
+    "patient": "Pacijent",
+    "lab": "Laboratorija",
+    "loading": "Učitavanje…",
+    "selectPatient": "Izaberite pacijenta",
+    "selectLab": "Izaberite laboratoriju",
+    "workType": "Vrsta rada",
+    "tooth": "Zub / oznaka",
+    "impressionType": "Otisak",
+    "antagonistInfo": "Podaci o antagonistu",
+    "shade": "Boja",
+    "sentDate": "Datum slanja",
+    "expectedDate": "Očekivani datum",
+    "status": "Status",
+    "notes": "Napomene",
+    "save": "Pošalji nalog",
+    "cancel": "Otkaži",
+    "noLabsHint": "Prvo kreirajte kontakt laboratorije u Kontaktima.",
+    "workTypes": {
+      "crown": "Krunica",
+      "bridge": "Most",
+      "denture": "Proteza",
+      "implant": "Implant",
+      "veneer": "Faseta",
+      "orthodontic": "Ortodontski rad",
+      "repair": "Reparatura",
+      "other": "Ostalo"
+    },
+    "impressionTypes": {
+      "alginate": "Alginat",
+      "pvs_silicone": "PVS / silikon",
+      "digital_scan": "Digitalni sken",
+      "other": "Ostalo"
+    },
+    "statuses": {
+      "sent": "Poslat",
+      "in_progress": "U izradi",
+      "ready": "Gotov",
+      "received": "Primljen",
+      "cancelled": "Otkazan"
+    }
+  },
+  "nav": {
+    "labOrdersForm": "Novi laboratorijski nalog",
+    "labOrdersStatus": "Laboratorijski nalozi"
+  }
+}

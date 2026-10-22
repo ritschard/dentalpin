@@ -5,6 +5,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- feat(i18n): Serbian layer strings in both scripts (`sr-Cyrl.json`, `sr-Latn.json`).
 - feat(i18n): Hindi (`hi`) locale for the module's frontend layer.
 ### Added
 

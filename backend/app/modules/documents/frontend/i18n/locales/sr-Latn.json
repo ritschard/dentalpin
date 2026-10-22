@@ -1,0 +1,88 @@
+{
+  "documents": {
+    "title": "Dokumenti",
+    "subtitle": "Upravljajte receptima, uverenjima, uputima i zahtevima za radiološko snimanje",
+    "newDocument": "Novi dokument",
+    "editDocument": "Izmeni dokument",
+    "filterType": "Filter po vrsti",
+    "filterStatus": "Filter po statusu",
+    "empty": "Još nema dokumenata. Kreirajte prvi dokument da biste počeli.",
+    "patient": "Pacijent",
+    "selectPatient": "Izaberite pacijenta",
+    "patientSearchEmpty": "Nijedan pacijent ne odgovara pretrazi",
+    "type": "Vrsta dokumenta",
+    "selectType": "Izaberite vrstu",
+    "titleLabel": "Naslov",
+    "titlePlaceholder": "npr. Recept za amoksicilin",
+    "types": {
+      "all": "Sve vrste",
+      "prescription": "Recept",
+      "medical_certificate": "Lekarsko uverenje",
+      "referral": "Uput",
+      "radiology_request": "Uput za radiološko snimanje"
+    },
+    "status": {
+      "all": "Svi statusi",
+      "draft": "Nacrt",
+      "generated": "Generisan",
+      "archived": "Arhiviran"
+    },
+    "actions": {
+      "generate": "Generiši PDF",
+      "edit": "Izmeni",
+      "archive": "Arhiviraj",
+      "download": "Preuzmi PDF"
+    },
+    "messages": {
+      "created": "Dokument je kreiran",
+      "updated": "Dokument je ažuriran",
+      "generated": "Dokument je uspešno generisan",
+      "archived": "Dokument je arhiviran",
+      "downloaded": "PDF je preuzet",
+      "downloadFailed": "Preuzimanje PDF-a nije uspelo"
+    },
+    "content": {
+      "diagnosis": "Dijagnoza",
+      "diagnosisPlaceholder": "Unesite dijagnozu...",
+      "medications": "Lekovi",
+      "addMedication": "Dodaj lek",
+      "medName": "Naziv leka",
+      "medDose": "Doza",
+      "medFrequency": "Učestalost",
+      "medDuration": "Trajanje",
+      "notes": "Napomene",
+      "notesPlaceholder": "Dodatne napomene...",
+      "description": "Opis",
+      "recommendations": "Preporuke",
+      "referredTo": "Upućuje se",
+      "specialty": "Specijalnost",
+      "reason": "Razlog upućivanja",
+      "clinicalSummary": "Klinički rezime",
+      "examType": "Vrsta snimanja",
+      "region": "Regija",
+      "clinicalQuestion": "Kliničko pitanje"
+    },
+    "settings": {
+      "cards": {
+        "letterhead": {
+          "title": "Memorandum dokumenata",
+          "description": "Oznake ordinacije na receptima, uverenjima, uputima i zahtevima za radiološko snimanje"
+        }
+      },
+      "letterhead": {
+        "help": "Ova polja zamenjuju podatke iz profila ordinacije na generisanim PDF dokumentima. Ostavite polje prazno da bi se koristili sačuvani naziv, adresa i PIB ordinacije.",
+        "name": "Naziv u zaglavlju",
+        "nameHint": "Podrazumevano naziv ordinacije",
+        "address": "Adresa u zaglavlju",
+        "phone": "Telefon u zaglavlju",
+        "email": "Imejl u zaglavlju",
+        "registrationNumber": "Registarski broj / broj licence",
+        "logo": "Logo",
+        "logoHint": "Prikazuje se gore levo na svakom PDF-u. Preporuka: kvadratni providni PNG manji od 512&times;512 px.",
+        "chooseLogo": "Izaberi sliku",
+        "save": "Sačuvaj memorandum",
+        "saved": "Memorandum je sačuvan"
+      }
+    }
+  }
+}

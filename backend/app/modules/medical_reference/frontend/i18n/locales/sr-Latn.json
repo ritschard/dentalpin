@@ -1,0 +1,36 @@
+{
+  "medicalReference": {
+    "settingsLabel": "Medicinski referentni spiskovi",
+    "settingsDescription": "Upravljajte spiskovima alergija, lekova i bolesti koji se koriste u kartonima pacijenata.",
+    "title": "Medicinski referentni spiskovi",
+    "description": "Ovi spiskovi se koriste u padajućim listama sa pretragom u medicinskoj anamnezi pacijenta. Deaktivirana stavka se više ne pojavljuje u pretrazi, a postojeći kartoni pacijenata ostaju nepromenjeni.",
+    "tabs": {
+      "allergies": "Alergije",
+      "medications": "Lekovi",
+      "diseases": "Bolesti",
+      "surgeries": "Operacije",
+      "interactions": "Interakcije",
+      "contraindications": "Kontraindikacije"
+    },
+    "name": "Naziv",
+    "status": "Status",
+    "active": "Aktivno",
+    "inactive": "Neaktivno",
+    "showInactive": "Prikaži neaktivne",
+    "newItemPlaceholder": "Naziv nove stavke…",
+    "addSuccess": "Dodato",
+    "addError": "Dodavanje stavke nije uspelo",
+    "updateError": "Ažuriranje stavke nije uspelo",
+    "deactivate": "Deaktiviraj",
+    "deactivateError": "Deaktiviranje stavke nije uspelo",
+    "itemCount": "Stavki: {count}",
+    "medicationA": "Lek A",
+    "medicationB": "Lek B",
+    "riskNote": "Rizik",
+    "riskNotePlaceholder": "Opišite rizik…",
+    "flags": {
+      "interaction": "Interakcija: {a} + {b}",
+      "contraindication": "{a}: kontraindikovano uz {b}"
+    }
+  }
+}

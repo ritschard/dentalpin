@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "accountingExport": "Izvoz za knjigovođu"
+  },
+  "accountingExport": {
+    "title": "Izvoz za knjigovođu",
+    "subtitle": "Preuzmite račune i uplate za period da biste ih predali knjigovođi.",
+    "period": "Period",
+    "from": "Od",
+    "to": "Do",
+    "presets": {
+      "currentMonth": "Tekući mesec",
+      "previousMonth": "Prethodni mesec",
+      "currentQuarter": "Tekući kvartal",
+      "previousQuarter": "Prethodni kvartal",
+      "yearToDate": "Od početka godine",
+      "custom": "Prilagođeno"
+    },
+    "actions": {
+      "preview": "Pregled",
+      "download": "Preuzmi (.zip)"
+    },
+    "counters": {
+      "invoices": "Računi",
+      "payments": "Uplate",
+      "base": "Osnovica",
+      "total": "Ukupno"
+    },
+    "cols": {
+      "numero": "Broj",
+      "fecha_emision": "Datum",
+      "cliente": "Kupac",
+      "nif": "PIB",
+      "base": "Osnovica",
+      "cuota_iva": "PDV",
+      "total": "Ukupno",
+      "estado": "Status"
+    }
+  }
+}

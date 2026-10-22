@@ -1,0 +1,35 @@
+{
+  "treasury": {
+    "nav": { "title": "Blagajna" },
+    "title": "Blagajna",
+    "newAccount": "Novi račun",
+    "transfer": "Prenos",
+    "correct": "Ispravka",
+    "correctionDirection": "Smer",
+    "accounts": "Računi",
+    "noAccounts": "Još nema računa.",
+    "statement": "Izvod",
+    "noEntries": "Još nema promena.",
+    "accountName": "Naziv računa",
+    "accountKind": "Vrsta",
+    "kindCash": "Gotovina",
+    "kindBank": "Banka",
+    "create": "Kreiraj",
+    "openingBalance": "Početno stanje",
+    "deactivate": "Deaktiviraj",
+    "activate": "Ponovo aktiviraj",
+    "inactive": "Neaktivan",
+    "fromAccount": "Sa računa",
+    "toAccount": "Na račun",
+    "amount": "Iznos",
+    "memo": "Napomena (opciono)",
+    "correctMemo": "Napomena (obavezno)",
+    "kind": {
+      "transfer_out": "Odlazni prenos",
+      "transfer_in": "Dolazni prenos",
+      "correction_in": "Ispravka (priliv)",
+      "correction_out": "Ispravka (odliv)",
+      "opening": "Početno stanje"
+    }
+  }
+}

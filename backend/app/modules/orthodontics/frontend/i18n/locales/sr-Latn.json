@@ -1,0 +1,127 @@
+{
+  "orthodontics": {
+    "tab": {
+      "label": "Ortodoncija"
+    },
+    "nav": {
+      "title": "Ortodoncija"
+    },
+    "appliance": {
+      "brackets_metal": "Metalne bravice",
+      "brackets_esthetic": "Estetske bravice",
+      "self_ligating": "Samoligirajuće bravice",
+      "aligners": "Alajneri",
+      "functional": "Funkcionalni aparat",
+      "retention": "Retencija"
+    },
+    "status": {
+      "active": "Aktivan",
+      "paused": "Pauziran",
+      "finished": "Završen",
+      "transferred_out": "Prebačen",
+      "session_pending": "Na čekanju",
+      "session_completed": "Završeno"
+    },
+    "inbox": {
+      "title": "Ortodoncija",
+      "active": "Aktivni",
+      "overdue": "Dospela kontrola",
+      "unscheduled": "Bez sledeće kontrole",
+      "finished": "Završeni",
+      "new": "Novi slučaj",
+      "empty": "Nema slučajeva u ovom prikazu",
+      "nextDue": "Sledeća kontrola",
+      "monthOf": "Mesec {x} od ~{n}"
+    },
+    "case": {
+      "new": "Novi ortodontski slučaj",
+      "appliance": "Aparat",
+      "professional": "Ortodont",
+      "startDate": "Datum početka",
+      "estimatedMonths": "Procenjeno trajanje (u mesecima)",
+      "notes": "Dijagnoza / ciljevi",
+      "create": "Otvori slučaj",
+      "inMouthNow": "Trenutno u ustima",
+      "upper": "Gornja vilica",
+      "lower": "Donja vilica",
+      "noWire": "Nema evidentiranog luka",
+      "changeStatus": "Promeni status",
+      "statusNote": "Razlog (opciono)",
+      "save": "Sačuvaj",
+      "none": "Još nema ortodontskog slučaja"
+    },
+    "control": {
+      "new": "Evidentiraj kontrolu",
+      "wires": "Lukovi (podrazumevano bez promene)",
+      "procedures": "Procedure",
+      "proceduresOther": "Ostale procedure",
+      "hygiene": "Higijena",
+      "hygiene_good": "Dobra",
+      "hygiene_fair": "Zadovoljavajuća",
+      "hygiene_poor": "Loša",
+      "alignerNumber": "Broj alajnera",
+      "notes": "Zapažanja / uputstva",
+      "nextControl": "Sledeća kontrola",
+      "weeks": "{n} ned.",
+      "noNext": "Bez sledeće kontrole",
+      "save": "Sačuvaj kontrolu",
+      "history": "Kontrole",
+      "empty": "Još nema kontrola",
+      "appointment": "Termin",
+      "session": "Povezana seansa",
+      "sessionHint": "Samo za evidenciju - naplata se vrši u Uplatama."
+    },
+    "card": {
+      "title": "Ortodoncija",
+      "noCase": "Nema aktivnog slučaja",
+      "view": "Otvori"
+    },
+    "photos": {
+      "title": "Fotografije ({n})",
+      "upload": "Dodaj fotografiju"
+    },
+    "procedures": {
+      "power_chain": "Elastični lanac",
+      "elastics_class_2": "Elastici II klase",
+      "elastics_class_3": "Elastici III klase",
+      "niti_open_coil": "NiTi otvorena opruga",
+      "metal_ligature": "Metalna ligatura",
+      "ligature_change": "Zamena ligatura",
+      "button_attachment": "Dugme / atačment",
+      "ipr": "IPR",
+      "bite_turbos": "Bajt turbo",
+      "bracket_rebonding": "Ponovno lepljenje bravice",
+      "expander_activation": "Aktivacija ekspandera",
+      "band_placement": "Postavljanje prstena",
+      "bracket_removal": "Skidanje bravica",
+      "retainer_placement": "Postavljanje retejnera"
+    },
+    "errors": {
+      "saveFailed": "Čuvanje nije uspelo. Pokušajte ponovo.",
+      "loadFailed": "Učitavanje ortodontskih podataka nije uspelo."
+    },
+    "plan": {
+      "title": "Plan lečenja",
+      "link": "Poveži plan",
+      "unlink": "Ukloni vezu sa planom",
+      "noLink": "Nije povezan plan (prebačeni pacijenti mogu da se prate i bez njega)",
+      "completed": "Završeno: {n}",
+      "pending": "Na čekanju: {n}",
+      "generate": "Generiši rate",
+      "collect": "Naplati ratu",
+      "confirmUnlink": "Ukloniti vezu sa planom lečenja?",
+      "downPayment": "Učešće",
+      "installmentN": "Rata {n}",
+      "months": "Meseci",
+      "monthlyAmount": "Mesečni iznos",
+      "pendingTotal": "Preostalo ukupno: {n}",
+      "closeSuggested": "Slučaj je prebačen, a ima povezan plan: razmotrite zatvaranje plana."
+    },
+    "settings": {
+      "title": "Katalozi oznaka",
+      "wires": "Lukovi (jedan po redu)",
+      "procedures": "Procedure (jedna po redu)",
+      "save": "Sačuvaj kataloge"
+    }
+  }
+}

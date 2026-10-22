@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "telephonyCalls": "Pozivi"
+  },
+  "telephony": {
+    "settings": {
+      "title": "Telefonija (CTI)",
+      "description": "Prikaz dolaznih poziva na ekranu i evidencija poziva — bilo koja telefonska centrala preko vebhuka."
+    },
+    "gateway": "Gejtvej",
+    "receiving": "Prima događaje",
+    "defaultCountry": "Podrazumevana zemlja",
+    "defaultCountryHelp": "Dvoslovni kod zemlje za tumačenje lokalnih brojeva telefona (npr. RS).",
+    "active": "Uključeno",
+    "rotateSecret": "Zameni tajni ključ",
+    "webhook": "Vebhuk za događaje",
+    "webhookHelp": "Podesite telefonsku centralu ili Zapier da šalje normalizovane događaje poziva (POST) na ovaj URL, potpisane tajnim ključem.",
+    "secret": "Tajni ključ za potpis",
+    "secretShownOnce": "Kopirajte ovaj ključ sada — prikazuje se samo jednom. Vaša centrala/automatizacija njime potpisuje svaki događaj (X-DentalPin-Signature).",
+    "copy": "Kopiraj",
+    "copied": "Kopirano u privremenu memoriju",
+    "saved": "Podešavanja su sačuvana",
+    "saveError": "Čuvanje podešavanja nije uspelo",
+    "calls": {
+      "title": "Evidencija poziva",
+      "allStatuses": "Svi statusi",
+      "status": {
+        "ringing": "Zvoni",
+        "answered": "Javljeno",
+        "ended": "Završen",
+        "missed": "Propušten"
+      },
+      "unknownCaller": "Nepoznat pozivalac",
+      "openRecord": "Otvori karton",
+      "searchPatient": "Pretraži pacijenta",
+      "empty": "Još nema poziva.",
+      "when": "Kada",
+      "caller": "Pozivalac",
+      "number": "Broj",
+      "statusCol": "Status",
+      "duration": "Trajanje"
+    },
+    "pop": {
+      "incoming": "Dolazni poziv"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "contacts": {
+    "title": "Kontakti",
+    "add": "Dodaj kontakt",
+    "edit": "Izmeni kontakt",
+    "delete": "Obriši kontakt",
+    "deleteConfirm": "Deaktivirati „{name}“? Nestaće iz imenika, ali ostaje povezan sa svim ranijim zapisima.",
+    "name": "Naziv",
+    "type": "Vrsta",
+    "phone": "Telefon",
+    "email": "Imejl",
+    "address": "Adresa",
+    "notes": "Napomene",
+    "search": "Pretraži kontakte",
+    "filterByType": "Filter po vrsti",
+    "allTypes": "Sve vrste",
+    "types": {
+      "lab": "Laboratorija",
+      "supplier": "Dobavljač",
+      "other": "Ostalo",
+      "delegate": "Predstavnik"
+    }
+  }
+}

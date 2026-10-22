@@ -1,0 +1,85 @@
+{
+  "periodontogram": {
+    "tab": {
+      "label": "Parodontogram"
+    },
+    "empty": {
+      "title": "Još nema parodontoloških pregleda",
+      "description": "Otvorite novu seansu da biste evidentirali dubinu džepova, krvarenje, plak i ostale SEPA parametre.",
+      "cta": "Započni pregled"
+    },
+    "session": {
+      "draftBadge": "Nacrt u toku",
+      "closedBadge": "Zatvorena seansa",
+      "recordedAt": "Evidentirano {date}",
+      "openDraft": "Otvori novu seansu",
+      "continueDraft": "Nastavi nacrt",
+      "closeTitle": "Zatvaranje parodontološke seanse",
+      "closeDescription": "Kada se zatvori, seansa se više ne može menjati i pojavljuje se u istoriji. Za ispravke ćete morati da otvorite novu seansu.",
+      "closeButton": "Zatvori seansu",
+      "discardTitle": "Odbacivanje nacrta",
+      "discardDescription": "Svi podaci uneti u ovoj seansi biće obrisani. Ova radnja se ne može opozvati.",
+      "discardButton": "Odbaci",
+      "cancel": "Otkaži",
+      "closeSession": "Zatvori seansu",
+      "discardDraft": "Odbaci nacrt"
+    },
+    "indices": {
+      "bop": "Krvarenje",
+      "pi": "Plak",
+      "calMean": "Prosečni CAL",
+      "deepPockets": "Džepovi ≥5 mm"
+    },
+    "saveState": {
+      "saving": "Čuvanje…",
+      "dirty": "Nesačuvane izmene",
+      "saved": "Izmene su sačuvane"
+    },
+    "history": {
+      "viewingSession": "Prikaz seanse od {date} (samo za čitanje).",
+      "returnToCurrent": "Nazad na trenutnu"
+    },
+    "arch": {
+      "upper": "Gornja vilica",
+      "lower": "Donja vilica",
+      "palatal": "Palatinalno",
+      "lingual": "Lingvalno",
+      "vestibular": "Vestibularno",
+      "probing": "Sondiranje",
+      "margin": "Ivica",
+      "bleeding": "Krvarenje",
+      "plaque": "Plak",
+      "probingTitle": "{code} sondiranje (0–15 mm)",
+      "marginTitle": "{code} gingivalna ivica (od -5 do 10 mm)",
+      "plaqueTitle": "{code} plak (kliknite za promenu)",
+      "bleedingTitle": "{code} krvarenje (kliknite za promenu)",
+      "implant": "Implant",
+      "implantToggleOn": "Implant (kliknite da uklonite)",
+      "implantToggleOff": "Kliknite da označite kao implant",
+      "mobility": "Pokretljivost",
+      "mobilityTitle": "Kliknite da promenite pokretljivost (0–3)",
+      "prognosis": "Prognoza",
+      "prognosisTitle": "Dobra / Zadovoljavajuća / Sumnjiva / Beznadežna",
+      "furcaV": "Furkacija V",
+      "furcaVTitle": "Vestibularna furkacija (0/I/II/III)",
+      "furcaLP": "Furkacija L/P",
+      "furcaLPTitle": "Lingvalna/palatinalna furkacija (0/I/II/III)",
+      "gingivalWidth": "Širina gingive",
+      "siteMarkerAria": "Mesto {code}, sondiranje {depth}"
+    },
+    "chart": {
+      "ariaLabel": "Parodontogram — gornja i donja vilica"
+    },
+    "indicesBanner": {
+      "observationsPlaceholder": "Beleške o pregledu…",
+      "noteLabel": "Napomena (opciono)"
+    },
+    "loading": "Učitavanje parodontograma…",
+    "errors": {
+      "loadFailed": "Učitavanje parodontograma nije uspelo.",
+      "saveFailed": "Čuvanje izmene nije uspelo.",
+      "checkConnection": "Proverite vezu i pokušajte ponovo.",
+      "closeAborted": "Neka merenja još nisu sačuvana — pregled nije zatvoren. Proverite vezu i pokušajte ponovo."
+    }
+  }
+}

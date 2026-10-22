@@ -1,0 +1,34 @@
+{
+  "staffTasks": {
+    "title": "Задаци особља",
+    "add": "Нови задатак",
+    "taskTitle": "Задатак",
+    "details": "Детаљи",
+    "priority": "Приоритет",
+    "dueDate": "Рок",
+    "status": "Статус",
+    "assignee": "Задужен/а",
+    "filterByStatus": "Филтер по статусу",
+    "all": "Сви",
+    "delete": "Обриши",
+    "deleteTitle": "Брисање задатка",
+    "deleteMessage": "Обрисати овај задатак? Ова радња се не може опозвати.",
+    "updateFailed": "Ажурирање задатка није успело.",
+    "saveFailed": "Чување задатка није успело.",
+    "deleteFailed": "Брисање задатка није успело.",
+    "statuses": {
+      "open": "Отворен",
+      "claimed": "Преузет",
+      "done": "Завршен",
+      "cancelled": "Отказан"
+    },
+    "priorities": {
+      "low": "Низак",
+      "normal": "Нормалан",
+      "high": "Висок"
+    }
+  },
+  "nav": {
+    "staffTasks": "Задаци особља"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "labOrders": {
+    "title": "Лабораторијски налози",
+    "add": "Нови лабораторијски налог",
+    "patient": "Пацијент",
+    "lab": "Лабораторија",
+    "loading": "Учитавање…",
+    "selectPatient": "Изаберите пацијента",
+    "selectLab": "Изаберите лабораторију",
+    "workType": "Врста рада",
+    "tooth": "Зуб / ознака",
+    "impressionType": "Отисак",
+    "antagonistInfo": "Подаци о антагонисту",
+    "shade": "Боја",
+    "sentDate": "Датум слања",
+    "expectedDate": "Очекивани датум",
+    "status": "Статус",
+    "notes": "Напомене",
+    "save": "Пошаљи налог",
+    "cancel": "Откажи",
+    "noLabsHint": "Прво креирајте контакт лабораторије у Контактима.",
+    "workTypes": {
+      "crown": "Круница",
+      "bridge": "Мост",
+      "denture": "Протеза",
+      "implant": "Имплант",
+      "veneer": "Фасета",
+      "orthodontic": "Ортодонтски рад",
+      "repair": "Репаратура",
+      "other": "Остало"
+    },
+    "impressionTypes": {
+      "alginate": "Алгинат",
+      "pvs_silicone": "PVS / силикон",
+      "digital_scan": "Дигитални скен",
+      "other": "Остало"
+    },
+    "statuses": {
+      "sent": "Послат",
+      "in_progress": "У изради",
+      "ready": "Готов",
+      "received": "Примљен",
+      "cancelled": "Отказан"
+    }
+  },
+  "nav": {
+    "labOrdersForm": "Нови лабораторијски налог",
+    "labOrdersStatus": "Лабораторијски налози"
+  }
+}

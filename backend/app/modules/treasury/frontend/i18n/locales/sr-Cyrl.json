@@ -1,0 +1,35 @@
+{
+  "treasury": {
+    "nav": { "title": "Благајна" },
+    "title": "Благајна",
+    "newAccount": "Нови рачун",
+    "transfer": "Пренос",
+    "correct": "Исправка",
+    "correctionDirection": "Смер",
+    "accounts": "Рачуни",
+    "noAccounts": "Још нема рачуна.",
+    "statement": "Извод",
+    "noEntries": "Још нема промена.",
+    "accountName": "Назив рачуна",
+    "accountKind": "Врста",
+    "kindCash": "Готовина",
+    "kindBank": "Банка",
+    "create": "Креирај",
+    "openingBalance": "Почетно стање",
+    "deactivate": "Деактивирај",
+    "activate": "Поново активирај",
+    "inactive": "Неактиван",
+    "fromAccount": "Са рачуна",
+    "toAccount": "На рачун",
+    "amount": "Износ",
+    "memo": "Напомена (опционо)",
+    "correctMemo": "Напомена (обавезно)",
+    "kind": {
+      "transfer_out": "Одлазни пренос",
+      "transfer_in": "Долазни пренос",
+      "correction_in": "Исправка (прилив)",
+      "correction_out": "Исправка (одлив)",
+      "opening": "Почетно стање"
+    }
+  }
+}

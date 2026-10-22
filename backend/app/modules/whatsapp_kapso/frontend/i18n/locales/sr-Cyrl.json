@@ -1,0 +1,53 @@
+{
+  "whatsapp_kapso": {
+    "settings": {
+      "title": "WhatsApp (Kapso)",
+      "description": "Повежите WhatsApp број ординације преко Kapso-а за слање и примање порука."
+    },
+    "connection": "Веза",
+    "verified": "Верификован",
+    "notVerified": "Није верификован",
+    "apiKey": "Kapso API кључ",
+    "phoneNumberId": "ID броја телефона",
+    "businessAccountId": "ID пословног налога",
+    "businessAccountHelp": "Потребан за синхронизацију одобрених шаблона.",
+    "displayPhone": "Приказани број",
+    "webhookSecret": "Тајни кључ вебхука",
+    "secretStored": "Сачуван. Оставите празно да остане непромењен.",
+    "webhook": "Вебхук",
+    "webhookHelp": "Налепите овај URL у подешавања вебхука у Kapso-у да бисте примали статусе и одговоре.",
+    "copy": "Копирај",
+    "copied": "URL је копиран",
+    "templates": "Шаблони",
+    "sync": "Синхронизуј",
+    "noTemplates": "Нема одобрених шаблона. Синхронизујте да бисте их преузели из Kapso-а.",
+    "notificationType": "Врста обавештења",
+    "template": "Шаблон",
+    "map": "Повежи",
+    "mapped": "Шаблон је повезан",
+    "mapError": "Повезивање шаблона није успело",
+    "test": "Тест слање",
+    "sendTest": "Пошаљи тест",
+    "testOk": "Тест порука је послата",
+    "testFail": "Слање теста није успело",
+    "saved": "Подешавања су сачувана",
+    "saveError": "Чување није успело",
+    "synced": "Синхронизовано шаблона: {n}",
+    "syncError": "Синхронизација није успела",
+    "types": {
+      "appointment_confirmation": "Потврда термина",
+      "appointment_reminder": "Подсетник за термин",
+      "appointment_cancelled": "Отказивање термина",
+      "budget_sent": "Предрачун послат",
+      "budget_accepted": "Предрачун прихваћен",
+      "budget_reminder": "Подсетник за предрачун",
+      "invoice_sent": "Рачун послат",
+      "recall_reminder": "Подсетник за контролу",
+      "welcome": "Добродошлица"
+    },
+    "onboarding": {
+      "label": "Слање преко WhatsApp-а",
+      "description": "WhatsApp је жељени канал ординације, али Kapso још није повезан. Повежите га да би аутоматске поруке могле да се шаљу."
+    }
+  }
+}

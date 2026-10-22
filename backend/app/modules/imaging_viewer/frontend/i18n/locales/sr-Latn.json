@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "imagingViewer": "Snimci"
+  },
+  "imagingViewer": {
+    "list": {
+      "title": "DICOM snimci",
+      "empty": "Za ovog pacijenta još nema snimaka za pregled.",
+      "noPatient": "Nije izabran pacijent",
+      "noPatientHint": "Izaberite pacijenta iznad ili otvorite ovu stranicu sa ?patient_id=..., npr. iz kartona pacijenta.",
+      "pickPatient": "Izaberi pacijenta",
+      "unknownPatient": "Nepoznat pacijent",
+      "searchPatients": "Pretraži pacijente",
+      "unknownModality": "Nepoznat modalitet",
+      "noStudyDate": "Nema datuma snimanja"
+    },
+    "viewer": {
+      "title": "DICOM pregledač",
+      "unavailable": "Pregled nije dostupan",
+      "fallbackHint": "Snimak nije moguće prikazati. Pokušajte ponovo da otpremite datoteku.",
+      "visualizationNote": "Samo pomoć pri vizuelizaciji - nikada dijagnoza."
+    },
+    "rvg": {
+      "title": "Red za uvoz RVG snimaka",
+      "empty": "Nema uvoza u ovom prikazu.",
+      "scanNow": "Skeniraj sada",
+      "approveSuggestion": "Odobri predlog",
+      "approveCurrentPatient": "Dodeli trenutnom pacijentu",
+      "reject": "Odbij",
+      "suggested": "Predloženi pacijent (ocena {score})",
+      "ambiguous": "Nejasno podudaranje - izaberite pacijenta ručno",
+      "noSuggestion": "Nema podudaranja - otvorite sa ?patient_id= da biste dodelili",
+      "loadFailed": "Učitavanje RVG reda nije uspelo.",
+      "scanFailed": "Skeniranje nije uspelo. Da li je nadgledana fascikla podešena?",
+      "scanSummary": "Skeniranje završeno: skenirano {scanned}, novo {created}, automatski odobreno {approved}, neuspešno {failed}",
+      "actionFailed": "Radnja nije uspela. O ovom redu je možda već odlučeno.",
+      "status": {
+        "pending": "Na čekanju",
+        "approved": "Odobreno",
+        "rejected": "Odbijeno",
+        "failed": "Neuspešno"
+      },
+      "linksTitle": "Povezani identiteti senzora",
+      "linksEmpty": "Nema povezanih identiteta senzora.",
+      "unlink": "Prekini vezu"
+    },
+    "annotations": {
+      "title": "Anotacije",
+      "ruler": "Lenjir",
+      "freehand": "Crtanje",
+      "note": "Beleška",
+      "notePlaceholder": "Tekst anotacije…",
+      "saveNote": "Sačuvaj belešku",
+      "deleteLabel": "Obriši anotaciju",
+      "mm": "{mm} mm",
+      "noSpacing": "nema razmaka piksela — mm nije dostupno",
+      "kind_ruler": "Lenjir",
+      "kind_freehand": "Crtež",
+      "kind_note": "Beleška",
+      "loadFailed": "Učitavanje anotacija nije uspelo.",
+      "actionFailed": "Radnja nije uspela. Pokušajte ponovo.",
+      "aidNote": "Slojevi služe samo kao pomoć pri vizuelizaciji — nikada kao dijagnoza."
+    }
+  }
+}

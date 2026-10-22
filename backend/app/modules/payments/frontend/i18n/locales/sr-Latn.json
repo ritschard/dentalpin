@@ -1,0 +1,311 @@
+{
+  "payments": {
+    "nav": {
+      "payments": "Uplate",
+      "reports": "Izveštaji o uplatama"
+    },
+    "balance": {
+      "debt": "Duguje",
+      "credit": "Avans",
+      "paid": "Ukupno plaćeno"
+    },
+    "list": {
+      "title": "Uplate",
+      "subtitle": "Uplate pacijenata, avansne uplate po predračunima i avansi pacijenata.",
+      "empty": "Nema evidentiranih uplata.",
+      "new": "Nova uplata",
+      "searchPlaceholder": "Pacijent ili poziv na broj",
+      "filterDateFrom": "Od",
+      "filterDateTo": "Do",
+      "filterMethod": "Način plaćanja",
+      "filterPatient": "Pacijent",
+      "filter": {
+        "method": "Način plaćanja",
+        "hasRefunds": "Sa povraćajima",
+        "hasUnallocated": "Neraspoređeno",
+        "patient": "Pacijent",
+        "withDebt": "Sa dugom",
+        "paymentStatus": "Status"
+      },
+      "sort": {
+        "paymentDate": "Datum",
+        "amount": "Iznos"
+      },
+      "budgetStatus": {
+        "paid": "Plaćeno",
+        "partial": "Delimično",
+        "unpaid": "Neplaćeno"
+      },
+      "row": {
+        "debtTooltip": "Neizmireni dug pacijenta",
+        "creditTooltip": "Avans pacijenta",
+        "allocationsLabel": "Raspored",
+        "refundedLabel": "Vraćeno",
+        "noPatient": "Bez pacijenta"
+      },
+      "columnDate": "Datum",
+      "columnPatient": "Pacijent",
+      "columnAmount": "Iznos",
+      "columnMethod": "Način plaćanja",
+      "columnAllocations": "Raspored",
+      "columnNet": "Neto",
+      "columnActions": "Radnje"
+    },
+    "detail": {
+      "title": "Uplata {reference}",
+      "amount": "Iznos",
+      "method": "Način plaćanja",
+      "date": "Datum",
+      "recordedBy": "Evidentirao/la",
+      "allocations": "Raspored",
+      "refunds": "Povraćaji",
+      "refund": "Povrati",
+      "refundedTotal": "Vraćeno",
+      "netAmount": "Neto",
+      "reference": "Poziv na broj",
+      "notes": "Napomene"
+    },
+    "new": {
+      "title": "Evidentiraj uplatu",
+      "patient": "Pacijent",
+      "patientPlaceholder": "Pretraži pacijenta...",
+      "unknownPatient": "Nepoznat pacijent",
+      "amount": "Iznos",
+      "suggestedHint": "Preostalo za naplatu: {amount}",
+      "useSuggested": "koristi ovaj iznos",
+      "method": "Način plaćanja",
+      "moreMethods": "Više opcija",
+      "date": "Datum",
+      "today": "Danas",
+      "advanced": "Napredne opcije",
+      "reference": "Poziv na broj",
+      "referencePlaceholder": "Broj autorizacije kartice, poziv na broj transfera...",
+      "notes": "Napomene",
+      "allocations": "Raspored",
+      "allocationsHint": "Rasporedite ovu uplatu po predračunima ili je ostavite kao avans pacijenta.",
+      "addAllocation": "Dodaj raspored",
+      "allocationToBudget": "Na predračun",
+      "allocationOnAccount": "Avans",
+      "sumLabel": "Zbir:",
+      "sumMismatch": "ne odgovara iznosu",
+      "submit": "Evidentiraj",
+      "submitWithAmount": "Naplati {amount}",
+      "cancel": "Otkaži",
+      "errPatient": "Izaberite pacijenta",
+      "errAmount": "Unesite iznos veći od 0",
+      "errSum": "Zbir rasporeda mora biti jednak iznosu",
+      "errUnknown": "Evidentiranje uplate nije uspelo. Pokušajte ponovo.",
+      "methodRecord": "Evidentiraj već primljenu uplatu",
+      "methodCollect": "Naplati sada"
+    },
+    "methods": {
+      "cash": "Gotovina",
+      "card": "Kartica",
+      "bank_transfer": "Transfer",
+      "direct_debit": "Direktno zaduženje",
+      "insurance": "Osiguranje",
+      "other": "Ostalo",
+      "upi": "UPI",
+      "netbanking": "Elektronsko bankarstvo"
+    },
+    "refund": {
+      "title": "Povrat uplate",
+      "amount": "Iznos",
+      "method": "Način plaćanja",
+      "reason": "Razlog",
+      "note": "Detalji",
+      "submit": "Povrati",
+      "reasonCodes": {
+        "duplicate": "Dupla uplata",
+        "overpaid": "Preplaćeno",
+        "treatment_cancelled": "Tretman je otkazan",
+        "dispute": "Spor",
+        "other": "Ostalo"
+      }
+    },
+    "ledger": {
+      "title": "Kartica pacijenta",
+      "totalPaid": "Ukupno plaćeno",
+      "totalEarned": "Izvedeni tretmani",
+      "patientCredit": "Avans pacijenta",
+      "clinicReceivable": "Potraživanje ordinacije",
+      "onAccount": "Avans",
+      "empty": "Nema promena."
+    },
+    "budgetCard": {
+      "title": "Uplate po predračunu",
+      "budgetTotal": "Predračunato",
+      "collected": "Naplaćeno",
+      "pending": "Preostalo",
+      "collect": "Naplati",
+      "empty": "Na ovaj predračun još nema evidentiranih uplata.",
+      "collectedLabel": "Naplaćeno",
+      "pendingLabel": "Preostalo",
+      "outOfTotal": "od ukupno {total}",
+      "settled": "Predračun je u potpunosti naplaćen",
+      "history": "Istorija uplata",
+      "payment": "Uplata",
+      "emptyDetailed": "Još nema naplaćenih uplata. Koristite „Naplati“ da evidentirate prvu."
+    },
+    "budgetCollect": {
+      "title": "Naplata predračuna",
+      "amountLabel": "Iznos",
+      "methodLabel": "Način plaćanja",
+      "dateLabel": "Datum uplate",
+      "today": "Danas",
+      "quickFull": "Ceo iznos",
+      "optionalDetails": "Dodaj poziv na broj ili napomene (opciono)",
+      "referenceLabel": "Poziv na broj",
+      "referencePlaceholder": "npr. ID POS transakcije",
+      "notesLabel": "Interne napomene",
+      "submit": "Naplati",
+      "cancel": "Otkaži",
+      "success": "Uplata je evidentirana",
+      "errorGeneric": "Evidentiranje uplate nije uspelo",
+      "noteAppliedToBudget": "se primenjuje na predračun.",
+      "notePendingAfter": "Preostaje",
+      "noteFullySettled": "Predračun će biti u potpunosti izmiren.",
+      "noteToBudget": "se primenjuje na predračun, a",
+      "noteExcessToOnAccount": "ide na avans pacijenta.",
+      "noteBudgetSettled": "Predračun je već u potpunosti plaćen.",
+      "noteToOnAccount": "ide na avans pacijenta."
+    },
+    "pendingCharges": {
+      "title": "Za naplatu",
+      "count": "Sesija: {n}",
+      "more": "+ još {n}",
+      "collect": "Naplati {amount}",
+      "unnamedSession": "Sesija bez naziva"
+    },
+    "patientPanel": {
+      "title": "Kartica pacijenta",
+      "kpis": {
+        "totalPaid": "Ukupno plaćeno",
+        "debt": "Potraživanje ordinacije",
+        "onAccount": "Avans"
+      },
+      "sidebar": {
+        "title": "Sažetak",
+        "credit": "Avans pacijenta",
+        "lastPayment": "Poslednja uplata",
+        "noLastPayment": "Još nema uplata",
+        "totalEarned": "Izvedeni tretmani"
+      },
+      "banner": {
+        "debtTitle": "Duguje ordinaciji {amount}",
+        "debtDescription": "Ukupno plaćeno je manje od vrednosti izvedenih tretmana.",
+        "creditTitle": "Ima avans od {amount}",
+        "creditDescription": "Plaćeno je više od vrednosti izvedenih tretmana."
+      },
+      "cobrar": "Evidentiraj uplatu",
+      "timeline": {
+        "title": "Promene",
+        "empty": "Nema evidentiranih promena",
+        "emptyCta": "Evidentiraj prvu uplatu",
+        "loadError": "Učitavanje kartice pacijenta nije uspelo.",
+        "retry": "Pokušaj ponovo",
+        "drPrefix": "dr {name}",
+        "types": {
+          "payment": "Uplata",
+          "refund": "Povraćaj",
+          "earned": "Izvedeni tretman"
+        },
+        "treatmentStatus": {
+          "planned": "Planirano",
+          "performed": "Izvedeno",
+          "completed": "Završeno",
+          "cancelled": "Otkazano",
+          "in_progress": "U toku"
+        },
+        "rowMenu": {
+          "refund": "Povrati",
+          "reallocate": "Dodeli predračunu…"
+        }
+      },
+      "refundModal": {
+        "title": "Povrat uplate",
+        "amount": "Iznos povraćaja",
+        "method": "Način povraćaja",
+        "reason": "Razlog",
+        "note": "Detalji (opciono)",
+        "submit": "Potvrdi povrat",
+        "cancel": "Otkaži",
+        "errorGeneric": "Evidentiranje povraćaja nije uspelo"
+      }
+    },
+    "reports": {
+      "title": "Izveštaji o uplatama",
+      "subtitle": "Naplata, povraćaji, salda pacijenata i trendovi za period.",
+      "loadError": "Učitavanje izveštaja o uplatama nije uspelo",
+      "cardDescription": "Naplaćeno, povraćaji, salda pacijenata, starost potraživanja i trendovi.",
+      "period": "Period",
+      "refresh": "Osveži",
+      "collected": "Naplaćeno",
+      "refunded": "Vraćeno",
+      "net": "Neto",
+      "patientCredit": "Ukupni avansi pacijenata",
+      "patientCreditHint": "Avansi i unapred uplaćeni iznosi.",
+      "clinicReceivable": "Potraživanje ordinacije",
+      "refundRatio": "Udeo povraćaja",
+      "byMethod": "Po načinu plaćanja",
+      "byProfessional": "Po terapeutu",
+      "byProfessionalHint": "Izvedeni tretmani, a ne naplaćeni iznosi.",
+      "aging": "Starost potraživanja",
+      "agingHint": "Pacijenti sa neizmirenim dugom, grupisani po starosti duga.",
+      "refunds": "Povraćaji po razlogu",
+      "refundsHint": "Raspodela povraćaja po evidentiranom razlogu.",
+      "bucket": "{range} dana",
+      "unknownProfessional": "Nije dodeljeno",
+      "countShort": "Transakcija: {n}",
+      "countPatients": "Pacijenata: {n}",
+      "granularity": {
+        "day": "Dan",
+        "week": "Nedelja",
+        "month": "Mesec"
+      },
+      "hero": {
+        "netCollected": "Neto naplaćeno",
+        "netCollectedHint": "Naplata umanjena za povraćaje u periodu.",
+        "receivable": "Neizmirena potraživanja",
+        "receivableHint": "Izvedeni tretmani koji još nisu naplaćeni, po starosti.",
+        "vsPrevious": "u odnosu na prethodni period",
+        "transactionsCount": "Transakcija u periodu: {n}"
+      },
+      "trend": {
+        "title": "Trend naplate",
+        "subtitle": "Neto po intervalu. Isprekidana linija prikazuje povraćaje."
+      },
+      "empty": {
+        "noDataTitle": "Nema podataka u ovom periodu",
+        "noDataDescription": "Promenite period ili evidentirajte uplatu da biste videli izveštaj.",
+        "noTrend": "Nema dovoljno tačaka za prikaz trenda.",
+        "noMethods": "U periodu nema naplate po načinima plaćanja.",
+        "noProfessionals": "U periodu nema izvedenih tretmana.",
+        "noReceivable": "Nema pacijenata sa neizmirenim dugom."
+      },
+      "drilldown": {
+        "viewPayments": "Prikaži uplate u periodu",
+        "viewPatients": "Prikaži pacijente sa dugom"
+      }
+    },
+    "target": {
+      "label": "Primeni na",
+      "placeholder": "Izaberite odredište",
+      "onAccount": "Avans pacijenta",
+      "onAccountHint": "Ostaje kao avans pacijenta. Ne primenjuje se ni na jedan račun ili predračun dok ga ne dodelite.",
+      "budgetHint": "Primeniće se na ovaj predračun i njegove izdate račune.",
+      "lockedBudget": "Primeniće se na predračun {budget} i njegove račune."
+    },
+    "reallocate": {
+      "title": "Dodeli predračunu",
+      "hint": "Cela uplata od {amount} biće prebačena na izabrani predračun i njegove izdate račune.",
+      "submit": "Dodeli",
+      "success": "Uplata je dodeljena predračunu",
+      "error": "Ponovno dodeljivanje uplate nije uspelo. Pokušajte ponovo."
+    },
+    "followup": {
+      "collect": "Naplati",
+      "collected": "Uplata je evidentirana."
+    }
+  }
+}

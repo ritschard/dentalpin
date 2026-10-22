@@ -1,0 +1,53 @@
+{
+  "whatsapp_kapso": {
+    "settings": {
+      "title": "WhatsApp (Kapso)",
+      "description": "Povežite WhatsApp broj ordinacije preko Kapso-a za slanje i primanje poruka."
+    },
+    "connection": "Veza",
+    "verified": "Verifikovan",
+    "notVerified": "Nije verifikovan",
+    "apiKey": "Kapso API ključ",
+    "phoneNumberId": "ID broja telefona",
+    "businessAccountId": "ID poslovnog naloga",
+    "businessAccountHelp": "Potreban za sinhronizaciju odobrenih šablona.",
+    "displayPhone": "Prikazani broj",
+    "webhookSecret": "Tajni ključ vebhuka",
+    "secretStored": "Sačuvan. Ostavite prazno da ostane nepromenjen.",
+    "webhook": "Vebhuk",
+    "webhookHelp": "Nalepite ovaj URL u podešavanja vebhuka u Kapso-u da biste primali statuse i odgovore.",
+    "copy": "Kopiraj",
+    "copied": "URL je kopiran",
+    "templates": "Šabloni",
+    "sync": "Sinhronizuj",
+    "noTemplates": "Nema odobrenih šablona. Sinhronizujte da biste ih preuzeli iz Kapso-a.",
+    "notificationType": "Vrsta obaveštenja",
+    "template": "Šablon",
+    "map": "Poveži",
+    "mapped": "Šablon je povezan",
+    "mapError": "Povezivanje šablona nije uspelo",
+    "test": "Test slanje",
+    "sendTest": "Pošalji test",
+    "testOk": "Test poruka je poslata",
+    "testFail": "Slanje testa nije uspelo",
+    "saved": "Podešavanja su sačuvana",
+    "saveError": "Čuvanje nije uspelo",
+    "synced": "Sinhronizovano šablona: {n}",
+    "syncError": "Sinhronizacija nije uspela",
+    "types": {
+      "appointment_confirmation": "Potvrda termina",
+      "appointment_reminder": "Podsetnik za termin",
+      "appointment_cancelled": "Otkazivanje termina",
+      "budget_sent": "Predračun poslat",
+      "budget_accepted": "Predračun prihvaćen",
+      "budget_reminder": "Podsetnik za predračun",
+      "invoice_sent": "Račun poslat",
+      "recall_reminder": "Podsetnik za kontrolu",
+      "welcome": "Dobrodošlica"
+    },
+    "onboarding": {
+      "label": "Slanje preko WhatsApp-a",
+      "description": "WhatsApp je željeni kanal ordinacije, ali Kapso još nije povezan. Povežite ga da bi automatske poruke mogle da se šalju."
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "inventory": {
+    "title": "Zalihe",
+    "add": "Dodaj artikal",
+    "edit": "Izmeni artikal",
+    "item": "Artikal",
+    "category": "Kategorija",
+    "unit": "Jedinica",
+    "stock": "Stanje",
+    "minimum": "Minimum",
+    "notes": "Napomene",
+    "status": "Status",
+    "ok": "U redu",
+    "low": "Nisko",
+    "filterByCategory": "Filter po kategoriji",
+    "lowStockOnly": "Samo niske zalihe",
+    "includeInactive": "Prikaži neaktivne",
+    "increment": "Povećaj stanje",
+    "decrement": "Smanji stanje",
+    "delete": "Obriši",
+    "deleteTitle": "Brisanje artikla",
+    "deleteMessage": "Obrisati ovaj artikal sa zaliha? Ova radnja se ne može opozvati.",
+    "cannotDeleteWithHistory": "Ovaj artikal ima istoriju promena stanja. Deaktivirajte ga da biste sačuvali trag izmena.",
+    "deactivate": "Deaktiviraj",
+    "reactivate": "Ponovo aktiviraj",
+    "deactivated": "Artikal je deaktiviran",
+    "reactivated": "Artikal je ponovo aktiviran",
+    "empty": "Još nema promena",
+    "allCategories": "Sve kategorije",
+    "adjustBy": "Promeni za…",
+    "apply": "Primeni",
+    "cost": "Jedinična cena",
+    "valuation": "Vrednost zaliha",
+    "movements": "Promene",
+    "movementsTitle": "Promene stanja",
+    "reasons": {
+      "initial": "Početno stanje",
+      "restock": "Dopuna",
+      "consumption": "Potrošnja",
+      "adjustment": "Usklađivanje",
+      "correction": "Ispravka"
+    },
+    "categories": {
+      "consumables": "Potrošni materijal",
+      "equipment": "Oprema",
+      "office": "Kancelarija",
+      "other": "Ostalo"
+    }
+  },
+  "nav": {
+    "inventory": "Zalihe"
+  }
+}

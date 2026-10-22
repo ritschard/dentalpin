@@ -1,0 +1,24 @@
+{
+  "expenses": {
+    "title": "Troškovi",
+    "add": "Dodaj trošak",
+    "date": "Datum",
+    "category": "Kategorija",
+    "amount": "Iznos",
+    "description": "Opis",
+    "filterByCategory": "Filter po kategoriji",
+    "delete": "Obriši",
+    "deleteTitle": "Brisanje troška",
+    "deleteMessage": "Obrisati ovaj trošak? Ova radnja se ne može opozvati.",
+    "categories": {
+      "rent": "Zakup",
+      "utilities": "Komunalije",
+      "salaries": "Zarade",
+      "supplies": "Potrošni materijal",
+      "equipment": "Oprema",
+      "insurance": "Osiguranje",
+      "maintenance": "Održavanje",
+      "other": "Ostalo"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "payroll": {
+    "title": "Zarade",
+    "subtitle": "Profili zaposlenih, obračunski periodi i izveštaji",
+    "nav": {
+      "profiles": "Profili",
+      "periods": "Periodi",
+      "reports": "Izveštaji"
+    },
+    "profiles": {
+      "title": "Profili",
+      "subtitle": "Uslovi zarade i šifrovani bankovni podaci za svakog zaposlenog",
+      "new": "Novi profil",
+      "edit": "Izmeni profil",
+      "staff": "Zaposleni",
+      "staffPlaceholder": "Izaberite zaposlenog",
+      "paymentType": "Način obračuna",
+      "monthly": "Mesečno",
+      "hourly": "Po satu",
+      "baseAmount": "Osnovni iznos",
+      "currency": "Valuta",
+      "bankAccount": "Bankovni račun",
+      "bankAccountPlaceholder": "Ostavite prazno da zadržite postojeće",
+      "taxId": "Poreski broj",
+      "taxIdPlaceholder": "Ostavite prazno da zadržite postojeće",
+      "hasBank": "Bankovni račun je unet",
+      "hasTax": "Poreski broj je unet",
+      "active": "Aktivan profil",
+      "inactive": "Neaktivan",
+      "empty": "Još nema profila"
+    },
+    "periods": {
+      "title": "Periodi",
+      "subtitle": "Mesečni obračunski periodi i njihove stavke",
+      "open": "Otvori period",
+      "month": "Mesec (GGGG-MM)",
+      "status": "Status",
+      "draft": "Nacrt",
+      "closed": "Zatvoren",
+      "paid": "Isplaćen",
+      "close": "Zatvori period",
+      "markPaid": "Označi kao isplaćeno",
+      "deleteConfirm": "Obrisati period {month}? Mogu se brisati samo prazni periodi u nacrtu.",
+      "transitionConfirm": "Prebaciti {month} u status {status}?",
+      "empty": "Još nema perioda"
+    },
+    "entries": {
+      "title": "Stavke",
+      "gross": "Bruto",
+      "deductions": "Odbici",
+      "net": "Neto",
+      "netMismatch": "Neto mora biti jednak bruto iznosu umanjenom za odbitke",
+      "notes": "Napomene",
+      "add": "Dodaj stavku",
+      "edit": "Izmeni stavku",
+      "deleteConfirm": "Obrisati ovu stavku? Ova radnja se ne može opozvati.",
+      "staff": "Zaposleni",
+      "empty": "Još nema stavki"
+    },
+    "reports": {
+      "title": "Izveštaji",
+      "subtitle": "Mesečni i godišnji zbirni pregledi u valuti ordinacije",
+      "month": "Mesec",
+      "year": "Godina",
+      "monthly": "Mesečni izveštaj",
+      "annual": "Godišnji izveštaj",
+      "entryCount": "Stavke",
+      "totalGross": "Ukupno bruto",
+      "totalDeductions": "Ukupno odbici",
+      "totalNet": "Ukupno neto",
+      "periodCount": "Periodi"
+    },
+    "common": {
+      "save": "Sačuvaj",
+      "cancel": "Otkaži",
+      "edit": "Izmeni",
+      "close": "Zatvori",
+      "delete": "Obriši",
+      "back": "Nazad",
+      "retry": "Pokušaj ponovo",
+      "loadError": "Učitavanje podataka nije uspelo",
+      "saveError": "Čuvanje izmena nije uspelo",
+      "empty": "Ovde još nema ničega"
+    }
+  }
+}
