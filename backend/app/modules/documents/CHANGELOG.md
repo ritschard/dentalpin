@@ -3,6 +3,7 @@
 ## Unreleased
 
 - feat(i18n): Serbian layer strings in both scripts (`sr-Cyrl.json`, `sr-Latn.json`).
+- fix(i18n): document PDF dates (birth date, issue stamp) follow the locale (`format_pdf_date`).
 - feat(i18n): Serbian clinical-document PDF labels (`sr-Cyrl`, `sr-Latn`).
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 

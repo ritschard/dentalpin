@@ -29,13 +29,21 @@ CATALOG_NAME_PRIORITY: tuple[str, ...] = (
     "it",
     "pl",
     "ar",
+    "sr-Latn",
+    "sr-Cyrl",
 )
 
 
-def catalog_name(names: dict | None) -> str | None:
+def catalog_name(names: dict | None, locale: str | None = None) -> str | None:
     """Resolve a display name from a catalog ``names`` JSONB dict.
 
-    Priority order per :data:`CATALOG_NAME_PRIORITY`, then any non-empty
+    With a ``locale`` (a surface rendering for one reader, e.g. a PDF), that
+    locale wins, then the other variants of the same language (``sr-Cyrl``
+    → ``sr-Latn``, ``pt-BR`` → ``pt``: same words, different script or
+    spelling), then English, which a reader of an untranslated language
+    is likelier to follow than Spanish.
+
+    Then priority order per :data:`CATALOG_NAME_PRIORITY`, then any non-empty
     translation (items created under a core-only locale never degrade to
     ``None``/internal code), else ``None``. Whitespace-only strings are
     treated as missing.
@@ -45,6 +53,14 @@ def catalog_name(names: dict | None) -> str | None:
 
     def usable(value: object) -> bool:
         return bool(isinstance(value, str) and value.strip())
+
+    if locale:
+        language = locale.split("-")[0]
+        siblings = sorted(k for k in names if k != locale and k.split("-")[0] == language)
+        for lang in (locale, *siblings, "en"):
+            value = names.get(lang)
+            if usable(value):
+                return value  # type: ignore[return-value]
 
     for lang in CATALOG_NAME_PRIORITY:
         value = names.get(lang)

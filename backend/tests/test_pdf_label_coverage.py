@@ -166,6 +166,26 @@ def test_budget_pdf_renders_its_own_heading(locale: str) -> None:
     assert BUDGET_HEADINGS[locale] in html
 
 
+def test_budget_pdf_dates_follow_the_locale() -> None:
+    """Quote dates in the reader's convention, not one slash format for all."""
+    serbian = BudgetPDFService._generate_html(_budget(), _clinic(), False, "sr-Latn", None)
+    spanish = BudgetPDFService._generate_html(_budget(), _clinic(), False, "es", None)
+    assert "20.10.2026." in serbian
+    assert "20/10/2026" in spanish
+
+
+def test_budget_pdf_names_fall_back_within_the_language() -> None:
+    """A Cyrillic quote lists the Latin catalog name, not English or Spanish."""
+    budget = _budget()
+    budget.items[0].catalog_item.names = {
+        "es": "Limpieza dental",
+        "en": "Dental cleaning",
+        "sr-Latn": "Čišćenje zuba",
+    }
+    html = BudgetPDFService._generate_html(budget, _clinic(), False, "sr-Cyrl", None)
+    assert "Čišćenje zuba" in html
+
+
 def _html_tag(html: str) -> str:
     return html.split("<html", 1)[1].split(">", 1)[0]
 

@@ -39,6 +39,14 @@ frontend as a Nuxt layer under its own Python package.
   pattern that skipped script subtags, so `sr-Cyrl` / `sr-Latn` slipped
   past it. Both are now accepted (Babel `sr_Cyrl_RS` / `sr_Latn_RS`), the
   five PDF modules carry Serbian labels, and the guard reads script codes.
+- **PDF dates were `dd/mm/yyyy` in every language**, and a quote PDF in a
+  language its catalog had no name for printed whichever translation came
+  first. Dates now go through `core/pdf_locales.format_pdf_date` (German
+  and Polish `22.10.2026`, Hungarian `2026. 10. 22.`, Serbian
+  `22.10.2026.`; prescriptions already did this and now share the table),
+  and `catalog_name(names, locale)` resolves the locale, then the same
+  language's other script or region (`sr-Cyrl` → `sr-Latn`, `pt-BR` →
+  `pt`), then English, before the Spanish-first default.
 - **Emails in every language but Spanish carried a Spanish footer, and
   template sends had a Spanish placeholder subject.** Nothing set the
   layout's `footer_sent_by`, so `base.html` always fell back to "Este

@@ -14,6 +14,8 @@ same one. A test guards the two against each other.
 
 from __future__ import annotations
 
+from datetime import date, datetime
+
 PDF_LOCALES: tuple[str, ...] = (
     "es",
     "en",
@@ -52,3 +54,23 @@ LOCALE_BY_LANG: dict[str, str] = {
     "sr-Cyrl": "sr_Cyrl_RS",
     "sr-Latn": "sr_Latn_RS",
 }
+
+
+# Date patterns printed on the PDFs. Day/month/year with slashes unless the
+# language writes dates its own way; the time, where shown, is always HH:MM.
+DEFAULT_DATE_FORMAT = "%d/%m/%Y"
+DATE_FORMAT_BY_LANG: dict[str, str] = {
+    "de": "%d.%m.%Y",
+    "hu": "%Y. %m. %d.",
+    "pl": "%d.%m.%Y",
+    "sr-Cyrl": "%d.%m.%Y.",
+    "sr-Latn": "%d.%m.%Y.",
+}
+
+
+def format_pdf_date(value: date, locale: str) -> str:
+    return value.strftime(DATE_FORMAT_BY_LANG.get(locale, DEFAULT_DATE_FORMAT))
+
+
+def format_pdf_datetime(value: datetime, locale: str) -> str:
+    return f"{format_pdf_date(value, locale)} {value.strftime('%H:%M')}"

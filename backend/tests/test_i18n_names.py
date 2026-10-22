@@ -38,3 +38,22 @@ def test_priority_chain_covers_known_locales():
     without breaking when a new locale is added."""
     for lang in ("es", "en", "fr", "pt", "ta", "te", "hi", "de", "hu", "it", "pl"):
         assert lang in CATALOG_NAME_PRIORITY, f"{lang} missing from CATALOG_NAME_PRIORITY"
+
+
+def test_locale_wins_over_the_priority_order():
+    names = {"es": "Empaste", "en": "Filling", "sr-Latn": "Plomba"}
+    assert catalog_name(names, "sr-Latn") == "Plomba"
+    assert catalog_name(names) == "Empaste"
+
+
+def test_locale_falls_back_to_its_own_language_first():
+    """A Cyrillic reader gets the Latin name before English or Spanish."""
+    names = {"es": "Empaste", "en": "Filling", "sr-Latn": "Plomba"}
+    assert catalog_name(names, "sr-Cyrl") == "Plomba"
+    assert catalog_name({"es": "Empaste", "pt": "Obturação"}, "pt-BR") == "Obturação"
+
+
+def test_untranslated_locale_falls_back_to_english_before_spanish():
+    names = {"es": "Empaste", "en": "Filling"}
+    assert catalog_name(names, "de") == "Filling"
+    assert catalog_name({"es": "Empaste"}, "de") == "Empaste"

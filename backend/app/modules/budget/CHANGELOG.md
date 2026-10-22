@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- fix(i18n): quote PDF dates follow the locale (`format_pdf_date`); treatment names resolve through `catalog_name(names, locale)` — the locale, then the same language's other script/region (`sr-Cyrl` → `sr-Latn`), then English. It used to take the first JSONB key, which happened to be English.
 - feat(i18n): Serbian quote PDF labels (`sr-Cyrl`, `sr-Latn`).
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 

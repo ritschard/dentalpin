@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- fix(i18n): invoice PDF dates follow the locale (`format_pdf_date`), e.g. `22.10.2026.` in Serbian, `22.10.2026` in German, `2026. 10. 22.` in Hungarian; was `dd/mm/yyyy` for every language.
 - feat(i18n): Serbian invoice PDF labels (`sr-Cyrl`, `sr-Latn`).
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 

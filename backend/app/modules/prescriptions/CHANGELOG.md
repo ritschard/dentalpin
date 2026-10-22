@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- refactor: the PDF date pattern comes from the shared `core/pdf_locales.DATE_FORMAT_BY_LANG` instead of a per-label `date_format` (same output for every existing locale).
 - feat(i18n): Serbian prescription PDF labels (`sr-Cyrl`, `sr-Latn`), dated `dd.mm.yyyy.`.
 - feat(i18n): Serbian layer strings in both scripts (`sr-Cyrl.json`, `sr-Latn.json`).
 - fix: date-only fields (`YYYY-MM-DD`) are parsed as local midnight
