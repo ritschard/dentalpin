@@ -25,6 +25,12 @@ frontend as a Nuxt layer under its own Python package.
   `sr-Cyrl` / `sr-Latn` strings; the country-specific compliance/payment
   layers (verifactu, sistema_ts, sdi_it, nav_online, india_gst, razorpay)
   fall back to English.
+- **Serbian demo data** (`./scripts/seed-demo.sh --lang sr-Latn`): a
+  Belgrade clinic in RSD with Serbian staff, patients (`+381` phones,
+  `.rs` emails), medical histories, plans, notes, recalls and timeline,
+  all in Latin script. The catalog's EUR reference prices are converted
+  to dinars at seed time (`seed_catalog(..., price_rate=)`), and seeded
+  timeline entries now name treatments in the demo's own language.
 
 ### Fixed
 
@@ -47,6 +53,9 @@ frontend as a Nuxt layer under its own Python package.
   and `catalog_name(names, locale)` resolves the locale, then the same
   language's other script or region (`sr-Cyrl` → `sr-Latn`, `pt-BR` →
   `pt`), then English, before the Spanish-first default.
+- **Demo payments were always recorded in EUR**, whatever the demo
+  clinic's currency (USD for English, INR for the India demos); they now
+  snapshot the clinic currency like the real write path.
 - **Emails in every language but Spanish carried a Spanish footer, and
   template sends had a Spanish placeholder subject.** Nothing set the
   layout's `footer_sent_by`, so `base.html` always fell back to "Este

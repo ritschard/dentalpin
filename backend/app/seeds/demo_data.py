@@ -3,7 +3,7 @@
 This module contains all the seed data used to populate a demo environment.
 All UUIDs are fixed to allow consistent references and easier debugging.
 
-Supports bilingual data (English and Spanish) via LANG setting.
+Language-specific data is selected via the LANG setting (see ``SupportedLang``).
 """
 
 from datetime import date, datetime, timedelta
@@ -11,11 +11,13 @@ from decimal import Decimal
 from typing import Literal
 from uuid import UUID, uuid4
 
+from app.core.i18n_names import catalog_name
+
 # =============================================================================
 # Language Configuration
 # =============================================================================
 
-SupportedLang = Literal["es", "en", "fr", "ta", "te", "hi"]
+SupportedLang = Literal["es", "en", "fr", "ta", "te", "hi", "sr-Latn"]
 LANG: SupportedLang = "en"  # Default language
 
 # Independent of LANG: forces the India GST demo clinic (Chennai, GSTIN,
@@ -92,6 +94,26 @@ def t(translations: dict[str, str]) -> str:
     return translations.get(LANG, translations.get("en", ""))
 
 
+def localized_catalog_name(names: dict | None) -> str | None:
+    """A catalog item's name in the demo language, when the catalog has it.
+
+    Without a locale ``catalog_name`` resolves Spanish-first; seeded text
+    should read in the demo's own language.
+    """
+    return catalog_name(names, LANG)
+
+
+# The catalog's reference prices are Spanish EUR figures. For a demo clinic
+# whose currency would make them read as nonsense (60 RSD for a filling),
+# the catalog seed converts them at this rate instead.
+DEMO_PRICE_RATES: dict[str, Decimal] = {"RSD": Decimal("117")}
+
+
+def get_catalog_price_rate() -> Decimal | None:
+    """EUR → clinic-currency rate for the catalog seed, or None to keep EUR."""
+    return DEMO_PRICE_RATES.get(get_clinic_data()["currency"])
+
+
 # =============================================================================
 # Fixed UUIDs for consistent references
 # =============================================================================
@@ -151,6 +173,7 @@ def get_clinic_data() -> dict:
                 "ta": "டெமோ பல் மருத்துவ கிளினிக்",
                 "te": "డెమో దంత వైద్యశాల",
                 "hi": "डेमो डेंटल क्लिनिक",
+                "sr-Latn": "Demo stomatološka ordinacija",
             }
         ),
         "tax_id": t(
@@ -161,6 +184,7 @@ def get_clinic_data() -> dict:
                 "ta": "33-1234567",
                 "te": "36-1234567",
                 "hi": "07-1234567",
+                "sr-Latn": "101234567",
             }
         ),
         "address": {
@@ -172,6 +196,7 @@ def get_clinic_data() -> dict:
                     "ta": "123 மெயின் தெரு",
                     "te": "123 మెయిన్ రోడ్, బంజారా హిల్స్",
                     "hi": "123 कनॉट प्लेस",
+                    "sr-Latn": "Bulevar kralja Aleksandra 123",
                 }
             ),
             "city": t(
@@ -182,6 +207,7 @@ def get_clinic_data() -> dict:
                     "ta": "சென்னை",
                     "te": "హైదరాబాద్",
                     "hi": "नई दिल्ली",
+                    "sr-Latn": "Beograd",
                 }
             ),
             "postal_code": t(
@@ -192,6 +218,7 @@ def get_clinic_data() -> dict:
                     "ta": "600001",
                     "te": "500034",
                     "hi": "110001",
+                    "sr-Latn": "11000",
                 }
             ),
             "country": t(
@@ -202,6 +229,7 @@ def get_clinic_data() -> dict:
                     "ta": "இந்தியா",
                     "te": "భారతదేశం",
                     "hi": "भारत",
+                    "sr-Latn": "Srbija",
                 }
             ),
         },
@@ -213,11 +241,20 @@ def get_clinic_data() -> dict:
                 "ta": "+91 98401 23456",
                 "te": "+91 98480 12345",
                 "hi": "+91 98110 23456",
+                "sr-Latn": "+381 11 123 4567",
             }
         ),
         "email": "info@demo.clinic",
         "currency": t(
-            {"es": "EUR", "en": "USD", "fr": "EUR", "ta": "INR", "te": "INR", "hi": "INR"}
+            {
+                "es": "EUR",
+                "en": "USD",
+                "fr": "EUR",
+                "ta": "INR",
+                "te": "INR",
+                "hi": "INR",
+                "sr-Latn": "RSD",
+            }
         ),
         "timezone": t(
             {
@@ -227,6 +264,7 @@ def get_clinic_data() -> dict:
                 "ta": "Asia/Kolkata",
                 "te": "Asia/Kolkata",
                 "hi": "Asia/Kolkata",
+                "sr-Latn": "Europe/Belgrade",
             }
         ),
         "settings": {
@@ -253,6 +291,7 @@ def get_clinic_data() -> dict:
                         "ta": "அறை 1",
                         "te": "గది 1",
                         "hi": "कक्ष 1",
+                        "sr-Latn": "Kabinet 1",
                     }
                 ),
                 "color": "#3B82F6",
@@ -266,6 +305,7 @@ def get_clinic_data() -> dict:
                         "ta": "அறை 2",
                         "te": "గది 2",
                         "hi": "कक्ष 2",
+                        "sr-Latn": "Kabinet 2",
                     }
                 ),
                 "color": "#10B981",
@@ -299,6 +339,7 @@ USERS_I18N = {
         "ta": {"first_name": "நிர்வாகி", "last_name": "டெமோ"},
         "te": {"first_name": "నిర్వాహకులు", "last_name": "డెమో"},
         "hi": {"first_name": "व्यवस्थापक", "last_name": "डेमो"},
+        "sr-Latn": {"first_name": "Admin", "last_name": "Demo"},
     },
     "dentist": {
         "es": {"first_name": "María", "last_name": "García López"},
@@ -307,6 +348,7 @@ USERS_I18N = {
         "ta": {"first_name": "மீனா", "last_name": "குமார்"},
         "te": {"first_name": "సరిత", "last_name": "రెడ్డి"},
         "hi": {"first_name": "प्रिया", "last_name": "शर्मा"},
+        "sr-Latn": {"first_name": "Jelena", "last_name": "Radović"},
     },
     "hygienist": {
         "es": {"first_name": "Carlos", "last_name": "López Martínez"},
@@ -315,6 +357,7 @@ USERS_I18N = {
         "ta": {"first_name": "அருண்", "last_name": "ரவி"},
         "te": {"first_name": "కిరణ్", "last_name": "రావు"},
         "hi": {"first_name": "अमित", "last_name": "वर्मा"},
+        "sr-Latn": {"first_name": "Nenad", "last_name": "Živković"},
     },
     "assistant": {
         "es": {"first_name": "Ana", "last_name": "Martínez Ruiz"},
@@ -323,6 +366,7 @@ USERS_I18N = {
         "ta": {"first_name": "அனிதா", "last_name": "முருகன்"},
         "te": {"first_name": "స్వప్న", "last_name": "నాయుడు"},
         "hi": {"first_name": "नेहा", "last_name": "गुप्ता"},
+        "sr-Latn": {"first_name": "Katarina", "last_name": "Mitrović"},
     },
     "receptionist": {
         "es": {"first_name": "Laura", "last_name": "Sánchez Pérez"},
@@ -331,6 +375,7 @@ USERS_I18N = {
         "ta": {"first_name": "லதா", "last_name": "செல்வி"},
         "te": {"first_name": "రమ్య", "last_name": "శర్మ"},
         "hi": {"first_name": "पूजा", "last_name": "सिंह"},
+        "sr-Latn": {"first_name": "Tijana", "last_name": "Stanković"},
     },
 }
 
@@ -351,7 +396,9 @@ def get_users_data() -> list[dict]:
             "email": "dentist@demo.clinic",
             "first_name": USERS_I18N["dentist"][LANG]["first_name"],
             "last_name": USERS_I18N["dentist"][LANG]["last_name"],
-            "professional_id": t({"es": "28/12345", "en": "DDS-12345", "fr": "DF-12345"}),
+            "professional_id": t(
+                {"es": "28/12345", "en": "DDS-12345", "fr": "DF-12345", "sr-Latn": "SKS-12345"}
+            ),
             "role": "dentist",
             "membership_id": MEMBERSHIP_DENTIST_ID,
         },
@@ -360,7 +407,9 @@ def get_users_data() -> list[dict]:
             "email": "hygienist@demo.clinic",
             "first_name": USERS_I18N["hygienist"][LANG]["first_name"],
             "last_name": USERS_I18N["hygienist"][LANG]["last_name"],
-            "professional_id": t({"es": "28/54321", "en": "RDH-54321", "fr": "OEF-54321"}),
+            "professional_id": t(
+                {"es": "28/54321", "en": "RDH-54321", "fr": "OEF-54321", "sr-Latn": "SKS-54321"}
+            ),
             "role": "hygienist",
             "membership_id": MEMBERSHIP_HYGIENIST_ID,
         },
@@ -423,6 +472,11 @@ PATIENTS_I18N = [
             "last_name": "मिश्रा",
             "notes": "बाल मरीज़। जाँच के लिए पहली विज़िट।",
         },
+        "sr-Latn": {
+            "first_name": "Luka",
+            "last_name": "Jovanović",
+            "notes": "Pedijatrijski pacijent. Prva poseta radi kontrole.",
+        },
         "phone": {
             "es": "+34 612 345 001",
             "en": "+1 (212) 555-0001",
@@ -430,6 +484,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 6123 4001",
             "te": "+91 40 6123 4001",
             "hi": "+91 11 4123 4001",
+            "sr-Latn": "+381 64 123 4501",
         },
         "email": None,
         "date_of_birth": date(2016, 3, 15),
@@ -476,6 +531,13 @@ PATIENTS_I18N = [
                 "email": "manoj.mishra@email.com",
                 "is_legal_guardian": True,
             },
+            "sr-Latn": {
+                "name": "Nikola Jovanović",
+                "relationship": "Otac",
+                "phone": "+381 64 123 4600",
+                "email": "nikola.jovanovic@email.rs",
+                "is_legal_guardian": True,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -514,6 +576,11 @@ PATIENTS_I18N = [
             "last_name": "अग्रवाल",
             "notes": "ऑर्थोडॉन्टिक उपचार प्रगति पर।",
         },
+        "sr-Latn": {
+            "first_name": "Mila",
+            "last_name": "Petrović",
+            "notes": "Ortodontska terapija u toku.",
+        },
         "phone": {
             "es": "+34 612 345 002",
             "en": "+1 (212) 555-0002",
@@ -521,6 +588,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 6123 4002",
             "te": "+91 40 6123 4002",
             "hi": "+91 11 4123 4002",
+            "sr-Latn": "+381 63 234 5602",
         },
         "email": {
             "es": "lucia.rodriguez@email.com",
@@ -529,6 +597,7 @@ PATIENTS_I18N = [
             "ta": "karthik.nandini@email.com",
             "te": "sita.rao@email.com",
             "hi": "ananya.agarwal@email.com",
+            "sr-Latn": "mila.petrovic@email.rs",
         },
         "date_of_birth": date(2010, 7, 22),
         "emergency_contact": {
@@ -574,6 +643,13 @@ PATIENTS_I18N = [
                 "email": "seema.agarwal@email.com",
                 "is_legal_guardian": True,
             },
+            "sr-Latn": {
+                "name": "Jelena Petrović",
+                "relationship": "Majka",
+                "phone": "+381 63 234 5601",
+                "email": "jelena.petrovic@email.rs",
+                "is_legal_guardian": True,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -589,6 +665,7 @@ PATIENTS_I18N = [
         "ta": {"first_name": "அண்ணாமலை", "last_name": "மீனாட்சி", "notes": None},
         "te": {"first_name": "వెంకట్", "last_name": "నాయుడు", "notes": None},
         "hi": {"first_name": "राजेश", "last_name": "कुमार", "notes": None},
+        "sr-Latn": {"first_name": "Stefan", "last_name": "Nikolić", "notes": None},
         "phone": {
             "es": "+34 612 345 003",
             "en": "+1 (212) 555-0003",
@@ -596,6 +673,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 6123 4003",
             "te": "+91 40 6123 4003",
             "hi": "+91 11 4123 4003",
+            "sr-Latn": "+381 65 345 6703",
         },
         "email": {
             "es": "miguel.gonzalez@email.com",
@@ -604,6 +682,7 @@ PATIENTS_I18N = [
             "ta": "annamalai.meenakshi@email.com",
             "te": "venkat.naidu@email.com",
             "hi": "rajesh.kumar@email.com",
+            "sr-Latn": "stefan.nikolic@email.rs",
         },
         "date_of_birth": date(1998, 11, 8),
         "emergency_contact": {
@@ -649,6 +728,13 @@ PATIENTS_I18N = [
                 "email": None,
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Ana Nikolić",
+                "relationship": "Sestra",
+                "phone": "+381 65 345 6702",
+                "email": None,
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -687,6 +773,11 @@ PATIENTS_I18N = [
             "last_name": "यादव",
             "notes": "दाँतों में संवेदनशीलता। एनेस्थीसिया सावधानी से दें।",
         },
+        "sr-Latn": {
+            "first_name": "Milica",
+            "last_name": "Ilić",
+            "notes": "Osetljivost zuba. Oprezno sa anestezijom.",
+        },
         "phone": {
             "es": "+34 612 345 004",
             "en": "+1 (212) 555-0004",
@@ -694,6 +785,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 6123 4004",
             "te": "+91 40 6123 4004",
             "hi": "+91 11 4123 4004",
+            "sr-Latn": "+381 64 456 7804",
         },
         "email": {
             "es": "carmen.diaz@email.com",
@@ -702,6 +794,7 @@ PATIENTS_I18N = [
             "ta": "senthil.nathan@email.com",
             "te": "lakshmi.chowdary@email.com",
             "hi": "sunita.yadav@email.com",
+            "sr-Latn": "milica.ilic@email.rs",
         },
         "date_of_birth": date(1995, 5, 30),
         "emergency_contact": {
@@ -747,11 +840,18 @@ PATIENTS_I18N = [
                 "email": "rakesh.yadav@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Petar Ilić",
+                "relationship": "Suprug",
+                "phone": "+381 64 456 7803",
+                "email": "petar.ilic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [
                 {
-                    "name": {"es": "Látex", "en": "Latex", "fr": "Latex"},
+                    "name": {"es": "Látex", "en": "Latex", "fr": "Latex", "sr-Latn": "Lateks"},
                     "severity": "medium",
                     "reaction": {
                         "es": "Irritación cutánea",
@@ -760,6 +860,7 @@ PATIENTS_I18N = [
                         "ta": "தோல் எரிச்சல்",
                         "te": "చర్మం మంట",
                         "hi": "त्वचा में जलन",
+                        "sr-Latn": "Iritacija kože",
                     },
                 },
             ],
@@ -771,6 +872,7 @@ PATIENTS_I18N = [
                 "ta": "மயக்க மருந்துக்குப் பிறகு தலைச்சுற்றல் மற்றும் குமட்டல்",
                 "te": "అనస్థీషియా (anesthesia) తర్వాత తల తిరగడం మరియు వికారం",
                 "hi": "एनेस्थीसिया के बाद चक्कर और मतली",
+                "sr-Latn": "Vrtoglavica i mučnina posle anestezije",
             },
             "systemic_diseases": [],
         },
@@ -783,6 +885,7 @@ PATIENTS_I18N = [
         "ta": {"first_name": "வெங்கடேசன்", "last_name": "இளமாறன்", "notes": None},
         "te": {"first_name": "కృష్ణ", "last_name": "శర్మ", "notes": None},
         "hi": {"first_name": "विकास", "last_name": "चौहान", "notes": None},
+        "sr-Latn": {"first_name": "Marko", "last_name": "Đorđević", "notes": None},
         "phone": {
             "es": "+34 612 345 005",
             "en": "+1 (212) 555-0005",
@@ -790,6 +893,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 6123 4005",
             "te": "+91 40 6123 4005",
             "hi": "+91 11 4123 4005",
+            "sr-Latn": "+381 60 567 8905",
         },
         "email": None,
         "date_of_birth": date(1992, 2, 14),
@@ -832,6 +936,11 @@ PATIENTS_I18N = [
             "last_name": "जैन",
             "notes": "गर्भवती (तीसरी तिमाही)। एक्स-रे से बचें।",
         },
+        "sr-Latn": {
+            "first_name": "Teodora",
+            "last_name": "Pavlović",
+            "notes": "Trudnica (treći trimestar). Izbegavati rendgensko snimanje.",
+        },
         "phone": {
             "es": "+34 612 345 006",
             "en": "+1 (212) 555-0006",
@@ -839,6 +948,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 6123 4006",
             "te": "+91 40 6123 4006",
             "hi": "+91 11 4123 4006",
+            "sr-Latn": "+381 62 678 9006",
         },
         "email": {
             "es": "elena.ruiz@email.com",
@@ -847,6 +957,7 @@ PATIENTS_I18N = [
             "ta": "nandhini@email.com",
             "te": "anuradha.varma@email.com",
             "hi": "kavita.jain@email.com",
+            "sr-Latn": "teodora.pavlovic@email.rs",
         },
         "date_of_birth": date(1985, 9, 3),
         "emergency_contact": {
@@ -892,6 +1003,13 @@ PATIENTS_I18N = [
                 "email": "ankit.jain@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Aleksandar Pavlović",
+                "relationship": "Suprug",
+                "phone": "+381 62 678 9004",
+                "email": "aleksandar.pavlovic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -928,6 +1046,11 @@ PATIENTS_I18N = [
             "notes": "టైప్ 2 మధుమేహం. గాయం మానడాన్ని గమనించండి.",
         },
         "hi": {"first_name": "संजय", "last_name": "पांडे", "notes": "टाइप 2 मधुमेह। घाव भरने पर नज़र रखें।"},
+        "sr-Latn": {
+            "first_name": "Dragan",
+            "last_name": "Stojanović",
+            "notes": "Dijabetes tip 2. Pratiti zarastanje.",
+        },
         "phone": {
             "es": "+34 612 345 007",
             "en": "+1 (212) 555-0007",
@@ -935,6 +1058,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 6123 4007",
             "te": "+91 40 6123 4007",
             "hi": "+91 11 4123 4007",
+            "sr-Latn": "+381 64 789 0107",
         },
         "email": {
             "es": "javier.sanchez@email.com",
@@ -943,6 +1067,7 @@ PATIENTS_I18N = [
             "ta": "tamil.selvan@email.com",
             "te": "srinivasulu.goud@email.com",
             "hi": "sanjay.pandey@email.com",
+            "sr-Latn": "dragan.stojanovic@email.rs",
         },
         "date_of_birth": date(1980, 12, 25),
         "emergency_contact": {
@@ -988,6 +1113,13 @@ PATIENTS_I18N = [
                 "email": "mamta.pandey@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Snežana Stojanović",
+                "relationship": "Supruga",
+                "phone": "+381 64 789 0105",
+                "email": "snezana.stojanovic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -1000,6 +1132,7 @@ PATIENTS_I18N = [
                         "ta": "வகை 2 நீரிழிவு நோய்",
                         "te": "టైప్ 2 మధుమేహం (Diabetes Mellitus)",
                         "hi": "टाइप 2 मधुमेह",
+                        "sr-Latn": "Dijabetes melitus tip 2",
                     },
                     "is_critical": True,
                     "notes": {
@@ -1009,6 +1142,7 @@ PATIENTS_I18N = [
                         "ta": "மெத்த்போர்மின் மூலம் கட்டுப்பாடு செய்யப்பட்டது. HbA1c: 7.2%",
                         "te": "మెట్‌ఫార్మిన్ (metformin) తో నియంత్రణలో ఉంది. HbA1c: 7.2%",
                         "hi": "मेटफ़ॉर्मिन से नियंत्रित। HbA1c: 7.2%",
+                        "sr-Latn": "Regulisan metforminom. HbA1c: 7,2%",
                     },
                 },
             ],
@@ -1022,6 +1156,7 @@ PATIENTS_I18N = [
         "ta": {"first_name": "அருள்", "last_name": "குமார்", "notes": None},
         "te": {"first_name": "పద్మావతి", "last_name": "రెడ్డి", "notes": None},
         "hi": {"first_name": "रिया", "last_name": "कपूर", "notes": None},
+        "sr-Latn": {"first_name": "Sara", "last_name": "Marković", "notes": None},
         "phone": {
             "es": "+34 612 345 008",
             "en": "+1 (212) 555-0008",
@@ -1029,6 +1164,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2432 1348",
             "te": "+91 40 2432 1348",
             "hi": "+91 11 2432 1348",
+            "sr-Latn": "+381 63 890 1208",
         },
         "email": None,
         "date_of_birth": date(1978, 6, 17),
@@ -1075,6 +1211,13 @@ PATIENTS_I18N = [
                 "email": None,
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Nemanja Marković",
+                "relationship": "Brat",
+                "phone": "+381 63 890 1206",
+                "email": None,
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -1106,6 +1249,11 @@ PATIENTS_I18N = [
         },
         "te": {"first_name": "నాగేశ్వర", "last_name": "రావు", "notes": "పెన్సిలిన్ (penicillin) అలర్జీ ఉంది."},
         "hi": {"first_name": "अर्जुन", "last_name": "तिवारी", "notes": "पेनिसिलिन से एलर्जी।"},
+        "sr-Latn": {
+            "first_name": "Aleksa",
+            "last_name": "Popović",
+            "notes": "Alergičan na penicilin.",
+        },
         "phone": {
             "es": "+34 612 345 009",
             "en": "+1 (212) 555-0009",
@@ -1113,6 +1261,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2341 2349",
             "te": "+91 40 2341 2349",
             "hi": "+91 11 2341 2349",
+            "sr-Latn": "+381 66 901 2309",
         },
         "email": {
             "es": "francisco.garcia@email.com",
@@ -1121,6 +1270,7 @@ PATIENTS_I18N = [
             "ta": "muthukumar.tamilarasan@email.com",
             "te": "nageswara.rao@email.com",
             "hi": "arjun.tiwari@email.com",
+            "sr-Latn": "aleksa.popovic@email.rs",
         },
         "date_of_birth": date(1975, 4, 9),
         "emergency_contact": {
@@ -1166,6 +1316,13 @@ PATIENTS_I18N = [
                 "email": "swati.tiwari@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Marija Popović",
+                "relationship": "Supruga",
+                "phone": "+381 66 901 2307",
+                "email": "marija.popovic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [
@@ -1177,6 +1334,7 @@ PATIENTS_I18N = [
                         "ta": "பெனிசிலின்",
                         "te": "పెన్సిలిన్ (penicillin)",
                         "hi": "पेनिसिलिन",
+                        "sr-Latn": "Penicilin",
                     },
                     "severity": "critical",
                     "reaction": {
@@ -1186,6 +1344,7 @@ PATIENTS_I18N = [
                         "ta": "அனாபிலாக்சிஸ்",
                         "te": "తీవ్రమైన అలర్జీ ప్రతిచర్య (anaphylaxis)",
                         "hi": "एनाफ़िलैक्सिस",
+                        "sr-Latn": "Anafilaksa",
                     },
                 },
                 {
@@ -1196,6 +1355,7 @@ PATIENTS_I18N = [
                         "ta": "அமோக்சிலின்",
                         "te": "అమోక్సిసిలిన్ (amoxicillin)",
                         "hi": "एमोक्सिसिलिन",
+                        "sr-Latn": "Amoksicilin",
                     },
                     "severity": "high",
                     "reaction": {
@@ -1205,6 +1365,7 @@ PATIENTS_I18N = [
                         "ta": "கடுமையான அர்டிகேரியா",
                         "te": "తీవ్రమైన దద్దుర్లు (urticaria)",
                         "hi": "गंभीर पित्ती",
+                        "sr-Latn": "Teška urtikarija",
                     },
                 },
             ],
@@ -1243,6 +1404,11 @@ PATIENTS_I18N = [
             "last_name": "श्रीवास्तव",
             "notes": "उच्च रक्तचाप। प्रक्रियाओं से पहले रक्तचाप जाँचें।",
         },
+        "sr-Latn": {
+            "first_name": "Jovana",
+            "last_name": "Simić",
+            "notes": "Hipertenzija. Proveriti krvni pritisak pre zahvata.",
+        },
         "phone": {
             "es": "+34 612 345 010",
             "en": "+1 (212) 555-0010",
@@ -1250,6 +1416,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2342 2345",
             "te": "+91 40 2342 2345",
             "hi": "+91 11 2342 2345",
+            "sr-Latn": "+381 64 012 3410",
         },
         "email": {
             "es": "rosa.martinez@email.com",
@@ -1258,6 +1425,7 @@ PATIENTS_I18N = [
             "ta": "chandrasekar.rajendran@email.com",
             "te": "sujatha.naidu@email.com",
             "hi": "meenakshi.srivastava@email.com",
+            "sr-Latn": "jovana.simic@email.rs",
         },
         "date_of_birth": date(1970, 8, 21),
         "emergency_contact": {
@@ -1303,6 +1471,13 @@ PATIENTS_I18N = [
                 "email": None,
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Miloš Simić",
+                "relationship": "Suprug",
+                "phone": "+381 64 012 3408",
+                "email": None,
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -1315,6 +1490,7 @@ PATIENTS_I18N = [
                         "ta": "தமனி உயர் இரத்த அழுத்தம்",
                         "te": "అధిక రక్తపోటు (hypertension)",
                         "hi": "उच्च रक्तचाप",
+                        "sr-Latn": "Arterijska hipertenzija",
                     },
                     "is_critical": True,
                     "notes": {
@@ -1324,6 +1500,7 @@ PATIENTS_I18N = [
                         "ta": "எனலாப்ரில் 10 மி.கி./நாள் சிகிச்சை. வழக்கமான இரத்த அழுத்தம்: 130/85",
                         "te": "ఎనాలాప్రిల్ (enalapril) 10మి.గ్రా/రోజు చికిత్స. సాధారణ రక్తపోటు: 130/85",
                         "hi": "एनालाप्रिल 10mg/दिन से उपचार। सामान्य BP: 130/85",
+                        "sr-Latn": "Terapija enalaprilom 10 mg/dan. Uobičajeni TA: 130/85",
                     },
                 },
             ],
@@ -1358,6 +1535,11 @@ PATIENTS_I18N = [
             "notes": "పై దవడకు పాక్షిక కట్టుడు పళ్ళు (partial denture).",
         },
         "hi": {"first_name": "रमेश", "last_name": "सक्सेना", "notes": "ऊपरी आंशिक डेन्चर।"},
+        "sr-Latn": {
+            "first_name": "Milan",
+            "last_name": "Kostić",
+            "notes": "Gornja parcijalna proteza.",
+        },
         "phone": {
             "es": "+34 612 345 011",
             "en": "+1 (212) 555-0011",
@@ -1365,6 +1547,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2342 2346",
             "te": "+91 40 2342 2346",
             "hi": "+91 11 2342 2346",
+            "sr-Latn": "+381 65 123 4511",
         },
         "email": None,
         "date_of_birth": date(1960, 1, 5),
@@ -1411,6 +1594,13 @@ PATIENTS_I18N = [
                 "email": "neetu.saxena@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Ivana Kostić",
+                "relationship": "Ćerka",
+                "phone": "+381 65 123 4509",
+                "email": "ivana.kostic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [
@@ -1422,6 +1612,7 @@ PATIENTS_I18N = [
                         "ta": "அயோடின்",
                         "te": "అయోడిన్",
                         "hi": "आयोडीन",
+                        "sr-Latn": "Jod",
                     },
                     "severity": "medium",
                     "reaction": {
@@ -1431,6 +1622,7 @@ PATIENTS_I18N = [
                         "ta": "தோல் தடிப்பு",
                         "te": "చర్మంపై దద్దుర్లు",
                         "hi": "त्वचा पर चकत्ते",
+                        "sr-Latn": "Kožni osip",
                     },
                 },
             ],
@@ -1443,6 +1635,7 @@ PATIENTS_I18N = [
                         "ta": "எலும்பு மூட்டு தேய்மானம்",
                         "te": "కీళ్ళ అరుగుదల (osteoarthritis)",
                         "hi": "ऑस्टियोआर्थराइटिस",
+                        "sr-Latn": "Osteoartritis",
                     },
                     "is_critical": False,
                     "notes": {
@@ -1452,6 +1645,7 @@ PATIENTS_I18N = [
                         "ta": "கழுத்துப் பகுதியின் அசைவுத்திறனைப் பாதிக்கிறது",
                         "te": "మెడ కదలికపై ప్రభావం చూపుతుంది",
                         "hi": "गर्दन की गतिशीलता प्रभावित",
+                        "sr-Latn": "Ograničava pokretljivost vrata",
                     },
                 },
             ],
@@ -1489,6 +1683,11 @@ PATIENTS_I18N = [
             "last_name": "भटनागर",
             "notes": "इम्प्लांट वाली मरीज़। समय-समय पर समीक्षा।",
         },
+        "sr-Latn": {
+            "first_name": "Gordana",
+            "last_name": "Lazić",
+            "notes": "Pacijentkinja sa implantima. Periodične kontrole.",
+        },
         "phone": {
             "es": "+34 612 345 012",
             "en": "+1 (212) 555-0012",
@@ -1496,6 +1695,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2342 2347",
             "te": "+91 40 2342 2347",
             "hi": "+91 11 2342 2347",
+            "sr-Latn": "+381 63 234 5612",
         },
         "email": None,
         "date_of_birth": date(1955, 10, 12),
@@ -1542,6 +1742,13 @@ PATIENTS_I18N = [
                 "email": "gaurav.bhatnagar@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Vladimir Lazić",
+                "relationship": "Sin",
+                "phone": "+381 63 234 5610",
+                "email": "vladimir.lazic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -1554,6 +1761,7 @@ PATIENTS_I18N = [
                         "ta": "ஆஸ்டியோபோரோசிஸ்",
                         "te": "ఎముకల బలహీనత (osteoporosis)",
                         "hi": "ऑस्टियोपोरोसिस",
+                        "sr-Latn": "Osteoporoza",
                     },
                     "is_critical": False,
                     "notes": {
@@ -1563,6 +1771,7 @@ PATIENTS_I18N = [
                         "ta": "பிஸ்பாஸ்போனேட் சிகிச்சை. பல் அகற்றும் சிகிச்சையில் கவனம் தேவை.",
                         "te": "బిస్ఫాస్ఫోనేట్స్ (bisphosphonates) చికిత్స. పన్ను తీసేటప్పుడు జాగ్రత్త.",
                         "hi": "बिसफ़ॉस्फ़ोनेट से उपचार। दाँत निकालने में सावधानी।",
+                        "sr-Latn": "Terapija bisfosfonatima. Oprez kod vađenja zuba.",
                     },
                 },
             ],
@@ -1600,6 +1809,11 @@ PATIENTS_I18N = [
             "last_name": "दुबे",
             "notes": "रक्त पतला करने वाली दवाइयाँ लेते हैं। दाँत निकालने से पहले चिकित्सक से समन्वय करें।",
         },
+        "sr-Latn": {
+            "first_name": "Zoran",
+            "last_name": "Milošević",
+            "notes": "Na antikoagulantnoj terapiji. Pre vađenja zuba konsultovati lekara.",
+        },
         "phone": {
             "es": "+34 612 345 013",
             "en": "+1 (212) 555-0013",
@@ -1607,6 +1821,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2341 2342",
             "te": "+91 40 2341 2342",
             "hi": "+91 11 2341 2342",
+            "sr-Latn": "+381 64 345 6713",
         },
         "email": {
             "es": "joseluis.munoz@email.com",
@@ -1615,6 +1830,7 @@ PATIENTS_I18N = [
             "ta": "joseph.vijay@email.com",
             "te": "venkateswarlu.varma@email.com",
             "hi": "mahesh.dubey@email.com",
+            "sr-Latn": "zoran.milosevic@email.rs",
         },
         "date_of_birth": date(1950, 3, 28),
         "emergency_contact": {
@@ -1660,6 +1876,13 @@ PATIENTS_I18N = [
                 "email": None,
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Vesna Milošević",
+                "relationship": "Supruga",
+                "phone": "+381 64 345 6711",
+                "email": None,
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -1675,6 +1898,7 @@ PATIENTS_I18N = [
                         "ta": "ஏட்ரியல் ஃபைப்ரிலேஷன்",
                         "te": "గుండె దడ (atrial fibrillation)",
                         "hi": "एट्रियल फ़िब्रिलेशन",
+                        "sr-Latn": "Atrijalna fibrilacija",
                     },
                     "is_critical": True,
                     "notes": {
@@ -1684,6 +1908,7 @@ PATIENTS_I18N = [
                         "ta": "இரத்த உறைதலைத் தடுக்கும் மருந்து சிகிச்சையில் உள்ளார். சிகிச்சைக்கு முன் INR பரிசோதனை தேவை.",
                         "te": "రక్తం పలుచబరిచే మందులు వాడుతున్నారు. ప్రక్రియలకు ముందు INR తనిఖీ అవసరం.",
                         "hi": "एंटीकोएगुलेंट पर। प्रक्रियाओं से पहले INR जाँच आवश्यक।",
+                        "sr-Latn": "Na antikoagulantnoj terapiji. Pre zahvata potrebna kontrola INR-a.",
                     },
                 },
             ],
@@ -1697,6 +1922,7 @@ PATIENTS_I18N = [
         "ta": {"first_name": "அருள்", "last_name": "விஜய்", "notes": None},
         "te": {"first_name": "అన్నపూర్ణ", "last_name": "గౌడ్", "notes": None},
         "hi": {"first_name": "उषा", "last_name": "रस्तोगी", "notes": None},
+        "sr-Latn": {"first_name": "Ljiljana", "last_name": "Todorović", "notes": None},
         "phone": {
             "es": "+34 612 345 014",
             "en": "+1 (212) 555-0014",
@@ -1704,6 +1930,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2341 2341",
             "te": "+91 40 2341 2341",
             "hi": "+91 11 2341 2343",
+            "sr-Latn": "+381 61 456 7814",
         },
         "email": None,
         "date_of_birth": date(1948, 7, 7),
@@ -1750,6 +1977,13 @@ PATIENTS_I18N = [
                 "email": "vinod.rastogi@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Bojan Todorović",
+                "relationship": "Sin",
+                "phone": "+381 61 456 7812",
+                "email": "bojan.todorovic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [],
@@ -1788,6 +2022,11 @@ PATIENTS_I18N = [
             "last_name": "मल्होत्रा",
             "notes": "पूर्ण डेन्चर। बार-बार समायोजन की ज़रूरत।",
         },
+        "sr-Latn": {
+            "first_name": "Miroslav",
+            "last_name": "Ristić",
+            "notes": "Totalna proteza. Potrebna česta podešavanja.",
+        },
         "phone": {
             "es": "+34 612 345 015",
             "en": "+1 (212) 555-0015",
@@ -1795,6 +2034,7 @@ PATIENTS_I18N = [
             "ta": "+91 44 2341 2341",
             "te": "+91 40 2341 2341",
             "hi": "+91 11 2341 2344",
+            "sr-Latn": "+381 64 567 8915",
         },
         "email": None,
         "date_of_birth": date(1945, 11, 19),
@@ -1841,6 +2081,13 @@ PATIENTS_I18N = [
                 "email": "rashmi.malhotra@email.com",
                 "is_legal_guardian": False,
             },
+            "sr-Latn": {
+                "name": "Dragana Ristić",
+                "relationship": "Ćerka",
+                "phone": "+381 64 567 8913",
+                "email": "dragana.ristic@email.rs",
+                "is_legal_guardian": False,
+            },
         },
         "medical_history": {
             "allergies": [
@@ -1852,6 +2099,7 @@ PATIENTS_I18N = [
                         "ta": "NSAID மருந்துகள்",
                         "te": "NSAIDs (నొప్పి నివారణ మందులు)",
                         "hi": "NSAID दवाइयाँ",
+                        "sr-Latn": "NSAIL",
                     },
                     "severity": "high",
                     "reaction": {
@@ -1861,6 +2109,7 @@ PATIENTS_I18N = [
                         "ta": "கடுமையான வயிற்றுப் பிரச்சினைகள்",
                         "te": "తీవ్రమైన కడుపు సమస్యలు",
                         "hi": "पेट की गंभीर समस्याएँ",
+                        "sr-Latn": "Teški gastrični problemi",
                     },
                 },
             ],
@@ -1873,6 +2122,7 @@ PATIENTS_I18N = [
                         "ta": "நாள்பட்ட சிறுநீரக நோய்",
                         "te": "దీర్ఘకాలిక మూత్రపిండ వ్యాధి",
                         "hi": "दीर्घकालिक गुर्दा रोग",
+                        "sr-Latn": "Hronična bolest bubrega",
                     },
                     "is_critical": True,
                     "notes": {
@@ -1882,6 +2132,7 @@ PATIENTS_I18N = [
                         "ta": "நிலை 3. மருந்துகளின் அளவைச் சரிசெய்யவும்.",
                         "te": "దశ 3. మందుల మోతాదులను సర్దుబాటు చేయండి.",
                         "hi": "स्टेज 3। दवा की खुराक समायोजित करें।",
+                        "sr-Latn": "Stadijum 3. Prilagoditi doze lekova.",
                     },
                 },
                 {
@@ -1892,6 +2143,7 @@ PATIENTS_I18N = [
                         "ta": "வகை 2 நீரிழிவு நோய்",
                         "te": "టైప్ 2 మధుమేహం (Diabetes Mellitus)",
                         "hi": "टाइप 2 मधुमेह",
+                        "sr-Latn": "Dijabetes melitus tip 2",
                     },
                     "is_critical": True,
                     "notes": {
@@ -1901,6 +2153,7 @@ PATIENTS_I18N = [
                         "ta": "இன்சுலின் சார்ந்தது",
                         "te": "ఇన్సులిన్‌పై ఆధారపడినవారు",
                         "hi": "इंसुलिन पर निर्भर",
+                        "sr-Latn": "Insulin-zavisan",
                     },
                 },
             ],
@@ -2476,6 +2729,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பரிசோதனை",
                 "te": "దంత పరీక్ష",
                 "hi": "जाँच",
+                "sr-Latn": "Kontrolni pregled",
             },
             "duration": 30,
             "color": "#3B82F6",
@@ -2491,6 +2745,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "எக்ஸ்-ரே",
                 "te": "ఎక్స్-రే",
                 "hi": "एक्स-रे",
+                "sr-Latn": "Rendgenski snimak",
             },
             "duration": 30,
             "color": "#60A5FA",
@@ -2506,6 +2761,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "நோயறிதல்",
                 "te": "రోగనిర్ధారణ",
                 "hi": "निदान",
+                "sr-Latn": "Dijagnoza",
             },
             "duration": 30,
             "color": "#3B82F6",
@@ -2521,6 +2777,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் சுத்தம்",
                 "te": "దంతాల శుభ్రత",
                 "hi": "दाँतों की सफ़ाई",
+                "sr-Latn": "Čišćenje zuba",
             },
             "duration": 45,
             "color": "#10B981",
@@ -2536,6 +2793,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் கிரீடம்",
                 "te": "క్రౌన్ (crown)",
                 "hi": "क्राउन",
+                "sr-Latn": "Krunica",
             },
             "duration": 60,
             "color": "#A855F7",
@@ -2551,6 +2809,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் முகப்பு",
                 "te": "వెనీర్ (veneer)",
                 "hi": "विनियर",
+                "sr-Latn": "Faseta",
             },
             "duration": 60,
             "color": "#F472B6",
@@ -2566,6 +2825,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் நிரப்பு",
                 "te": "ఫిల్లింగ్",
                 "hi": "फिलिंग",
+                "sr-Latn": "Plomba",
             },
             "duration": 45,
             "color": "#F59E0B",
@@ -2581,6 +2841,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் மறுசீரமைப்பு",
                 "te": "దంత పునరుద్ధరణ",
                 "hi": "पुनर्स्थापन",
+                "sr-Latn": "Restauracija",
             },
             "duration": 45,
             "color": "#F59E0B",
@@ -2596,6 +2857,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் அகற்றுதல்",
                 "te": "పన్ను తీయడం (extraction)",
                 "hi": "दाँत निकालना",
+                "sr-Latn": "Vađenje zuba",
             },
             "duration": 60,
             "color": "#EF4444",
@@ -2611,6 +2873,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "அறுவைச் சிகிச்சை",
                 "te": "శస్త్రచికిత్స",
                 "hi": "शल्य चिकित्सा",
+                "sr-Latn": "Hirurgija",
             },
             "duration": 60,
             "color": "#DC2626",
@@ -2626,6 +2889,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல வேர் கால்வாய் சிகிச்சை",
                 "te": "అనేక వేర్ల రూట్ కెనాల్",
                 "hi": "बहु-जड़ रूट कैनाल",
+                "sr-Latn": "Lečenje kanala višekorenog zuba",
             },
             "duration": 90,
             "color": "#8B5CF6",
@@ -2641,6 +2905,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "வேர் கால்வாய் சிகிச்சை",
                 "te": "రూట్ కెనాల్ చికిత్స",
                 "hi": "रूट कैनाल",
+                "sr-Latn": "Lečenje kanala korena",
             },
             "duration": 75,
             "color": "#8B5CF6",
@@ -2656,6 +2921,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் சுற்றுத்திசு சிகிச்சை",
                 "te": "చిగుళ్ళ చికిత్స (periodontics)",
                 "hi": "पेरियोडॉन्टिक्स",
+                "sr-Latn": "Parodontologija",
             },
             "duration": 60,
             "color": "#14B8A6",
@@ -2671,6 +2937,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பற்கள் வெண்மையாக்குதல்",
                 "te": "దంతాల తెల్లదనం (whitening)",
                 "hi": "दाँतों को सफ़ेद करना",
+                "sr-Latn": "Izbeljivanje",
             },
             "duration": 60,
             "color": "#06B6D4",
@@ -2686,6 +2953,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "பல் அழகியல்",
                 "te": "దంత సౌందర్యం",
                 "hi": "सौंदर्य दंत चिकित्सा",
+                "sr-Latn": "Estetika",
             },
             "duration": 45,
             "color": "#06B6D4",
@@ -2701,6 +2969,7 @@ _APPT_LOOK_BY_PREFIX: list[tuple[str, dict]] = [
                 "ta": "செயற்கைப் பல்",
                 "te": "కృత్రిమ దంతాలు (prosthesis)",
                 "hi": "कृत्रिम दाँत",
+                "sr-Latn": "Proteza",
             },
             "duration": 90,
             "color": "#84CC16",
@@ -2722,6 +2991,7 @@ def _appt_look_for(code: str) -> dict:
             "ta": "சிகிச்சை",
             "te": "చికిత్స",
             "hi": "उपचार",
+            "sr-Latn": "Tretman",
         },
         "duration": 45,
         "color": "#64748B",
@@ -2754,6 +3024,7 @@ PATIENT_JOURNEYS = [
                 "ta": "குழந்தைகளுக்கான தடுப்பு சிகிச்சைத் திட்டம்",
                 "te": "పిల్లల నివారణ చికిత్స ప్రణాళిక",
                 "hi": "बाल निवारक योजना",
+                "sr-Latn": "Pedijatrijski preventivni plan",
             },
             "diagnosis_notes": {
                 "es": "Primera visita. Revisión pediátrica.",
@@ -2762,6 +3033,7 @@ PATIENT_JOURNEYS = [
                 "ta": "முதல் வருகை. குழந்தைகளுக்கான பல் பரிசோதனை.",
                 "te": "మొదటి సందర్శన. పిల్లల దంత పరీక్ష.",
                 "hi": "पहली विज़िट। बच्चों की दंत जाँच।",
+                "sr-Latn": "Prva poseta. Pedijatrijski pregled.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True},
@@ -2788,6 +3060,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பாதுகாப்பு சிகிச்சை",
                 "te": "సంరక్షణ చికిత్స",
                 "hi": "संरक्षी उपचार",
+                "sr-Latn": "Konzervativna terapija",
             },
             "diagnosis_notes": {
                 "es": "Caries en molares inferiores deciduos.",
@@ -2796,6 +3069,7 @@ PATIENT_JOURNEYS = [
                 "ta": "கீழ்த் தாடையின் பால் கடைவாய்ப் பற்களில் பல் சொத்தை.",
                 "te": "కింది పాల దవడ పళ్ళలో దంత క్షయం (caries).",
                 "hi": "निचले दूध के दाढ़ों में कैविटी।",
+                "sr-Latn": "Karijes na donjim mlečnim kutnjacima.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True},
@@ -2823,6 +3097,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பரிசோதனை மற்றும் பல் சுத்தம்",
                 "te": "దంత పరీక్ష మరియు శుభ్రత",
                 "hi": "जाँच और सफ़ाई",
+                "sr-Latn": "Pregled i čišćenje",
             },
             "diagnosis_notes": {
                 "es": "Paciente joven, buen estado general.",
@@ -2831,6 +3106,7 @@ PATIENT_JOURNEYS = [
                 "ta": "இளம் நோயாளர், நல்ல பொது உடல்நிலை.",
                 "te": "యువ రోగి, సాధారణ ఆరోగ్యం బాగుంది.",
                 "hi": "युवा मरीज़, सामान्य स्वास्थ्य अच्छा।",
+                "sr-Latn": "Mlad pacijent, dobro opšte stanje.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True},
@@ -2849,6 +3125,7 @@ PATIENT_JOURNEYS = [
                 "ta": "மதிப்பாய்வுக்காக நிலுவையில் உள்ள வரைவு",
                 "te": "సమీక్ష కోసం పెండింగ్‌లో ఉన్న డ్రాఫ్ట్",
                 "hi": "समीक्षा के लिए लंबित मसौदा",
+                "sr-Latn": "Nacrt čeka pregled",
             },
         },
         "appointments": [],
@@ -2864,6 +3141,7 @@ PATIENT_JOURNEYS = [
                 "ta": "வரைவு - வழங்குவதற்காக நிலுவையில் உள்ளது",
                 "te": "డ్రాఫ్ట్ - జారీ చేయాల్సి ఉంది",
                 "hi": "मसौदा - जारी करना लंबित",
+                "sr-Latn": "Nacrt - čeka izdavanje",
             },
             # India GST (Tamil/Telugu, or English + --country in): place of supply
             # pre-filled as a draft would have it from the invoice form, but
@@ -2887,6 +3165,7 @@ PATIENT_JOURNEYS = [
                 "ta": "ஆரம்ப சிகிச்சைத் திட்டம்",
                 "te": "ప్రాథమిక చికిత్స ప్రణాళిక",
                 "hi": "प्रारंभिक उपचार योजना",
+                "sr-Latn": "Početni plan lečenja",
             },
             "diagnosis_notes": {
                 "es": "Paciente con sensibilidad dental. Requiere empaste en molar.",
@@ -2895,6 +3174,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பல் உணர்திறன் உள்ள நோயாளர். கடைவாய்ப் பல்லில் நிரப்பு சிகிச்சை தேவை.",
                 "te": "పళ్ళు జివ్వుమనే రోగి. దవడ పన్నుకు ఫిల్లింగ్ అవసరం.",
                 "hi": "दाँतों में संवेदनशीलता वाले मरीज़। दाढ़ में फिलिंग आवश्यक।",
+                "sr-Latn": "Pacijent sa osetljivošću zuba. Potrebna plomba na kutnjaku.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True},
@@ -2914,6 +3194,7 @@ PATIENT_JOURNEYS = [
                 "ta": "மதிப்பீடு அனுப்பப்பட்டது, பதிலுக்காகக் காத்திருக்கிறது",
                 "te": "అంచనా పంపబడింది, సమాధానం కోసం వేచి ఉంది",
                 "hi": "उपचार अनुमान भेजा गया, उत्तर की प्रतीक्षा",
+                "sr-Latn": "Predračun poslat, čeka se odgovor",
             },
         },
         "appointments": [],
@@ -2932,6 +3213,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பல் அழகியல் சிகிச்சைத் திட்டம்",
                 "te": "దంత సౌందర్య ప్రణాళిక",
                 "hi": "सौंदर्य योजना",
+                "sr-Latn": "Estetski plan",
             },
             "diagnosis_notes": {
                 "es": "Paciente interesado en blanqueamiento.",
@@ -2940,6 +3222,7 @@ PATIENT_JOURNEYS = [
                 "ta": "நோயாளர் பற்களை வெண்மையாக்கும் சிகிச்சையில் ஆர்வமாக உள்ளார்.",
                 "te": "రోగి దంతాల తెల్లదనం (whitening) చికిత్సపై ఆసక్తిగా ఉన్నారు.",
                 "hi": "मरीज़ दाँत सफ़ेद कराने में रुचि रखते हैं।",
+                "sr-Latn": "Pacijent zainteresovan za izbeljivanje.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -2959,6 +3242,7 @@ PATIENT_JOURNEYS = [
                 "ta": "ஏற்றுக்கொள்ளப்பட்டது, சந்திப்பு திட்டமிடப்பட வேண்டியுள்ளது",
                 "te": "అంగీకరించబడింది, అపాయింట్‌మెంట్ షెడ్యూల్ చేయాలి",
                 "hi": "स्वीकृत, अपॉइंटमेंट तय करना बाकी",
+                "sr-Latn": "Prihvaćeno, čeka zakazivanje",
             },
         },
         # No appointments — surfaces in bandeja tab "Sin cita".
@@ -2977,6 +3261,7 @@ PATIENT_JOURNEYS = [
                 "ta": "நோயறிதல் மற்றும் பல் மறுசீரமைப்பு",
                 "te": "రోగనిర్ధారణ మరియు దంత పునరుద్ధరణ",
                 "hi": "निदान और पुनर्स्थापन",
+                "sr-Latn": "Dijagnoza i restauracija",
             },
             "diagnosis_notes": {
                 "es": "Embarazada. Evitar radiografías no esenciales.",
@@ -2985,6 +3270,7 @@ PATIENT_JOURNEYS = [
                 "ta": "கர்ப்பிணி. அவசியமற்ற எக்ஸ்-ரே பரிசோதனைகளைத் தவிர்க்கவும்.",
                 "te": "గర్భవతి. అవసరం లేని ఎక్స్-రేలు నివారించండి.",
                 "hi": "गर्भवती। गैर-ज़रूरी एक्स-रे से बचें।",
+                "sr-Latn": "Trudnica. Izbegavati rendgenske snimke koji nisu neophodni.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -3004,6 +3290,7 @@ PATIENT_JOURNEYS = [
                 "ta": "கர்ப்பிணி நோயாளர் - சிகிச்சை நடைபெற்று வருகிறது",
                 "te": "గర్భిణీ రోగి - చికిత్స కొనసాగుతోంది",
                 "hi": "गर्भवती मरीज़ - उपचार प्रगति पर",
+                "sr-Latn": "Pacijentkinja trudnica - lečenje u toku",
             },
         },
         "appointments": [
@@ -3022,6 +3309,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பகுதி பணப்பரிவர்த்தனை பெறப்பட்டது",
                 "te": "పాక్షిక చెల్లింపు అందింది",
                 "hi": "आंशिक भुगतान प्राप्त",
+                "sr-Latn": "Primljena delimična uplata",
             },
             # India GST (Tamil/Telugu/Hindi, or English + --country in): intra-state (clinic home state) → CGST + SGST.
             "gst": {"place_of_supply": india_home_state()},
@@ -3040,6 +3328,7 @@ PATIENT_JOURNEYS = [
                 "ta": "வேர் கால்வாய் சிகிச்சை மற்றும் பல் கிரீடம்",
                 "hi": "रूट कैनाल और क्राउन",
                 "te": "రూట్ కెనాల్ మరియు క్రౌన్",
+                "sr-Latn": "Lečenje kanala i krunica",
             },
             "diagnosis_notes": {
                 "es": "Paciente diabético. Control especial de cicatrización.",
@@ -3048,6 +3337,7 @@ PATIENT_JOURNEYS = [
                 "ta": "நீரிழிவு நோயாளர். காயம் ஆறும் நிலையை சிறப்பாகக் கண்காணிக்க வேண்டும்.",
                 "te": "మధుమేహ రోగి. గాయం మానడాన్ని ప్రత్యేకంగా గమనించాలి.",
                 "hi": "मधुमेह रोगी। घाव भरने की विशेष निगरानी।",
+                "sr-Latn": "Pacijent dijabetičar. Posebno praćenje zarastanja.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -3067,6 +3357,7 @@ PATIENT_JOURNEYS = [
                 "ta": "நீரிழிவு நோயாளர் - சிறப்பு கவனிப்பு",
                 "te": "మధుమేహ రోగి - ప్రత్యేక శ్రద్ధ",
                 "hi": "मधुमेह रोगी - विशेष देखभाल",
+                "sr-Latn": "Pacijent dijabetičar - posebna nega",
             },
         },
         # Past appointments only — surfaces in bandeja tab "Sin próxima cita".
@@ -3086,6 +3377,7 @@ PATIENT_JOURNEYS = [
                 "ta": "வங்கி பரிமாற்றம் மூலம் செலுத்தப்பட்டது",
                 "te": "బ్యాంక్ బదిలీ ద్వారా చెల్లించారు",
                 "hi": "बैंक ट्रांसफ़र से भुगतान",
+                "sr-Latn": "Plaćeno bankovnim transferom",
             },
             # India GST (Tamil/Telugu, or English + --country in): intra-state (clinic home state) → CGST + SGST.
             "gst": {"place_of_supply": india_home_state()},
@@ -3105,6 +3397,7 @@ PATIENT_JOURNEYS = [
                 "ta": "விலை காரணமாக நோயாளர் பல் அழகியல் முகப்புகளை நிராகரித்தார்.",
                 "te": "ధర కారణంగా రోగి సౌందర్య వెనీర్లను తిరస్కరించారు.",
                 "hi": "कीमत के कारण मरीज़ ने सौंदर्य विनियर अस्वीकार किए।",
+                "sr-Latn": "Pacijent je odbio estetske fasete zbog cene.",
             },
             "title": {
                 "es": "Plan estético rechazado",
@@ -3113,6 +3406,7 @@ PATIENT_JOURNEYS = [
                 "ta": "நிராகரிக்கப்பட்ட பல் அழகியல் சிகிச்சைத் திட்டம்",
                 "te": "తిరస్కరించిన దంత సౌందర్య ప్రణాళిక",
                 "hi": "अस्वीकृत सौंदर्य योजना",
+                "sr-Latn": "Odbijen estetski plan",
             },
             "diagnosis_notes": {
                 "es": "Control semestral. Paciente rechazó carillas estéticas.",
@@ -3121,6 +3415,7 @@ PATIENT_JOURNEYS = [
                 "ta": "ஆறு மாதப் பரிசோதனை. நோயாளர் பல் அழகியல் முகப்புகளை நிராகரித்தார்.",
                 "te": "ఆరు నెలల దంత పరీక్ష. రోగి సౌందర్య వెనీర్లను తిరస్కరించారు.",
                 "hi": "छमाही जाँच। मरीज़ ने सौंदर्य विनियर अस्वीकार किए।",
+                "sr-Latn": "Polugodišnja kontrola. Pacijent je odbio estetske fasete.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -3139,6 +3434,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பல் முகப்புகளுக்கான விலை மிகவும் அதிகம்",
                 "te": "వెనీర్ల ధర చాలా ఎక్కువ",
                 "hi": "विनियर की कीमत बहुत अधिक",
+                "sr-Latn": "Cena faseta previsoka",
             },
             "global_discount": None,
             "signature": False,
@@ -3149,6 +3445,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பல் முகப்புகளின் விலை காரணமாக நிராகரிக்கப்பட்டது",
                 "te": "వెనీర్ల ధర కారణంగా తిరస్కరించబడింది",
                 "hi": "विनियर की कीमत के कारण अस्वीकृत",
+                "sr-Latn": "Odbijeno zbog cene faseta",
             },
         },
         "appointments": [
@@ -3168,6 +3465,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பல் சுற்றுத்திசு சிகிச்சை",
                 "te": "చిగుళ్ళ చికిత్స (periodontics)",
                 "hi": "पेरियोडॉन्टल उपचार",
+                "sr-Latn": "Parodontološka terapija",
             },
             "diagnosis_notes": {
                 "es": "ALÉRGICO A PENICILINA. Usar alternativas.",
@@ -3176,6 +3474,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பெனிசிலினுக்கு ஒவ்வாமை உள்ளது. மாற்று மருந்துகளைப் பயன்படுத்தவும்.",
                 "te": "పెన్సిలిన్ (penicillin) అలర్జీ ఉంది. ప్రత్యామ్నాయ మందులు వాడండి.",
                 "hi": "पेनिसिलिन से एलर्जी। वैकल्पिक दवाइयाँ उपयोग करें।",
+                "sr-Latn": "ALERGIČAN NA PENICILIN. Koristiti alternative.",
             },
             "items": [
                 {"catalog_code": "PERIO-SCAL", "is_global": True, "completed": True},
@@ -3195,6 +3494,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பெனிசிலினுக்கு ஒவ்வாமை உள்ளது",
                 "te": "పెన్సిలిన్ (penicillin) అలర్జీ ఉంది",
                 "hi": "पेनिसिलिन से एलर्जी",
+                "sr-Latn": "Alergičan na penicilin",
             },
         },
         "appointments": [
@@ -3217,6 +3517,7 @@ PATIENT_JOURNEYS = [
                 "ta": "இரண்டு தவணைகளில் செலுத்தப்பட்டது",
                 "te": "రెండు వాయిదాలలో చెల్లించారు",
                 "hi": "दो किस्तों में भुगतान",
+                "sr-Latn": "Plaćeno u dve rate",
             },
             # India GST (Tamil/Telugu, or English + --country in): inter-state — patient billed from Karnataka
             # (a registered recipient, e.g. an employer paying on the
@@ -3237,6 +3538,7 @@ PATIENT_JOURNEYS = [
                 "ta": "வாய்வழி பல் மறுசீரமைப்பு",
                 "te": "నోటి పునరావాసం (oral rehabilitation)",
                 "hi": "मौखिक पुनर्वास",
+                "sr-Latn": "Oralna rehabilitacija",
             },
             "diagnosis_notes": {
                 "es": "Hipertensa - verificar presión antes de procedimientos.",
@@ -3245,6 +3547,7 @@ PATIENT_JOURNEYS = [
                 "ta": "உயர் இரத்த அழுத்தம் உள்ளது - சிகிச்சைக்கு முன் இரத்த அழுத்தத்தைச் சரிபார்க்கவும்.",
                 "te": "అధిక రక్తపోటు - ప్రక్రియలకు ముందు రక్తపోటు తనిఖీ చేయండి.",
                 "hi": "उच्च रक्तचाप - प्रक्रियाओं से पहले रक्तचाप जाँचें।",
+                "sr-Latn": "Hipertenzija - proveriti krvni pritisak pre zahvata.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -3270,6 +3573,7 @@ PATIENT_JOURNEYS = [
                 "ta": "சிகிச்சை நடைபெற்று வருகிறது",
                 "te": "చికిత్స కొనసాగుతోంది",
                 "hi": "उपचार प्रगति पर",
+                "sr-Latn": "Lečenje u toku",
             },
         },
         "appointments": [
@@ -3289,6 +3593,7 @@ PATIENT_JOURNEYS = [
                 "ta": "முதல் கட்டத்திற்கான விலைப்பட்டியல் வழங்கப்பட்டது",
                 "te": "మొదటి దశకు ఇన్‌వాయిస్ జారీ చేయబడింది",
                 "hi": "पहले चरण का चालान बना",
+                "sr-Latn": "Prva faza fakturisana",
             },
             # India GST (Tamil/Telugu/Hindi, or English + --country in): intra-state (clinic home state) → CGST + SGST.
             "gst": {"place_of_supply": india_home_state()},
@@ -3307,6 +3612,7 @@ PATIENT_JOURNEYS = [
                 "ta": "மேல் தாடைக்கான பகுதி செயற்கைப் பல்",
                 "te": "పై దవడ పాక్షిక కట్టుడు పళ్ళు",
                 "hi": "ऊपरी आंशिक डेन्चर",
+                "sr-Latn": "Gornja parcijalna proteza",
             },
             "diagnosis_notes": {
                 "es": "Prótesis parcial superior entregada y ajustada.",
@@ -3315,6 +3621,7 @@ PATIENT_JOURNEYS = [
                 "ta": "மேல் தாடைக்கான பகுதி செயற்கைப் பல் வழங்கப்பட்டு பொருத்தம் சரிசெய்யப்பட்டது.",
                 "te": "పై దవడ పాక్షిక కట్టుడు పళ్ళు అందజేసి సర్దుబాటు చేయబడ్డాయి.",
                 "hi": "ऊपरी आंशिक डेन्चर दिया गया और समायोजित किया गया।",
+                "sr-Latn": "Gornja parcijalna proteza predata i prilagođena.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -3333,6 +3640,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பகுதி செயற்கைப் பல் வழங்கப்பட்டது",
                 "te": "పాక్షిక కట్టుడు పళ్ళు అందజేయబడ్డాయి",
                 "hi": "आंशिक डेन्चर दिया गया",
+                "sr-Latn": "Parcijalna proteza predata",
             },
         },
         "appointments": [
@@ -3367,6 +3675,7 @@ PATIENT_JOURNEYS = [
                 "ta": "இரண்டு அமர்வுகளில் பல் கிரீடம்",
                 "te": "రెండు సెషన్లలో క్రౌన్",
                 "hi": "दो सत्रों में क्राउन",
+                "sr-Latn": "Krunica u dve posete",
             },
             "diagnosis_notes": {
                 "es": "Corona metal-cerámica en 36 — cobro fraccionado por sesión.",
@@ -3374,6 +3683,7 @@ PATIENT_JOURNEYS = [
                 "fr": "Couronne métal-céramique sur 36 - facturation par séance.",
                 "ta": "36-ஆம் பல்லில் உலோகம்-செராமிக் கிரீடம் — ஒவ்வொரு அமர்விற்கும் தனித்தனியாகக் கட்டணம் வசூலிக்கப்படும்.",
                 "hi": "दाँत 36 पर मेटल-सिरेमिक क्राउन — प्रति सत्र बिल किया जाता है।",
+                "sr-Latn": "Metalokeramička krunica na zubu 36 — naplata po poseti.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -3404,6 +3714,7 @@ PATIENT_JOURNEYS = [
                 "ta": "அவசர வேர் கால்வாய் சிகிச்சை",
                 "te": "అత్యవసర రూట్ కెనాల్",
                 "hi": "आपातकालीन रूट कैनाल",
+                "sr-Latn": "Hitno lečenje kanala",
             },
             "diagnosis_notes": {
                 "es": "Endodoncia urgente por absceso. Paciente anticoagulado.",
@@ -3412,6 +3723,7 @@ PATIENT_JOURNEYS = [
                 "ta": "பல் சீழ்க்கட்டியின் காரணமாக அவசர வேர் கால்வாய் சிகிச்சை. இரத்த உறைதலைத் தடுக்கும் மருந்து சிகிச்சையில் உள்ள நோயாளர்.",
                 "te": "చీము గడ్డ (abscess) కారణంగా అత్యవసర రూట్ కెనాల్. రక్తం పలుచబరిచే మందులు వాడుతున్న రోగి.",
                 "hi": "फोड़े के कारण आपातकालीन रूट कैनाल। एंटीकोएगुलेंट लेने वाले मरीज़।",
+                "sr-Latn": "Hitno lečenje kanala zbog apscesa. Pacijent na antikoagulantnoj terapiji.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -3430,6 +3742,7 @@ PATIENT_JOURNEYS = [
                 "ta": "இரத்த உறைதலைத் தடுக்கும் மருந்து சிகிச்சையில் உள்ளார் - அறுவைச் சிகிச்சைக்குப் பிந்தைய கவனிப்பு",
                 "te": "రక్తం పలుచబరిచే మందులు వాడుతున్నారు - శస్త్రచికిత్స తర్వాత సంరక్షణ",
                 "hi": "एंटीकोएगुलेंट पर - शल्य चिकित्सा के बाद की देखभाल",
+                "sr-Latn": "Antikoagulantna terapija - postoperativna nega",
             },
         },
         "appointments": [
@@ -3449,6 +3762,7 @@ PATIENT_JOURNEYS = [
                 "ta": "காலக்கெடு கடந்த விலைப்பட்டியல்",
                 "te": "గడువు దాటిన ఇన్‌వాయిస్",
                 "hi": "बकाया चालान",
+                "sr-Latn": "Dospeo račun",
             },
             # India GST (Tamil/Telugu, or English + --country in): intra-state (clinic home state) → CGST + SGST.
             "gst": {"place_of_supply": india_home_state()},
@@ -3467,6 +3781,7 @@ PATIENT_JOURNEYS = [
                 "ta": "மதிப்பீடு மற்றும் பல் சுத்தம்",
                 "te": "పరిశీలన మరియు శుభ్రత",
                 "hi": "मूल्यांकन और सफ़ाई",
+                "sr-Latn": "Pregled i čišćenje",
             },
             "diagnosis_notes": {
                 "es": "Evaluación periódica.",
@@ -3475,6 +3790,7 @@ PATIENT_JOURNEYS = [
                 "ta": "வழக்கமான மதிப்பீடு.",
                 "te": "క్రమానుగత పరిశీలన.",
                 "hi": "नियमित मूल्यांकन।",
+                "sr-Latn": "Periodični pregled.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True},
@@ -3500,6 +3816,7 @@ PATIENT_JOURNEYS = [
                 "ta": "செயற்கைப் பல் பராமரிப்பு",
                 "te": "కృత్రిమ దంతాల నిర్వహణ",
                 "hi": "कृत्रिम दाँतों का रखरखाव",
+                "sr-Latn": "Održavanje proteze",
             },
             "diagnosis_notes": {
                 "es": "Ajustes periódicos de prótesis completa.",
@@ -3508,6 +3825,7 @@ PATIENT_JOURNEYS = [
                 "ta": "முழுமையான செயற்கைப் பல்லுக்கான வழக்கமான பொருத்தச் சரிசெய்தல்கள்.",
                 "te": "పూర్తి కట్టుడు పళ్ళకు క్రమానుగత సర్దుబాట్లు.",
                 "hi": "पूर्ण डेन्चर का नियमित समायोजन।",
+                "sr-Latn": "Periodična podešavanja totalne proteze.",
             },
             "items": [
                 {"catalog_code": "DX-VISIT", "is_global": True, "completed": True},
@@ -4160,6 +4478,7 @@ def generate_invoice_series_data() -> list[dict]:
                     "ta": "முதன்மை விலைப்பட்டியல் தொடர்",
                     "te": "ప్రధాన ఇన్‌వాయిస్ సిరీస్",
                     "hi": "मुख्य चालान श्रृंखला",
+                    "sr-Latn": "Osnovna serija računa",
                 }
             ),
             "current_number": num_invoices + 1,
@@ -4177,6 +4496,7 @@ def generate_invoice_series_data() -> list[dict]:
                     "ta": "கடன் குறிப்புகள்",
                     "te": "క్రెడిట్ నోట్లు",
                     "hi": "क्रेडिट नोट",
+                    "sr-Latn": "Knjižna odobrenja",
                 }
             ),
             "current_number": 1,
@@ -4222,6 +4542,8 @@ def generate_invoices_data(catalog_items_map: dict[str, dict], budgets_result: d
     import uuid
 
     patients_data = get_patients_data()
+    # Payments snapshot the clinic currency, like the real write path.
+    currency = get_clinic_data()["currency"]
     invoices: list[dict] = []
     items: list[dict] = []
     gst_invoices_pending_hook: list = []
@@ -4294,6 +4616,7 @@ def generate_invoices_data(catalog_items_map: dict[str, dict], budgets_result: d
                         {
                             "es": f"Tratamiento {budget_item['catalog_code']}",
                             "en": f"Treatment {budget_item['catalog_code']}",
+                            "sr-Latn": f"Tretman {budget_item['catalog_code']}",
                         }
                     ),
                     "internal_code": budget_item["catalog_code"],
@@ -4352,7 +4675,7 @@ def generate_invoices_data(catalog_items_map: dict[str, dict], budgets_result: d
                     "clinic_id": CLINIC_ID,
                     "patient_id": patient["id"],
                     "amount": amount,
-                    "currency": "EUR",
+                    "currency": currency,
                     "method": payment_data["method"],
                     "payment_date": pay_date,
                     "reference": f"REF-{payment_idx:04d}",

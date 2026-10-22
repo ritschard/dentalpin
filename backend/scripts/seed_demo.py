@@ -77,6 +77,7 @@ from app.seeds.demo_data import (
     generate_invoices_data,
     generate_odontogram_data,
     generate_treatment_plans_data,
+    get_catalog_price_rate,
     get_clinic_data,
     get_india_gst_fixture,
     get_patients_data,
@@ -715,13 +716,14 @@ Examples:
   python scripts/seed_demo.py --lang ta              # Tamil, India GST demo
   python scripts/seed_demo.py --lang te              # Telugu, India GST demo (Hyderabad)
   python scripts/seed_demo.py --lang hi              # Hindi, India GST demo (New Delhi)
+  python scripts/seed_demo.py --lang sr-Latn         # Serbian (Latin script), Belgrade, RSD
   python scripts/seed_demo.py --lang en --country in # English, India GST demo
         """,
     )
     parser.add_argument(
         "--lang",
         "-l",
-        choices=["en", "es", "fr", "ta", "te", "hi"],
+        choices=["en", "es", "fr", "ta", "te", "hi", "sr-Latn"],
         default="en",
         help="Language for demo data (default: en)",
     )
@@ -755,6 +757,7 @@ async def main(lang: str = "en", country: str = "generic") -> None:
         "ta": "Tamil",
         "te": "Telugu",
         "hi": "Hindi",
+        "sr-Latn": "Serbian (Latin)",
     }
     lang_name = lang_names.get(lang, lang)
     if country == "in" and lang not in ("ta", "te", "hi"):
@@ -786,7 +789,7 @@ async def main(lang: str = "en", country: str = "generic") -> None:
             await seed_patients(db)
 
             print("\n[4/10] Creating treatment catalog...")
-            catalog_result = await seed_catalog(db, CLINIC_ID)
+            catalog_result = await seed_catalog(db, CLINIC_ID, price_rate=get_catalog_price_rate())
             print(f"  Created {catalog_result['categories']} categories")
             print(f"  Created {catalog_result['items']} catalog items")
             catalog_map = await _load_catalog_map(db)

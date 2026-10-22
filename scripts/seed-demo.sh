@@ -6,6 +6,7 @@
 #   ./scripts/seed-demo.sh              # English (default)
 #   ./scripts/seed-demo.sh --lang es    # Spanish
 #   ./scripts/seed-demo.sh -l es        # Spanish (short form)
+#   ./scripts/seed-demo.sh --lang sr-Latn  # Serbian (Latin), Belgrade clinic in RSD
 
 set -e
 

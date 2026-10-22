@@ -25,14 +25,13 @@ from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.core.i18n_names import catalog_name
 from app.modules.agenda.models import Appointment
 from app.modules.billing.models import Invoice
 from app.modules.budget.models import Budget
 from app.modules.odontogram.models import Treatment
 from app.modules.patient_timeline.models import PatientTimeline
 from app.modules.treatment_plan.models import PlannedTreatmentItem, TreatmentPlan
-from app.seeds.demo_data import t
+from app.seeds.demo_data import localized_catalog_name, t
 
 
 async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int]:
@@ -60,6 +59,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     "ta": "திட்டமிடப்பட்ட சந்திப்பு",
                     "hi": "निर्धारित अपॉइंटमेंट",
                     "te": "షెడ్యూల్ చేసిన అపాయింట్‌మెంట్",
+                    "sr-Latn": "Zakazan termin",
                 }
             ),
             "confirmed": t(
@@ -70,6 +70,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     "ta": "திட்டமிடப்பட்ட சந்திப்பு",
                     "te": "షెడ్యూల్ చేసిన అపాయింట్‌మెంట్",
                     "hi": "निर्धारित अपॉइंटमेंट",
+                    "sr-Latn": "Zakazan termin",
                 }
             ),
             "completed": t(
@@ -80,6 +81,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     "ta": "முடிக்கப்பட்ட சந்திப்பு",
                     "te": "పూర్తయిన అపాయింట్‌మెంట్",
                     "hi": "पूर्ण अपॉइंटमेंट",
+                    "sr-Latn": "Završen termin",
                 }
             ),
             "cancelled": t(
@@ -90,6 +92,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     "ta": "ரத்து செய்யப்பட்ட சந்திப்பு",
                     "te": "రద్దయిన అపాయింట్‌మెంట్",
                     "hi": "रद्द अपॉइंटमेंट",
+                    "sr-Latn": "Otkazan termin",
                 }
             ),
             "no_show": t(
@@ -100,6 +103,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     "ta": "நோயாளர் வரவில்லை",
                     "te": "రోగి రాలేదు",
                     "hi": "मरीज़ नहीं आए",
+                    "sr-Latn": "Pacijent nije došao",
                 }
             ),
         }
@@ -113,6 +117,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     "ta": "சந்திப்பு",
                     "te": "అపాయింట్‌మెంట్",
                     "hi": "अपॉइंटमेंट",
+                    "sr-Latn": "Termin",
                 }
             ),
         )
@@ -124,6 +129,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                 "ta": "ஆலோசனை",
                 "te": "సంప్రదింపు",
                 "hi": "परामर्श",
+                "sr-Latn": "Konsultacija",
             }
         )
         occurred = appt.end_time if appt.status == "completed" else appt.start_time
@@ -166,7 +172,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                 event_category="treatment",
                 source_table="treatment_plans",
                 source_id=plan.id,
-                title=f"{t({'es': 'Plan de tratamiento creado', 'en': 'Treatment plan created', 'fr': 'Plan de traitement créé', 'ta': 'சிகிச்சைத் திட்டம் உருவாக்கப்பட்டது', 'te': 'చికిత్స ప్రణాళిక సృష్టించబడింది', 'hi': 'उपचार योजना बनाई गई'})}: {plan.title or plan.plan_number}",
+                title=f"{t({'es': 'Plan de tratamiento creado', 'en': 'Treatment plan created', 'fr': 'Plan de traitement créé', 'ta': 'சிகிச்சைத் திட்டம் உருவாக்கப்பட்டது', 'te': 'చికిత్స ప్రణాళిక సృష్టించబడింది', 'hi': 'उपचार योजना बनाई गई', 'sr-Latn': 'Kreiran plan lečenja'})}: {plan.title or plan.plan_number}",
                 event_data={"plan_number": plan.plan_number},
                 occurred_at=plan.created_at or datetime.now(UTC),
                 created_by=plan.created_by,
@@ -191,7 +197,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
             if item.treatment and item.treatment.catalog_item
             else {}
         ) or {}
-        item_name = catalog_name(names) or t(
+        item_name = localized_catalog_name(names) or t(
             {
                 "es": "tratamiento",
                 "en": "treatment",
@@ -199,6 +205,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                 "ta": "சிகிச்சை",
                 "te": "చికిత్స",
                 "hi": "उपचार",
+                "sr-Latn": "tretman",
             }
         )
         patient_id = item.treatment.patient_id if item.treatment else None
@@ -212,7 +219,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                 event_category="treatment",
                 source_table="planned_treatment_items",
                 source_id=item.id,
-                title=f"{t({'es': 'Tratamiento del plan completado', 'en': 'Plan treatment completed', 'fr': 'Traitement du plan terminé', 'ta': 'திட்டத்தின் சிகிச்சை முடிக்கப்பட்டது', 'te': 'ప్రణాళికలోని చికిత్స పూర్తయింది', 'hi': 'योजना का उपचार पूर्ण'})}: {item_name}",
+                title=f"{t({'es': 'Tratamiento del plan completado', 'en': 'Plan treatment completed', 'fr': 'Traitement du plan terminé', 'ta': 'திட்டத்தின் சிகிச்சை முடிக்கப்பட்டது', 'te': 'ప్రణాళికలోని చికిత్స పూర్తయింది', 'hi': 'योजना का उपचार पूर्ण', 'sr-Latn': 'Završen tretman iz plana'})}: {item_name}",
                 event_data={"plan_id": str(item.treatment_plan_id)},
                 occurred_at=item.completed_at or item.created_at or datetime.now(UTC),
                 created_by=item.completed_by,
@@ -229,7 +236,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
     for treatment in performed.scalars().all():
         names = (treatment.catalog_item.names if treatment.catalog_item else {}) or {}
         name = (
-            catalog_name(names)
+            localized_catalog_name(names)
             or treatment.clinical_type
             or t(
                 {
@@ -239,6 +246,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     "ta": "சிகிச்சை",
                     "te": "చికిత్స",
                     "hi": "उपचार",
+                    "sr-Latn": "tretman",
                 }
             )
         )
@@ -252,8 +260,8 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                 event_category="treatment",
                 source_table="treatments",
                 source_id=treatment.id,
-                title=f"{t({'es': 'Tratamiento realizado', 'en': 'Treatment performed', 'fr': 'Traitement réalisé', 'ta': 'சிகிச்சை செய்யப்பட்டது', 'te': 'చికిత్స చేయబడింది', 'hi': 'उपचार किया गया'})}: {name}",
-                description=f"{t({'es': 'Dientes', 'en': 'Teeth', 'fr': 'Dents', 'ta': 'வாய்ச்சிறுபிடிப்புகள்', 'te': 'దంతాలు', 'hi': 'दाँत'})}: {teeth_label}"
+                title=f"{t({'es': 'Tratamiento realizado', 'en': 'Treatment performed', 'fr': 'Traitement réalisé', 'ta': 'சிகிச்சை செய்யப்பட்டது', 'te': 'చికిత్స చేయబడింది', 'hi': 'उपचार किया गया', 'sr-Latn': 'Izveden tretman'})}: {name}",
+                description=f"{t({'es': 'Dientes', 'en': 'Teeth', 'fr': 'Dents', 'ta': 'வாய்ச்சிறுபிடிப்புகள்', 'te': 'దంతాలు', 'hi': 'दाँत', 'sr-Latn': 'Zubi'})}: {teeth_label}"
                 if teeth_label
                 else None,
                 event_data={
@@ -278,7 +286,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     event_category="financial",
                     source_table="budgets",
                     source_id=budget.id,
-                    title=f"{t({'es': 'Presupuesto enviado', 'en': 'Budget sent', 'fr': 'Devis envoyé', 'ta': 'மதிப்பீடு அனுப்பப்பட்டது', 'te': 'అంచనా పంపబడింది', 'hi': 'उपचार अनुमान भेजा गया'})}: {budget.budget_number}",
+                    title=f"{t({'es': 'Presupuesto enviado', 'en': 'Budget sent', 'fr': 'Devis envoyé', 'ta': 'மதிப்பீடு அனுப்பப்பட்டது', 'te': 'అంచనా పంపబడింది', 'hi': 'उपचार अनुमान भेजा गया', 'sr-Latn': 'Predračun poslat'})}: {budget.budget_number}",
                     event_data={
                         "budget_number": budget.budget_number,
                         "total": str(budget.total),
@@ -296,7 +304,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     event_category="financial",
                     source_table="budgets",
                     source_id=budget.id,
-                    title=f"{t({'es': 'Presupuesto aceptado', 'en': 'Budget accepted', 'fr': 'Devis accepté', 'ta': 'மதிப்பீடு ஏற்கப்பட்டது', 'te': 'అంచనా అంగీకరించబడింది', 'hi': 'उपचार अनुमान स्वीकृत'})}: {budget.budget_number}",
+                    title=f"{t({'es': 'Presupuesto aceptado', 'en': 'Budget accepted', 'fr': 'Devis accepté', 'ta': 'மதிப்பீடு ஏற்கப்பட்டது', 'te': 'అంచనా అంగీకరించబడింది', 'hi': 'उपचार अनुमान स्वीकृत', 'sr-Latn': 'Predračun prihvaćen'})}: {budget.budget_number}",
                     event_data={
                         "budget_number": budget.budget_number,
                         "total": str(budget.total),
@@ -318,7 +326,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     event_category="financial",
                     source_table="invoices",
                     source_id=invoice.id,
-                    title=f"{t({'es': 'Factura emitida', 'en': 'Invoice issued', 'fr': 'Facture émise', 'ta': 'வாங்கப்பட்ட பில்', 'te': 'ఇన్‌వాయిస్ జారీ చేయబడింది', 'hi': 'चालान जारी'})}: {invoice.invoice_number or '—'}",
+                    title=f"{t({'es': 'Factura emitida', 'en': 'Invoice issued', 'fr': 'Facture émise', 'ta': 'வாங்கப்பட்ட பில்', 'te': 'ఇన్‌వాయిస్ జారీ చేయబడింది', 'hi': 'चालान जारी', 'sr-Latn': 'Račun izdat'})}: {invoice.invoice_number or '—'}",
                     event_data={
                         "invoice_number": invoice.invoice_number,
                         "total": str(invoice.total),
@@ -342,7 +350,7 @@ async def seed_timeline_demo(db: AsyncSession, clinic_id: UUID) -> dict[str, int
                     event_category="financial",
                     source_table="invoices",
                     source_id=invoice.id,
-                    title=f"{t({'es': 'Factura pagada', 'en': 'Invoice paid', 'fr': 'Facture payée', 'ta': 'வாங்கப்பட்ட பில் செலுத்தப்பட்டது', 'te': 'ఇన్‌వాయిస్ చెల్లించబడింది', 'hi': 'चालान का भुगतान हुआ'})}: {invoice.invoice_number or '—'}",
+                    title=f"{t({'es': 'Factura pagada', 'en': 'Invoice paid', 'fr': 'Facture payée', 'ta': 'வாங்கப்பட்ட பில் செலுத்தப்பட்டது', 'te': 'ఇన్‌వాయిస్ చెల్లించబడింది', 'hi': 'चालान का भुगतान हुआ', 'sr-Latn': 'Račun plaćen'})}: {invoice.invoice_number or '—'}",
                     event_data={
                         "invoice_number": invoice.invoice_number,
                         "total": str(invoice.total),

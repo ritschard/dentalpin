@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- feat: `seed_catalog(..., price_rate=)` converts the EUR reference prices (base, surface, per-role and per-session) to the clinic currency, rounded to the nearest 100; `with_prices=False` now goes through the same price mapper. Serbian (`sr-Latn`) names for every seeded VAT type, category, treatment and session label.
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 
 - fix(#701): `Category{Create,Update}.icon` is capped at the column
