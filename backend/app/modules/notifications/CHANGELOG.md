@@ -7,6 +7,10 @@
   characters (`notif_0009`, with the matching schema/query limits) so the
   script-tagged Serbian locales `sr-Cyrl` / `sr-Latn` fit. Downgrade
   refuses to run while a longer code is stored instead of truncating it.
+- feat(i18n): Serbian email templates in both scripts
+  (`templates/email/sr-Cyrl/`, `sr-Latn/`) — the ten patient and staff
+  templates; the Spain-only Verifactu ones are exempt like te/hi. The
+  clinic language page offers both as communication language.
 
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 

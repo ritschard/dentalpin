@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Добро дошли у {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Добро дошли!</h2>
+
+<p>Поштовани/а {{ patient_name }},</p>
+
+<p>Драго нам је што сте изабрали <strong>{{ clinic_name | default('DentalPin') }}</strong>.</p>
+
+<p>Сада можете да управљате својим терминима, прегледате историју лечења и приступите свим нашим услугама путем наше платформе.</p>
+
+<p>Ако имате питања, слободно нас контактирајте.</p>
+{% endblock %}

@@ -19,12 +19,27 @@ from pathlib import Path
 
 from app.core.email.service import TEMPLATES_DIR
 
-EXPECTED_LOCALES = {"es", "en", "fr", "pt", "ta", "te", "hi", "de", "hu", "pl", "it", "ar"}
+EXPECTED_LOCALES = {
+    "es",
+    "en",
+    "fr",
+    "pt",
+    "ta",
+    "te",
+    "hi",
+    "de",
+    "hu",
+    "pl",
+    "it",
+    "ar",
+    "sr-Cyrl",
+    "sr-Latn",
+}
 # Overlay dirs: subset of templates, not subject to full-file parity.
 OVERLAY_LOCALES = {"pt-BR"}
 
-# Country-specific templates a locale deliberately does not ship: Telugu
-# targets Indian clinics, which never run Spain's Verifactu (AEAT).
+# Country-specific templates a locale deliberately does not ship: Telugu,
+# Hindi and Serbian clinics never run Spain's Verifactu (AEAT).
 _VERIFACTU_TEMPLATES = {
     "verifactu_cert_expiry.html",
     "verifactu_cert_expiry.txt",
@@ -34,6 +49,8 @@ _VERIFACTU_TEMPLATES = {
 COUNTRY_EXEMPT: dict[str, set[str]] = {
     "te": _VERIFACTU_TEMPLATES,
     "hi": _VERIFACTU_TEMPLATES,
+    "sr-Cyrl": _VERIFACTU_TEMPLATES,
+    "sr-Latn": _VERIFACTU_TEMPLATES,
 }
 
 

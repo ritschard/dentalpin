@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Termin je otkazan - {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Termin je otkazan</h2>
+
+<p>Poštovani/a {{ patient_name }},</p>
+
+<p>Vaš termin kod <strong>{{ clinic_name | default('DentalPin') }}</strong> je otkazan.</p>
+
+<div class="info-box">
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Datum</div>
+            <div class="value">{{ appointment_date }}</div>
+        </div>
+        <div style="flex: 1;">
+            <div class="label">Vreme</div>
+            <div class="value">{{ appointment_time }}</div>
+        </div>
+    </div>
+    {% if professional_name %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Terapeut</div>
+            <div class="value">{{ professional_name }}</div>
+        </div>
+    </div>
+    {% endif %}
+    {% if cancellation_reason %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Razlog</div>
+            <div class="value">{{ cancellation_reason }}</div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<p>Da biste zakazali novi termin, kontaktirajte nas.</p>
+{% endblock %}

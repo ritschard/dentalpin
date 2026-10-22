@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Ваша следећа контрола код {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Време је за следећу контролу</h2>
+
+<p>Поштовани/а {{ patient_name }},</p>
+
+<p>Планирали смо Вашу следећу контролу{% if due_month %} за <strong>{{ due_month }}</strong>{% endif %}{% if reason %} ({{ reason }}){% endif %} код <strong>{{ clinic_name | default('DentalPin') }}</strong>.</p>
+
+<p>Јавите нам се да договоримо термин који Вам одговара.</p>
+
+{% if clinic_phone %}
+<div class="button-container">
+    <a href="tel:{{ clinic_phone }}" class="button">Закажите термин</a>
+</div>
+{% endif %}
+
+<p>Ако имате питања, слободно нас контактирајте.</p>
+{% endblock %}

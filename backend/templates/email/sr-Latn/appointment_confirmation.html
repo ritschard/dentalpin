@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Potvrda termina - {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Potvrda termina</h2>
+
+<p>Poštovani/a {{ patient_name }},</p>
+
+<p>Potvrđujemo Vaš termin kod <strong>{{ clinic_name | default('DentalPin') }}</strong>:</p>
+
+<div class="info-box">
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Datum</div>
+            <div class="value">{{ appointment_date }}</div>
+        </div>
+        <div style="flex: 1;">
+            <div class="label">Vreme</div>
+            <div class="value">{{ appointment_time }}</div>
+        </div>
+    </div>
+    {% if professional_name %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Terapeut</div>
+            <div class="value">{{ professional_name }}</div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<p>Ako želite da pomerite ili otkažete termin, molimo Vas da nas kontaktirate što pre.</p>
+{% endblock %}

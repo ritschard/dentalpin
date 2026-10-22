@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- feat(i18n): morning-digest subject in Serbian (`sr-Cyrl`, `sr-Latn`).
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 - feat(#332): Ollama LLM provider adapter (self-hosted, local, no API key)
   over its OpenAI-compatible endpoint. `OLLAMA_SPEC` declares

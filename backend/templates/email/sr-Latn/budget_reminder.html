@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Vaš predračun čeka odgovor - {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Ljubazni podsetnik</h2>
+
+<p>Poštovani/a {{ patient_name }},</p>
+
+<p>Vaš predračun za lečenje <strong>#{{ budget_number }}</strong> od <strong>{{ clinic_name | default('DentalPin') }}</strong> još uvek čeka Vaš odgovor.</p>
+
+<div class="info-box">
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Predračun</div>
+            <div class="value">{{ budget_number }}</div>
+        </div>
+        {% if total %}
+        <div style="flex: 1; text-align: right;">
+            <div class="label">Ukupno</div>
+            <div class="value">{{ total }}</div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if valid_until %}
+<div class="alert alert-warning">
+    <strong>Važenje:</strong> ovaj predračun važi do {{ valid_until }}.
+</div>
+{% endif %}
+
+{% if public_url %}
+<div class="button-container">
+    <a href="{{ public_url }}" class="button">Pogledajte predračun</a>
+</div>
+{% endif %}
+
+<p>Ako ste već doneli odluku ili imate pitanja, kontaktirajte nas — rado ćemo Vam pomoći.</p>
+{% endblock %}

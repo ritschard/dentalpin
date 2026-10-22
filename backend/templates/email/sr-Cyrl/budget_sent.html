@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Предрачун за лечење - {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Предрачун за лечење</h2>
+
+<p>Поштовани/а {{ patient_name }},</p>
+
+<p>У наставку Вам достављамо предрачун за лечење <strong>#{{ budget_number }}</strong> од <strong>{{ clinic_name | default('DentalPin') }}</strong>:</p>
+
+{% if treatments %}
+<div class="info-box">
+    {% for t in treatments %}
+    <div class="info-row">
+        <div style="flex: 2;">
+            <div class="label">{{ t.name }}{% if t.tooth %} — зуб {{ t.tooth }}{% endif %}</div>
+        </div>
+        <div style="flex: 1; text-align: right;">
+            <div class="value">{{ t.price }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="info-box">
+    {% if discount_amount %}
+    <div class="info-row">
+        <div class="label">Међузбир</div>
+        <div class="value">{{ subtotal }}</div>
+    </div>
+    <div class="info-row">
+        <div class="label">Попуст</div>
+        <div class="value">-{{ discount_amount }}</div>
+    </div>
+    {% endif %}
+    <div class="info-row">
+        <div class="label">Укупно</div>
+        <div class="value" style="font-size: 18px; font-weight: 700;">{{ total }}</div>
+    </div>
+    {% if validity_days %}
+    <div class="info-row">
+        <div class="label">Рок важења</div>
+        <div class="value">{{ validity_days }} {{ 'дан' if validity_days % 10 == 1 and validity_days % 100 != 11 else 'дана' }}</div>
+    </div>
+    {% endif %}
+</div>
+
+{% if notes %}
+<p><strong>Напомене:</strong> {{ notes }}</p>
+{% endif %}
+
+{% if custom_message %}
+<div class="alert alert-info">
+    {{ custom_message }}
+</div>
+{% endif %}
+
+<p>Ако имате питања у вези са овим предрачуном, контактирајте нас.</p>
+{% endblock %}

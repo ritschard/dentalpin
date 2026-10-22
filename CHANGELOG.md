@@ -17,6 +17,10 @@ frontend as a Nuxt layer under its own Python package.
   locale translated in its own file. Nuxt UI ships no Serbian, so its
   component labels are defined in `app/constants/nuxtUiSerbian.ts`.
   A Serbian plural rule (one / few / other) joins `pluralRules.ts`.
+- **Serbian patient emails** (`templates/email/sr-Cyrl/`, `sr-Latn/`; the
+  Spain-only Verifactu templates are exempt), selectable as the clinic
+  communication language. The notifications locale columns widen to fit
+  script-tagged codes (`notif_0009`).
 
 ### Fixed
 

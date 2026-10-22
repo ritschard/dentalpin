@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Dnevni pregled - {{ clinic_name }}{% endblock %}
+
+{% block content %}
+<h2>Pregled za {{ today }}</h2>
+
+{% if appointments is not none %}
+<h3>Današnji termini ({{ appointments | length }})</h3>
+{% if appointments %}
+<div class="info-box">
+    {% for a in appointments %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">{{ a.start_time[11:16] if a.start_time else '' }}</div>
+            <div class="value">{{ a.patient_name or '—' }}</div>
+        </div>
+        <div style="flex: 1;">
+            <div class="label">Status</div>
+            <div class="value">{{ a.status }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>Za danas nema zakazanih termina.</p>
+{% endif %}
+{% endif %}
+
+{% if recalls is not none %}
+<h3>Dospeli kontrolni pozivi ({{ recalls | length }})</h3>
+{% if recalls %}
+<div class="info-box">
+    {% for r in recalls %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">{{ r.reason }}</div>
+            <div class="value">{{ r.patient_name or '—' }}{% if r.phone %} · {{ r.phone }}{% endif %}</div>
+        </div>
+        <div style="flex: 1;">
+            <div class="label">Prioritet</div>
+            <div class="value">{{ r.priority }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>Nema dospelih kontrolnih poziva.</p>
+{% endif %}
+{% endif %}
+
+{% if budgets is not none %}
+<h3>Predračuni bez odgovora ({{ budgets | length }})</h3>
+{% if budgets %}
+<div class="info-box">
+    {% for b in budgets %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">{{ b.number }}</div>
+            <div class="value">{{ b.patient_name or '—' }}</div>
+        </div>
+        <div style="flex: 1;">
+            <div class="label">Iznos</div>
+            <div class="value">{{ b.total }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>Nema predračuna koji čekaju odgovor.</p>
+{% endif %}
+{% endif %}
+
+<p style="color: #71717a; font-size: 14px;">
+    Automatski pregled koji priprema DentalPin kopilot. Možete ga
+    isključiti ili promeniti vreme slanja u Podešavanja → Kopilot.
+</p>
+{% endblock %}

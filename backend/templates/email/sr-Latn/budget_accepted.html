@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Predračun je prihvaćen - {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Predračun je prihvaćen</h2>
+
+<p>Poštovani/a {{ patient_name }},</p>
+
+<p>Vaš predračun <strong>#{{ budget_number }}</strong> od <strong>{{ clinic_name | default('DentalPin') }}</strong> je prihvaćen.</p>
+
+<div class="info-box">
+    <div class="info-row">
+        <div class="label">Predračun</div>
+        <div class="value">#{{ budget_number }}</div>
+    </div>
+    <div class="info-row">
+        <div class="label">Datum prihvatanja</div>
+        <div class="value">{{ accepted_date }}</div>
+    </div>
+    <div class="info-row">
+        <div class="label">Ukupno</div>
+        <div class="value" style="font-size: 18px; font-weight: 700;">{{ total }}</div>
+    </div>
+</div>
+
+<p>Uskoro ćemo Vas kontaktirati kako bismo zakazali odgovarajuće termine.</p>
+{% endblock %}

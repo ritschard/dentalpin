@@ -2,9 +2,9 @@
 const { t } = useI18n()
 const { settings, loading, saving, fetch, update } = useCommunicationsSettings()
 
-const language = ref<'es' | 'en' | 'fr' | 'pt' | 'pt-BR' | 'ta' | 'te' | 'hi' | 'de' | 'hu' | 'pl' | 'it' | 'ar'>('es')
+const language = ref<'es' | 'en' | 'fr' | 'pt' | 'pt-BR' | 'ta' | 'te' | 'hi' | 'de' | 'hu' | 'pl' | 'it' | 'ar' | 'sr-Cyrl' | 'sr-Latn'>('es')
 
-const SUPPORTED = ['en', 'fr', 'pt', 'pt-BR', 'ta', 'te', 'hi', 'de', 'hu', 'pl', 'it', 'ar'] as const
+const SUPPORTED = ['en', 'fr', 'pt', 'pt-BR', 'ta', 'te', 'hi', 'de', 'hu', 'pl', 'it', 'ar', 'sr-Cyrl', 'sr-Latn'] as const
 
 watch(settings, (s) => {
   if (s) language.value = (SUPPORTED.includes(s.language as typeof SUPPORTED[number]) ? s.language as typeof language.value : 'es')
@@ -25,7 +25,9 @@ const options = [
   { value: 'hu', label: 'Magyar' },
   { value: 'pl', label: 'Polski' },
   { value: 'it', label: 'Italiano' },
-  { value: 'ar', label: 'العربية' }
+  { value: 'ar', label: 'العربية' },
+  { value: 'sr-Cyrl', label: 'Српски (ћирилица)' },
+  { value: 'sr-Latn', label: 'Srpski (latinica)' }
 ]
 
 async function save() {

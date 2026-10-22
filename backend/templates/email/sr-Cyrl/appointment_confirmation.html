@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Потврда термина - {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Потврда термина</h2>
+
+<p>Поштовани/а {{ patient_name }},</p>
+
+<p>Потврђујемо Ваш термин код <strong>{{ clinic_name | default('DentalPin') }}</strong>:</p>
+
+<div class="info-box">
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Датум</div>
+            <div class="value">{{ appointment_date }}</div>
+        </div>
+        <div style="flex: 1;">
+            <div class="label">Време</div>
+            <div class="value">{{ appointment_time }}</div>
+        </div>
+    </div>
+    {% if professional_name %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Терапеут</div>
+            <div class="value">{{ professional_name }}</div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<p>Ако желите да померите или откажете термин, молимо Вас да нас контактирате што пре.</p>
+{% endblock %}

@@ -58,6 +58,8 @@ _SUBJECT = {
     "pl": "Poranne podsumowanie — {clinic_name}",
     "it": "Briefing del giorno — {clinic_name}",
     "ar": "الملخص اليومي — {clinic_name}",
+    "sr-Cyrl": "Дневни преглед — {clinic_name}",
+    "sr-Latn": "Dnevni pregled — {clinic_name}",
 }
 
 

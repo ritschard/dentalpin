@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Podsetnik za termin - {{ clinic_name | default('DentalPin') }}{% endblock %}
+
+{% block content %}
+<h2>Podsetnik za termin</h2>
+
+<p>Poštovani/a {{ patient_name }},</p>
+
+<p>Podsećamo Vas na predstojeći termin kod <strong>{{ clinic_name | default('DentalPin') }}</strong>:</p>
+
+<div class="info-box">
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Datum</div>
+            <div class="value">{{ appointment_date }}</div>
+        </div>
+        <div style="flex: 1;">
+            <div class="label">Vreme</div>
+            <div class="value">{{ appointment_time }}</div>
+        </div>
+    </div>
+    {% if professional_name %}
+    <div class="info-row">
+        <div style="flex: 1;">
+            <div class="label">Terapeut</div>
+            <div class="value">{{ professional_name }}</div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<p>Molimo Vas da dođete nekoliko minuta ranije. Ako želite da pomerite termin, kontaktirajte nas što pre.</p>
+{% if checkin_url %}
+<div class="button-container">
+    <a href="{{ checkin_url }}" class="button">Prijavite dolazak na termin</a>
+</div>
+{% endif %}
+
+{% endblock %}
