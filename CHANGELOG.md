@@ -13,6 +13,11 @@ frontend as a Nuxt layer under its own Python package.
 
 ### Fixed
 
+- **The module-layer locale parity check passed vacuously for
+  script-tagged files.** A layer's `sr-Latn.json` was mapped back onto
+  itself instead of `en.json`, so it could miss every key and still pass;
+  the file-name mapping now understands region and script subtags and
+  fails on any name it cannot map.
 - **Dates showed one day early in the Americas.** `new Date('2026-10-20')`
   is UTC midnight per spec, so in any zone behind UTC every date-only field
   (invoice and due dates, quote validity, payment dates, dates of birth, a

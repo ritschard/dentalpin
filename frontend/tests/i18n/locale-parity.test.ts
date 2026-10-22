@@ -39,6 +39,9 @@ const MODULES_ROOT = existsSync('/module_layers')
 /** Host-only overlay locales. */
 const OVERLAY_LOCALES = new Set(['pt-BR.json'])
 
+/** `<lang>[-Region|-Script].json`, optionally behind a `<namespace>-` prefix. */
+const LOCALE_FILE_SUFFIX = /(^|-)[a-z]{2}(?:-[A-Z]{2}|-[A-Z][a-z]{3})?\.json$/
+
 type Tree = Record<string, unknown>
 
 function flatten(obj: Tree, prefix = ''): Map<string, string> {
@@ -179,10 +182,12 @@ describe('locale key parity', () => {
         if (OVERLAY_LOCALES.has(file)) continue
         // English sources are the reference, not compared against themselves.
         if (file === 'en.json' || file.endsWith('-en.json')) continue
-        // notifications-pt.json → notifications-en.json; pt.json → en.json
-        const resolvedEn = file.includes('-')
-          ? file.replace(/-([a-z]{2})(?:-[A-Z]{2})?\.json$/, '-en.json')
-          : 'en.json'
+        // pt.json / sr-Latn.json → en.json;
+        // notifications-pt.json / notifications-sr-Latn.json → notifications-en.json.
+        // The tag may carry a region (pt-BR) or a script (sr-Cyrl), so a
+        // bare hyphen does not mean a namespace prefix.
+        const resolvedEn = file.replace(LOCALE_FILE_SUFFIX, '$1en.json')
+        expect(resolvedEn, `${mod}/${file}: not a locale file name`).not.toBe(file)
         const enPath = resolve(i18nDir, resolvedEn)
         if (!existsSync(enPath)) continue
         comparePair(`${mod}/${file}`, enPath, resolve(i18nDir, file))
