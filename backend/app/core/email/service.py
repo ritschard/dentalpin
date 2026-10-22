@@ -5,6 +5,7 @@ any configured provider. It handles template rendering and provider
 selection.
 """
 
+import html
 import logging
 from pathlib import Path
 from uuid import UUID
@@ -20,6 +21,7 @@ from app.core.email.providers.base import (
 )
 from app.core.email.providers.console import ConsoleProvider
 from app.core.email.providers.smtp import SMTPProvider
+from app.core.email.strings import footer_sent_by
 
 logger = logging.getLogger(__name__)
 
@@ -231,7 +233,7 @@ class EmailService:
         to_email: str,
         template_key: str,
         context: dict,
-        subject: str,
+        subject: str | None = None,
         locale: str = "es",
         to_name: str | None = None,
         from_email: str | None = None,
@@ -253,7 +255,9 @@ class EmailService:
             to_email: Recipient email address.
             template_key: Template identifier (e.g., 'appointment_confirmation').
             context: Template context variables.
-            subject: Email subject (can include template variables).
+            subject: Email subject (can include template variables). When
+                omitted, the template's own ``title`` block — already in the
+                recipient's language — is used.
             locale: Language code for template selection (default 'es').
             to_name: Recipient name (optional).
             from_email: Sender email (optional, uses default).
@@ -304,6 +308,13 @@ class EmailService:
             custom_template=template_text,
         )
 
+        # No explicit subject: take the template's localized title block, so a
+        # template-only send never goes out under a raw template key.
+        if not subject:
+            subject = self._render_title(template_key, locale, context, template_html) or (
+                context.get("clinic_name") or "DentalPin"
+            )
+
         # Render subject if it contains template syntax
         rendered_subject = subject
         if "{{" in subject or "{%" in subject:
@@ -350,7 +361,9 @@ class EmailService:
         # If custom template provided, use it directly
         if custom_template:
             try:
-                return self._jinja_env.from_string(custom_template).render(context)
+                return self._jinja_env.from_string(custom_template).render(
+                    self._layout_vars(locale, context)
+                )
             except Exception as e:
                 logger.error(f"Failed to render custom template: {e}")
                 return None
@@ -359,8 +372,20 @@ class EmailService:
             logger.warning("Jinja2 environment not initialized")
             return None
 
-        # Try locale-specific template first, then base locale(if overlay locale),
-        # then fallback to default
+        for template_path in self._template_paths(template_key, locale, extension):
+            try:
+                template = self._jinja_env.get_template(template_path)
+                return template.render(self._layout_vars(locale, context))
+            except Exception:
+                continue
+
+        logger.warning(f"Template not found: {template_key}.{extension} for locale {locale}")
+        return None
+
+    @staticmethod
+    def _template_paths(template_key: str, locale: str, extension: str) -> list[str]:
+        """Locale-specific template first, then the base locale (overlay
+        locales), then the fallbacks."""
         template_paths = [
             f"{locale}/{template_key}.{extension}",
         ]
@@ -373,17 +398,50 @@ class EmailService:
                 f"{template_key}.{extension}",
             ]
         )
+        return template_paths
 
-        for template_path in template_paths:
-            try:
-                template = self._jinja_env.get_template(template_path)
-                # base.html reads ``locale`` for ``lang``/``dir``.
-                return template.render({"locale": locale, **context})
-            except Exception:
-                continue
+    @staticmethod
+    def _layout_vars(locale: str, context: dict) -> dict:
+        # base.html reads ``locale`` for ``lang``/``dir`` and renders the
+        # localized footer; an explicit ``footer_sent_by`` in context wins.
+        return {
+            "locale": locale,
+            "footer_sent_by": footer_sent_by(locale, context.get("clinic_name")),
+            **context,
+        }
 
-        logger.warning(f"Template not found: {template_key}.{extension} for locale {locale}")
-        return None
+    def _render_title(
+        self,
+        template_key: str,
+        locale: str,
+        context: dict,
+        custom_template: str | None = None,
+    ) -> str | None:
+        """Render the ``title`` block of the HTML template the body uses, as
+        plain text. ``None`` when that template defines no title."""
+        if not self._jinja_env:
+            return None
+        try:
+            if custom_template:
+                template = self._jinja_env.from_string(custom_template)
+            else:
+                template = None
+                for template_path in self._template_paths(template_key, locale, "html"):
+                    try:
+                        template = self._jinja_env.get_template(template_path)
+                        break
+                    except Exception:
+                        continue
+            if template is None or "title" not in template.blocks:
+                return None
+            block = template.blocks["title"](
+                template.new_context(self._layout_vars(locale, context))
+            )
+            title = " ".join(html.unescape("".join(block)).split())
+            return title or None
+        except Exception as e:
+            logger.warning(f"Failed to render title of {template_key} ({locale}): {e}")
+            return None
 
     async def health_check(self) -> bool:
         """Check if the email service is healthy.

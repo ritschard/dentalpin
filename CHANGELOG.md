@@ -29,6 +29,15 @@ frontend as a Nuxt layer under its own Python package.
   itself instead of `en.json`, so it could miss every key and still pass;
   the file-name mapping now understands region and script subtags and
   fails on any name it cannot map.
+- **Emails in every language but Spanish carried a Spanish footer, and
+  template sends had a Spanish placeholder subject.** Nothing set the
+  layout's `footer_sent_by`, so `base.html` always fell back to "Este
+  email fue enviado por…"; it is now localized per locale
+  (`app/core/email/strings.py`, English fallback) and the parity test
+  requires an entry for every communication locale. A notification with
+  no subject went out as `Notificación: <template_key>`; `send_templated`
+  now takes the template's own localized `title` block (subject is
+  optional), falling back to the clinic name.
 - **Dates showed one day early in the Americas.** `new Date('2026-10-20')`
   is UTC midnight per spec, so in any zone behind UTC every date-only field
   (invoice and due dates, quote validity, payment dates, dates of birth, a

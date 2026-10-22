@@ -208,3 +208,11 @@ def test_exempt_template_falls_back_to_english() -> None:
         {"admin_name": "A", "clinic_name": "C", "is_expired": True, "valid_until": "x"},
     )
     assert html is not None and "Verifactu certificate" in html
+
+
+def test_every_communication_locale_has_a_footer() -> None:
+    """base.html's "sent by" line is localized in app/core/email/strings.py;
+    a locale missing there would fall back to English under a translated body."""
+    from app.core.email.strings import FOOTER_SENT_BY
+
+    assert EXPECTED_LOCALES <= set(FOOTER_SENT_BY)

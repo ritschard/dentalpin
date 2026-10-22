@@ -11,6 +11,9 @@
   (`templates/email/sr-Cyrl/`, `sr-Latn/`) — the ten patient and staff
   templates; the Spain-only Verifactu ones are exempt like te/hi. The
   clinic language page offers both as communication language.
+- fix: the email adapter no longer substitutes `Notificación: <key>` for a
+  missing subject; the core email service uses the template's localized
+  title instead.
 
 - fix(#723): the paginated list query now ends its `order_by` on the primary key. Rows that tied on the sort column (same date, name or timestamp) were cut from different orderings on each page, so some appeared twice and others on no page.
 
