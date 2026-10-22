@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- feat(i18n): Serbian prescription PDF labels (`sr-Cyrl`, `sr-Latn`), dated `dd.mm.yyyy.`.
 - feat(i18n): Serbian layer strings in both scripts (`sr-Cyrl.json`, `sr-Latn.json`).
 - fix: date-only fields (`YYYY-MM-DD`) are parsed as local midnight
   (`parseDateOnly`, host `utils/wallClock.ts`) instead of `new Date(s)`, which

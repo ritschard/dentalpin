@@ -43,6 +43,8 @@ BUDGET_HEADINGS = {
     "ta": "மதிப்பீடு",
     "te": "అంచనా",
     "hi": "उपचार अनुमान",
+    "sr-Cyrl": "Предрачун",
+    "sr-Latn": "Predračun",
 }
 
 

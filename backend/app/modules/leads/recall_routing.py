@@ -67,6 +67,8 @@ _IDENTITY_LABELS: dict[str, str] = {
     "te": "వెబ్‌సైట్ ఫారం — ఈ పేరుతో సమర్పించబడింది",
     "hi": "वेबसाइट फ़ॉर्म — इस नाम से भेजा गया",
     "ar": "نموذج الموقع الإلكتروني — أُرسل باسم",
+    "sr-Cyrl": "Веб образац — послато као",
+    "sr-Latn": "Veb obrazac — poslato kao",
 }
 _FALLBACK_LOCALE = "es"
 

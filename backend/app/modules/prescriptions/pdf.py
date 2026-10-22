@@ -253,6 +253,42 @@ def _get_labels(locale: str) -> dict[str, str]:
         "draft": "मसौदा",
         "cancelled": "रद्द",
     }
+    labels_sr_cyrl = {
+        "title": "Рецепт",
+        "date": "Датум",
+        "patient": "Пацијент",
+        "prescriber": "Прописао/ла",
+        "license": "Бр. лиценце",
+        "signature": "Потпис",
+        "date_format": "%d.%m.%Y.",
+        "medication": "Лек",
+        "dose": "Доза",
+        "route": "Начин примене",
+        "frequency": "Учесталост",
+        "duration": "Трајање",
+        "instructions": "Упутства",
+        "notes": "Напомене",
+        "draft": "НАЦРТ",
+        "cancelled": "ПОНИШТЕН",
+    }
+    labels_sr_latn = {
+        "title": "Recept",
+        "date": "Datum",
+        "patient": "Pacijent",
+        "prescriber": "Propisao/la",
+        "license": "Br. licence",
+        "signature": "Potpis",
+        "date_format": "%d.%m.%Y.",
+        "medication": "Lek",
+        "dose": "Doza",
+        "route": "Način primene",
+        "frequency": "Učestalost",
+        "duration": "Trajanje",
+        "instructions": "Uputstva",
+        "notes": "Napomene",
+        "draft": "NACRT",
+        "cancelled": "PONIŠTEN",
+    }
     # English stays the fallback for a locale the host adds before the
     # labels follow (#485). The route accepts every PDF locale, so
     # returning English for eight of the ten printed an English
@@ -271,6 +307,8 @@ def _get_labels(locale: str) -> dict[str, str]:
         "ta": labels_ta,
         "te": labels_te,
         "hi": labels_hi,
+        "sr-Cyrl": labels_sr_cyrl,
+        "sr-Latn": labels_sr_latn,
     }.get(locale, labels_en)
 
 

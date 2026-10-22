@@ -33,6 +33,12 @@ frontend as a Nuxt layer under its own Python package.
   itself instead of `en.json`, so it could miss every key and still pass;
   the file-name mapping now understands region and script subtags and
   fails on any name it cannot map.
+- **Every "Download PDF" answered 422 in Serbian.** The PDF endpoints
+  accept only `PDF_LOCALES`, and the guard meant to keep that list in step
+  with the UI (`tests/test_pdf_locales.py`) read locale codes with a
+  pattern that skipped script subtags, so `sr-Cyrl` / `sr-Latn` slipped
+  past it. Both are now accepted (Babel `sr_Cyrl_RS` / `sr_Latn_RS`), the
+  five PDF modules carry Serbian labels, and the guard reads script codes.
 - **Emails in every language but Spanish carried a Spanish footer, and
   template sends had a Spanish placeholder subject.** Nothing set the
   layout's `footer_sent_by`, so `base.html` always fell back to "Este

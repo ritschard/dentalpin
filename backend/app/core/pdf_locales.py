@@ -28,6 +28,8 @@ PDF_LOCALES: tuple[str, ...] = (
     "pl",
     "it",
     "ar",
+    "sr-Cyrl",
+    "sr-Latn",
 )
 PDF_LOCALE_PATTERN = "^(" + "|".join(PDF_LOCALES) + ")$"
 
@@ -47,4 +49,6 @@ LOCALE_BY_LANG: dict[str, str] = {
     "pl": "pl_PL",
     "it": "it_IT",
     "ar": "ar",
+    "sr-Cyrl": "sr_Cyrl_RS",
+    "sr-Latn": "sr_Latn_RS",
 }

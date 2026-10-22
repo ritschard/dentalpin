@@ -1238,6 +1238,83 @@ class InvoicePDFService:
             },
         }
 
+        labels_sr_cyrl = {
+            "invoice": "Рачун",
+            "credit_note": "Књижно одобрење",
+            "credit_note_for": "Коригује",
+            "draft": "НАЦРТ",
+            "issue_date": "Датум издавања",
+            "due_date": "Датум доспећа",
+            "billing_info": "Подаци за фактурисање",
+            "billing_name": "Име/Фирма",
+            "tax_id": "ПИБ",
+            "address": "Адреса",
+            "patient": "Пацијент",
+            "items": "Ставке",
+            "description": "Опис",
+            "qty": "Кол.",
+            "unit_price": "Цена",
+            "discount": "Попуст",
+            "vat": "ПДВ",
+            "total": "Укупно",
+            "subtotal": "Међузбир",
+            "total_discount": "Укупан попуст",
+            "tax": "ПДВ",
+            "grand_total": "УКУПНО",
+            "total_paid": "Укупно плаћено",
+            "balance_due": "Преостало за плаћање",
+            "notes": "Напомене",
+            "payment_terms": "Рок плаћања",
+            "days": "дана",
+            "generated_by": "Генерисано помоћу",
+            "status": {
+                "draft": "Нацрт",
+                "issued": "Издат",
+                "partial": "Делимично плаћен",
+                "paid": "Плаћен",
+                "cancelled": "Отказан",
+                "voided": "Сторниран",
+            },
+        }
+        labels_sr_latn = {
+            "invoice": "Račun",
+            "credit_note": "Knjižno odobrenje",
+            "credit_note_for": "Koriguje",
+            "draft": "NACRT",
+            "issue_date": "Datum izdavanja",
+            "due_date": "Datum dospeća",
+            "billing_info": "Podaci za fakturisanje",
+            "billing_name": "Ime/Firma",
+            "tax_id": "PIB",
+            "address": "Adresa",
+            "patient": "Pacijent",
+            "items": "Stavke",
+            "description": "Opis",
+            "qty": "Kol.",
+            "unit_price": "Cena",
+            "discount": "Popust",
+            "vat": "PDV",
+            "total": "Ukupno",
+            "subtotal": "Međuzbir",
+            "total_discount": "Ukupan popust",
+            "tax": "PDV",
+            "grand_total": "UKUPNO",
+            "total_paid": "Ukupno plaćeno",
+            "balance_due": "Preostalo za plaćanje",
+            "notes": "Napomene",
+            "payment_terms": "Rok plaćanja",
+            "days": "dana",
+            "generated_by": "Generisano pomoću",
+            "status": {
+                "draft": "Nacrt",
+                "issued": "Izdat",
+                "partial": "Delimično plaćen",
+                "paid": "Plaćen",
+                "cancelled": "Otkazan",
+                "voided": "Storniran",
+            },
+        }
+
         if locale == "es":
             return labels_es
         if locale == "ta":
@@ -1262,4 +1339,8 @@ class InvoicePDFService:
             return labels_it
         if locale == "ar":
             return labels_ar
+        if locale == "sr-Cyrl":
+            return labels_sr_cyrl
+        if locale == "sr-Latn":
+            return labels_sr_latn
         return labels_en
