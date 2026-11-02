@@ -12,7 +12,7 @@ const { currentLocale, availableLocales, changeLocale } = useLocale()
       {{ t('settings.languageDescription') }}
     </p>
 
-    <div class="flex gap-2">
+    <div class="flex flex-wrap gap-2">
       <UButton
         v-for="loc in availableLocales"
         :key="loc.code"
